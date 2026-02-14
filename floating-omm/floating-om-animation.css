@@ -1,0 +1,352 @@
+/* ========================================
+   FLOATING OM BACKGROUND ANIMATION
+   Premium Spiritual Design
+   ======================================== */
+
+/* ---------- FLOATING CONTAINER ---------- */
+.floating-om-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1;
+  background: radial-gradient(ellipse at 50% 50%, rgba(255, 248, 231, 0.5) 0%, transparent 70%);
+}
+
+/* ---------- FLOATING OM ELEMENT BASE ---------- */
+.floating-om {
+  position: absolute;
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 900;
+  color: #D4AF37;
+  opacity: 0.15;
+  pointer-events: none;
+  user-select: none;
+  will-change: transform, opacity;
+  text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+/* ---------- FLOATING OM SIZE VARIATIONS ---------- */
+.floating-om.size-small {
+  font-size: 1.5rem;
+  opacity: 0.08;
+}
+
+.floating-om.size-medium {
+  font-size: 3rem;
+  opacity: 0.12;
+}
+
+.floating-om.size-large {
+  font-size: 5rem;
+  opacity: 0.1;
+}
+
+/* ---------- GLOWING OM VARIATIONS ---------- */
+.floating-om.glow-soft {
+  text-shadow: 
+    0 0 15px rgba(212, 175, 55, 0.4),
+    0 0 30px rgba(255, 179, 71, 0.2);
+  opacity: 0.18;
+  font-weight: 900;
+}
+
+.floating-om.glow-intense {
+  text-shadow: 
+    0 0 20px rgba(212, 175, 55, 0.5),
+    0 0 40px rgba(255, 179, 71, 0.3),
+    0 0 60px rgba(255, 179, 71, 0.15);
+  opacity: 0.25;
+}
+
+/* ---------- OPACITY VARIATIONS ---------- */
+.floating-om.opacity-faded {
+  opacity: 0.05;
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.15);
+}
+
+.floating-om.opacity-subtle {
+  opacity: 0.12;
+  text-shadow: 0 0 15px rgba(212, 175, 55, 0.25);
+}
+
+.floating-om.opacity-visible {
+  opacity: 0.25;
+  text-shadow: 0 0 20px rgba(212, 175, 55, 0.35);
+}
+
+/* ========================================
+   ANIMATION KEYFRAMES
+   ======================================== */
+
+/* Float upward slowly */
+@keyframes floatUp {
+  0% {
+    transform: translateY(100vh) translateX(0) scale(1) rotate(0deg);
+    opacity: 0;
+  }
+  5% {
+    opacity: var(--om-opacity);
+  }
+  95% {
+    opacity: var(--om-opacity);
+  }
+  100% {
+    transform: translateY(-100vh) translateX(var(--drift-x)) scale(1.05) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Float upward with slight drift */
+@keyframes floatUpDrift {
+  0% {
+    transform: translateY(100vh) translateX(0) scale(1) rotate(0deg);
+    opacity: 0;
+  }
+  5% {
+    opacity: var(--om-opacity);
+  }
+  50% {
+    transform: translateY(50vh) translateX(calc(var(--drift-x) * 0.5)) scale(1);
+  }
+  95% {
+    opacity: var(--om-opacity);
+  }
+  100% {
+    transform: translateY(-100vh) translateX(var(--drift-x)) scale(0.95) rotate(-360deg);
+    opacity: 0;
+  }
+}
+
+/* Float sideways slowly */
+@keyframes floatSideways {
+  0% {
+    transform: translateX(-50vw) translateY(0) scale(1) rotate(0deg);
+    opacity: 0;
+  }
+  5% {
+    opacity: var(--om-opacity);
+  }
+  95% {
+    opacity: var(--om-opacity);
+  }
+  100% {
+    transform: translateX(50vw) translateY(var(--vertical-drift)) scale(1.1) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Gentle scale breathing effect */
+@keyframes floatBreath {
+  0% {
+    transform: translateY(100vh) translateX(0) scale(0.9) rotate(0deg);
+    opacity: 0;
+  }
+  5% {
+    opacity: var(--om-opacity);
+  }
+  25% {
+    transform: translateY(75vh) translateX(var(--drift-x)) scale(1.1);
+  }
+  50% {
+    transform: translateY(50vh) translateX(calc(var(--drift-x) * 1.5)) scale(0.95);
+  }
+  75% {
+    transform: translateY(25vh) translateX(var(--drift-x)) scale(1.05);
+  }
+  95% {
+    opacity: var(--om-opacity);
+  }
+  100% {
+    transform: translateY(-100vh) translateX(calc(var(--drift-x) * 2)) scale(1) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Circular orbit motion */
+@keyframes floatOrbit {
+  0% {
+    transform: 
+      translateX(calc(var(--start-x) + 150px * cos(0deg)))
+      translateY(calc(100vh + 150px * sin(0deg)))
+      scale(1)
+      rotate(0deg);
+    opacity: 0;
+  }
+  5% {
+    opacity: var(--om-opacity);
+  }
+  50% {
+    transform: 
+      translateX(var(--start-x))
+      translateY(calc(50vh))
+      scale(1.15);
+  }
+  95% {
+    opacity: var(--om-opacity);
+  }
+  100% {
+    transform: 
+      translateX(calc(var(--start-x) + 150px * cos(360deg)))
+      translateY(calc(-100vh + 150px * sin(360deg)))
+      scale(0.95)
+      rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Shimmer glow pulse */
+@keyframes shimmerGlow {
+  0% {
+    text-shadow: 
+      0 0 15px rgba(212, 175, 55, 0.3),
+      0 0 30px rgba(255, 179, 71, 0.15);
+  }
+  50% {
+    text-shadow: 
+      0 0 25px rgba(212, 175, 55, 0.6),
+      0 0 50px rgba(255, 179, 71, 0.4),
+      0 0 80px rgba(255, 179, 71, 0.2);
+  }
+  100% {
+    text-shadow: 
+      0 0 15px rgba(212, 175, 55, 0.3),
+      0 0 30px rgba(255, 179, 71, 0.15);
+  }
+}
+
+/* Subtle shimmer without glow */
+@keyframes subtleShimmer {
+  0%, 100% {
+    opacity: var(--om-opacity);
+  }
+  50% {
+    opacity: calc(var(--om-opacity) * 1.5);
+  }
+}
+
+/* ========================================
+   ANIMATION SPEED VARIATIONS
+   ======================================== */
+
+.duration-slow {
+  --duration: 40s;
+}
+
+.duration-medium {
+  --duration: 35s;
+}
+
+.duration-fast {
+  --duration: 30s;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+/* Tablet and smaller desktops */
+@media (max-width: 1024px) {
+  .floating-om {
+    font-size: 2.5rem;
+  }
+
+  .floating-om.size-small {
+    font-size: 1.2rem;
+  }
+
+  .floating-om.size-large {
+    font-size: 4rem;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+  .floating-om-container {
+    background: radial-gradient(ellipse at 50% 50%, rgba(255, 248, 231, 0.3) 0%, transparent 70%);
+  }
+
+  .floating-om {
+    font-size: 2rem;
+    opacity: 0.1;
+  }
+
+  .floating-om.size-small {
+    font-size: 1rem;
+    opacity: 0.06;
+  }
+
+  .floating-om.size-medium {
+    font-size: 2rem;
+    opacity: 0.1;
+  }
+
+  .floating-om.size-large {
+    font-size: 3rem;
+    opacity: 0.08;
+  }
+
+  .floating-om.glow-soft {
+    opacity: 0.12;
+  }
+
+  .floating-om.glow-intense {
+    opacity: 0.15;
+  }
+
+  .floating-om.opacity-visible {
+    opacity: 0.15;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .floating-om {
+    font-size: 1.5rem;
+    opacity: 0.08;
+  }
+
+  .floating-om.size-small {
+    font-size: 0.8rem;
+    opacity: 0.05;
+  }
+
+  .floating-om.size-large {
+    font-size: 2.5rem;
+    opacity: 0.07;
+  }
+
+  .floating-om.glow-soft,
+  .floating-om.glow-intense {
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.2) !important;
+  }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .floating-om {
+    animation: none !important;
+    opacity: 0.08;
+  }
+}
+
+/* ========================================
+   PERFORMANCE OPTIMIZATION
+   ======================================== */
+
+.floating-om {
+  /* Use transform and opacity for smooth 60fps animations */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Content layer positioning */
+.content-layer {
+  position: relative;
+  z-index: 1;
+}

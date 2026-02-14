@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="or">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ଶ୍ରୀ ମା' ଭୁବନେଶ୍ୱରୀ ମନ୍ଦିର - ଦାନ ପୋର୍ଟାଲ୍</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        saffron: "#FF9933",
+                        gold: "#D4AF37",
+                        cream: "#FDF5E6",
+                        maroon: "#5A0E0E",
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&family=Noto+Sans+Oriya:wght@400;700&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- AOS (Animate On Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Razorpay SDK -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+    <style>
+        :root {
+            --maroon: #5A0E0E;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', 'Noto Sans Oriya', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Playfair Display', 'Noto Sans Oriya', serif;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #fff;
+            z-index: 50 !important;
+        }
+
+        .swiper-pagination {
+            z-index: 50 !important;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: #D4AF37 !important;
+        }
+
+        /* Navbar gradient background */
+        .navbar-gradient {
+            background: linear-gradient(135deg, #FF9933 0%, #FFB347 20%, #D4AF37 50%, #FFA500 80%, #FF8C00 100%);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 8px 32px rgba(90, 14, 14, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        }
+
+        .navbar-gradient.scrolled {
+            box-shadow: 0 12px 48px rgba(90, 14, 14, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+
+        /* Logo styling */
+        .logo-img {
+            height: 3.5rem;
+            width: 3.5rem;
+            border-radius: 50%;
+            object-fit: cover;
+            filter: brightness(1.1) contrast(1.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-weight: 900;
+            font-size: 1.5rem;
+            color: #FFFFFF;
+            text-shadow: 2px 2px 6px rgba(90, 14, 14, 0.3);
+            letter-spacing: -0.02em;
+        }
+
+        /* Nav links styling */
+        .nav-link-item {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1rem;
+            color: #FFFFFF;
+            position: relative;
+            padding: 0.625rem 0;
+            letter-spacing: 0.03em;
+            text-shadow: 1px 1px 3px rgba(90, 14, 14, 0.2);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .nav-link-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #FFD700, #FFA500);
+            transition: width 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+        }
+
+        .nav-link-item:hover {
+            color: #FFF8E7;
+            text-shadow: 2px 2px 6px rgba(90, 14, 14, 0.4), 0 0 20px rgba(255, 215, 0, 0.5);
+        }
+
+        .nav-link-item:hover::after {
+            width: 100%;
+        }
+
+        /* Mobile menu toggle */
+        .hamburger-line {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background-color: white;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hamburger-open .hamburger-line:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .hamburger-open .hamburger-line:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger-open .hamburger-line:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        /* Mobile menu links */
+        .mobile-nav-link {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.75rem;
+            color: #FFFFFF;
+            text-shadow: 2px 2px 8px rgba(90, 14, 14, 0.4);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: block;
+            padding: 0.75rem;
+        }
+
+        .mobile-nav-link:hover {
+            transform: scale(1.1);
+            color: #FFF8E7;
+            text-shadow: 3px 3px 10px rgba(90, 14, 14, 0.6);
+        }
+    </style>
+</head>
+
+<body class="bg-cream text-maroon flex flex-col min-h-screen">
+
+    <!-- ========== PREMIUM NAVIGATION - PURE TAILWIND CSS ========== -->
+    <nav class="navbar-gradient fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="mainNav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between py-4">
+
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-3 relative z-40">
+                    <img src="assets/logo.jpeg" alt="ମା ଭୁବନେଶ୍ଵରୀ ମନ୍ଦିର" class="logo-img">
+                    <span class="logo-text  sm:inline-block">ମା ଭୁବନେଶ୍ଵରୀ</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a class="nav-link-item" href="index.html">HOME</a>
+                    <a class="nav-link-item" href="about.html">ABOUT</a>
+                    <a class="nav-link-item" href="puja.html">PUJASEVA</a>
+                    <a class="nav-link-item" href="bhoga.html">BHOGO</a>
+                    <a class="nav-link-item" href="donation.html">DONATION</a>
+                    <a class="nav-link-item" href="event.html">EVENTS</a>
+                    <a class="nav-link-item" href="galary.html">GALLERY</a>
+                    <a class="nav-link-item" href="contact.html">CONTACT</a>
+                </div>
+
+                <!-- Mobile Menu Toggle Button -->
+                <button
+                    id="mobile-menu-toggle"
+                    class="lg:hidden relative z-50 w-10 h-10 flex flex-col items-center justify-center space-y-1.5 focus:outline-none"
+                    aria-label="Toggle menu"
+                >
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div
+            id="mobile-menu"
+            class="lg:hidden z-60 fixed h-screen inset-0 bg-gradient-to-br from-orange-600 via-amber-500 to-orange-700 transform translate-x-full transition-transform duration-300 ease-in-out z-40"
+        >
+            <div class="flex flex-col items-center justify-center h-screen space-y-3 px-6 py-4 text-center">
+                <a class="mobile-nav-link" href="index.html">HOME</a>
+                <a class="mobile-nav-link" href="about.html">ABOUT</a>
+                <a class="mobile-nav-link" href="puja.html">PUJASEVA</a>
+                <a class="mobile-nav-link" href="bhoga.html">BHOGO</a>
+                <a class="mobile-nav-link" href="donation.html">DONATION</a>
+                <a class="mobile-nav-link" href="event.html">EVENTS</a>
+                <a class="mobile-nav-link" href="galary.html">GALLERY</a>
+                <a class="mobile-nav-link" href="contact.html">CONTACT</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow mt-40">
+
+        <h1 class="text-5xl md:text-7xl text-center  font-bold mb-4 drop-shadow-2xl" data-aos="fade-down">🛕 ଶ୍ରୀ ମା'
+                    ଭୁବନେଶ୍ୱରୀ ମନ୍ଦିର</h1>
+                <p class="text-2xl md:text-3xl text-center  font-serif text-gold mb-4 italic drop-shadow-lg" data-aos="fade-up">
+                    "ମା'ଙ୍କ ଅଶେଷ କୃପା ସଦା ଆପଣଙ୍କ ସହ ରହୁ 🙏"
+                </p>
+                <p class="text-lg text-black text-center  md:text-xl   drop-shadow-md font-medium" data-aos="fade-up"
+                    data-aos-delay="200">"ଆପଣଙ୍କ ଛୋଟ ଦାନ ମନ୍ଦିରର ସେବା, ପୂଜା ଓ ଧାର୍ମିକ କାର୍ଯ୍ୟରେ ବଡ଼ ଅବଦାନ ରଖେ।"</p>
+                
+                    
+        <!-- 2️⃣ ଦାନ କାହିଁକି କରିବେ? (Purpose Section) -->
+        <section class="py-20 px-4 max-w-7xl mx-auto text-center" data-aos="fade-up">
+            <h2 class="text-4xl font-bold text-maroon mb-4">🌸 "ଆପଣଙ୍କ ଦାନ କେଉଁଠି ବ୍ୟୟ ହୁଏ?"</h2>
+            <div class="w-24 h-1.5 bg-gold mx-auto mb-12 rounded-full"></div>
+
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
+                <div class="p-6 bg-white rounded-2xl shadow-lg border-b-4 border-gold">
+                    <div class="text-saffron text-4xl mb-4"><i class="fas fa-om"></i></div>
+                    <h4 class="font-bold text-lg">ଦୈନିକ ପୂଜା ଓ ଭୋଗ</h4>
+                </div>
+                <div class="p-6 bg-white rounded-2xl shadow-lg border-b-4 border-gold">
+                    <div class="text-saffron text-4xl mb-4"><i class="fas fa-utensils"></i></div>
+                    <h4 class="font-bold text-lg">ଅନ୍ନଦାନ କାର୍ଯ୍ୟକ୍ରମ</h4>
+                </div>
+                <div class="p-6 bg-white rounded-2xl shadow-lg border-b-4 border-gold">
+                    <div class="text-saffron text-4xl mb-4"><i class="fas fa-hammer"></i></div>
+                    <h4 class="font-bold text-lg">ମନ୍ଦିର ରକ୍ଷା ଓ ପୁନଃନିର୍ମାଣ</h4>
+                </div>
+                <div class="p-6 bg-white rounded-2xl shadow-lg border-b-4 border-gold">
+                    <div class="text-saffron text-4xl mb-4"><i class="fas fa-calendar-alt"></i></div>
+                    <h4 class="font-bold text-lg">ପର୍ବପର୍ବାଣୀ ଓ ଉତ୍ସବ</h4>
+                </div>
+                <div class="p-6 bg-white rounded-2xl shadow-lg border-b-4 border-gold">
+                    <div class="text-saffron text-4xl mb-4"><i class="fas fa-hands-helping"></i></div>
+                    <h4 class="font-bold text-lg">ବିଶେଷ ପୂଜା ଓ ସେବା</h4>
+                </div>
+            </div>
+            <p class="mt-12 text-2xl font-serif italic text-saffron">"ଆପଣଙ୍କ ଦାନ ମା'ଙ୍କ ସେବାରେ ପବିତ୍ର ଅବଦାନ |"</p>
+        </section>
+
+        <!-- 3️⃣ ଦାନ ରାଶି ଚୟନ & 4️⃣ ଦାନକାରୀ ବିବରଣୀ -->
+        <section id="donation-amount-section" class="py-16 bg-white/50 border-y-2 border-gold/10">
+            <div class="max-w-4xl mx-auto px-4">
+                <div class="bg-white rounded-[3rem] shadow-2xl overflow-hidden border border-gold/10">
+                    <div class="p-8 md:p-16">
+                        <!-- 3️⃣ Donation Amount -->
+                        <div id="donation-active-view">
+                            <div class="text-center mb-12" data-aos="fade-up">
+                                <h2 class="text-3xl font-bold text-maroon mb-8">💰 "ଦାନ ରାଶି ବାଛନ୍ତୁ"</h2>
+                                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                                    <button onclick="setAmount(51)"
+                                        class="amount-btn border-2 border-orange-100 py-4 rounded-xl font-bold transition hover:border-gold hover:bg-cream">₹୫୧</button>
+                                    <button onclick="setAmount(101)"
+                                        class="amount-btn border-2 border-orange-100 py-4 rounded-xl font-bold transition hover:border-gold hover:bg-cream">₹୧୦୧</button>
+                                    <button onclick="setAmount(501)"
+                                        class="amount-btn border-2 border-orange-100 py-4 rounded-xl font-bold transition hover:border-gold hover:bg-cream">₹୫୦୧</button>
+                                    <button onclick="setAmount(1001)"
+                                        class="amount-btn border-2 border-orange-100 py-4 rounded-xl font-bold transition hover:border-gold hover:bg-cream">₹୧୦୦୧</button>
+                                    <button onclick="setAmount(5001)"
+                                        class="amount-btn border-2 border-orange-100 py-4 rounded-xl font-bold transition hover:border-gold hover:bg-cream">₹୫୦୦୧</button>
+                                    <button onclick="document.getElementById('donation-amount').focus()"
+                                        class="amount-btn border-2 border-dashed border-gray-200 py-4 rounded-xl font-bold transition hover:border-gold hover:bg-cream text-xs">🔹
+                                        ନିଜର ରାଶି</button>
+                                </div>
+                            </div>
+
+                            <!-- 4️⃣ Donor Details Form -->
+                            <form id="donation-form" class="space-y-8" data-aos="fade-up">
+                                <h2 class="text-3xl font-bold text-maroon text-center mb-8">📝 "ଦାନକାରୀଙ୍କ ବିବରଣୀ"</h2>
+
+                                <div>
+                                    <label class="block text-gray-500 font-bold text-xs uppercase mb-3 px-2">ଦାନ ପରିମାଣ
+                                        (₹)</label>
+                                    <input type="number" id="donation-amount" required min="1"
+                                        placeholder="ରାଶି ଲେଖନ୍ତୁ"
+                                        class="w-full px-8 py-5 text-4xl font-bold text-maroon border-2 border-gray-100 rounded-2xl focus:outline-none focus:border-gold bg-gray-50/50 transition-all font-mono">
+                                </div>
+
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                    <div class="space-y-2">
+                                        <label class="text-gray-500 font-bold text-xs uppercase px-2">ନାମ (Full Name)
+                                            *</label>
+                                        <input type="text" id="donor-name" required placeholder="ଆପଣଙ୍କ ନାମ"
+                                            class="w-full px-6 py-4 border-2 border-gray-100 rounded-xl outline-none focus:border-saffron bg-gray-50/50 transition">
+                                    </div>
+                                    <div class="space-y-2">
+                                        <label class="text-gray-500 font-bold text-xs uppercase px-2">ମୋବାଇଲ ନମ୍ବର
+                                            *</label>
+                                        <input type="tel" id="donor-phone" required placeholder="୯୮୭୬୫୪୩୨୧୦"
+                                            class="w-full px-6 py-4 border-2 border-gray-100 rounded-xl outline-none focus:border-saffron bg-gray-50/50 transition">
+                                    </div>
+                                    <div class="space-y-2">
+                                        <label class="text-gray-500 font-bold text-xs uppercase px-2">ଇମେଲ
+                                            (Optional)</label>
+                                        <input type="email" id="donor-email" placeholder="example@gmail.com"
+                                            class="w-full px-6 py-4 border-2 border-gray-100 rounded-xl outline-none focus:border-saffron bg-gray-50/50 transition">
+                                    </div>
+                                    <div class="space-y-2">
+                                        <label class="text-gray-500 font-bold text-xs uppercase px-2">ଗୋତ୍ର
+                                            (Optional)</label>
+                                        <input type="text" id="donor-gotra" placeholder="ଆପଣଙ୍କ ଗୋତ୍ର"
+                                            class="w-full px-6 py-4 border-2 border-gray-100 rounded-xl outline-none focus:border-saffron bg-gray-50/50 transition">
+                                    </div>
+                                </div>
+
+                                <div class="space-y-2 text-left">
+                                    <label class="text-gray-500 font-bold text-xs uppercase px-2">ସଙ୍କଳ୍ପ ନାମ (ଯାହାଙ୍କ
+                                        ନାମରେ
+                                        ପୂଜା)</label>
+                                    <input type="text" id="sankalpa-name" placeholder="ସଙ୍କଳ୍ପ ନାମ ଲେଖନ୍ତୁ"
+                                        class="w-full px-6 py-4 border-2 border-gray-100 rounded-xl outline-none focus:border-saffron bg-gray-50/50 transition">
+                                </div>
+
+                                <!-- Dynamic Purpose Dropdown -->
+                                <div class="space-y-2 text-left" id="purpose-dropdown-container">
+                                    <label class="text-gray-500 font-bold text-xs uppercase px-2">ଦାନର ଉଦ୍ଦେଶ୍ୟ
+                                        (Purpose)</label>
+                                    <select id="donation-purpose"
+                                        class="w-full px-6 py-4 border-2 border-gray-100 rounded-xl outline-none focus:border-saffron bg-gray-50/50 transition bg-white cursor-pointer">
+                                        <option value="General Donation">ସାଧାରଣ ଦାନ (General)</option>
+                                        <option value="Daily Pooja">ଦୈନିକ ପୂଜା</option>
+                                        <option value="Anna Prasad">ଅନ୍ନ ପ୍ରସାଦ</option>
+                                        <option value="Temple Construction">ମନ୍ଦିର ନିର୍ମାଣ</option>
+                                    </select>
+                                </div>
+
+                                <div class="flex items-start gap-3 py-4 text-left">
+                                    <input type="checkbox" required
+                                        class="mt-1.5 w-5 h-5 rounded border-gray-300 text-saffron focus:ring-saffron">
+                                    <label class="text-sm text-gray-500 font-medium leading-relaxed">
+                                        ☑️ ମୁଁ ସ୍ୱେଚ୍ଛାକୃତ ଭାବେ ଏହି ଦାନ କରୁଛି ଏବଂ ମନ୍ଦିରର <a href="#"
+                                            class="text-saffron underline hover:text-maroon">ନିୟମ ଓ ଶର୍ତ୍ତାବଳୀ</a> ଏବଂ
+                                        <a href="#" class="text-saffron underline hover:text-maroon">ରିଫଣ୍ଡ ନୀତି</a> ସହ
+                                        ସମ୍ମତ |
+                                    </label>
+                                </div>
+
+                                <button type="submit"
+                                    class="w-full bg-gradient-to-r from-[#FF9933] to-[#5A0E0E] text-white font-bold py-6 rounded-2xl text-2xl shadow-xl hover:brightness-110 active:scale-95 transition-all">
+                                    🔘 "ଏବେ ଦାନ କରନ୍ତୁ"
+                                </button>
+                            </form>
+                        </div>
+
+                        <!-- Donation Disabled Message -->
+                        <div id="donation-disabled-view" class="hidden text-center py-20" data-aos="fade-up">
+                            <div
+                                class="w-24 h-24 bg-gray-100 text-gray-400 rounded-full flex items-center justify-center mx-auto mb-8 text-5xl">
+                                <i class="fas fa-lock"></i>
+                            </div>
+                            <h2 class="text-3xl font-bold text-maroon mb-4">🙏 କ୍ଷମା କରିବେ</h2>
+                            <p class="text-xl text-gray-500 mb-8 font-serif italic">
+                                "ବର୍ତ୍ତମାନ ଦାନ ଗ୍ରହଣ କରାଯାଉ ନାହିଁ | ଦୟାକରି କିଛି ସମୟ ପରେ ଚେଷ୍ଟା କରନ୍ତୁ |"
+                            </p>
+                        </div>
+
+                        <!-- Success / Blessing View -->
+                        <div id="donation-receipt" class="hidden text-center py-10" data-aos="zoom-in">
+                            <div
+                                class="max-w-md mx-auto bg-green-50 p-10 rounded-[2.5rem] border-2 border-dashed border-green-200">
+                                <div class="text-6xl text-green-500 mb-6"><i class="fas fa-check-circle"></i></div>
+                                <h3 class="text-3xl font-bold text-green-800 mb-4">🙏 ଧନ୍ୟବାଦ!</h3>
+                                <p class="text-lg text-green-700 italic mb-8">"ଆପଣଙ୍କ ପବିତ୍ର ଦାନ ପାଇଁ ଧନ୍ୟବାଦ | ମା'ଙ୍କ
+                                    ଅଶେଷ କୃପା ସଦା ଆପଣଙ୍କ ଓ ଆପଣଙ୍କ ପରିବାର ସହ ରହୁ |"</p>
+
+                                <div class="bg-white p-6 rounded-2xl shadow-sm text-left mb-8 space-y-3">
+                                    <div class="flex justify-between border-b pb-2"><span class="text-gray-400">ରସିଦ
+                                            ଆଇଡି:</span><span id="receipt-id" class="font-bold text-maroon"></span>
+                                    </div>
+                                    <div class="flex justify-between border-b pb-2"><span
+                                            class="text-gray-400">ଦାତା:</span><span id="receipt-name"
+                                            class="font-bold"></span></div>
+                                    <div class="flex justify-between items-center"><span
+                                            class="text-gray-400">ପରିମାଣ:</span><span id="receipt-amount"
+                                            class="text-3xl font-black text-saffron"></span></div>
+                                </div>
+
+                                <div class="flex flex-col gap-4">
+                                    <button onclick="window.print()"
+                                        class="bg-maroon text-white py-4 rounded-xl font-bold shadow-lg hover:bg-black transition">ରସିଦ
+                                        ପ୍ରିଣ୍ଟ କରନ୍ତୁ</button>
+                                    <button onclick="resetDonationPage()" class="text-saffron font-bold text-sm">ଅନ୍ୟ ଏକ
+                                        ସେବା କରନ୍ତୁ</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5️⃣ ପେମେଣ୍ଟ ବିକଳ୍ପ & 6️⃣ ଭରସା ଓ ପ୍ରମାଣ -->
+        <section id="payment-section" class="py-20 px-4 max-w-7xl mx-auto border-b-2 border-gold/10">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+                <!-- Payment Options -->
+                <div >
+                    <h2 class="text-3xl font-bold text-maroon mb-8 text-center md:text-left">💳 "ପେମେଣ୍ଟ ପ୍ରକାର"</h2>
+                    <div class="grid grid-cols-2 gap-4 mb-10">
+                        <div
+                            class="bg-white p-6 rounded-2xl shadow-sm flex flex-col items-center gap-2 border border-gray-100 opacity-60">
+                            <i class="fas fa-mobile-alt text-2xl text-saffron"></i>
+                            <span class="font-bold text-sm">UPI</span>
+                        </div>
+                        <div
+                            class="bg-white p-6 rounded-2xl shadow-sm flex flex-col items-center gap-2 border border-gray-100 opacity-60">
+                            <i class="fas fa-credit-card text-2xl text-saffron"></i>
+                            <span class="font-bold text-sm">Card</span>
+                        </div>
+                        <div
+                            class="bg-white p-6 rounded-2xl shadow-sm flex flex-col items-center gap-2 border border-gray-100 opacity-60">
+                            <i class="fas fa-university text-2xl text-saffron"></i>
+                            <span class="font-bold text-sm">Net Banking</span>
+                        </div>
+                        <div
+                            class="bg-white p-6 rounded-2xl shadow-sm flex flex-col items-center gap-2 border border-gray-100 opacity-60">
+                            <i class="fas fa-qrcode text-2xl text-saffron"></i>
+                            <span class="font-bold text-sm">QR Code</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-maroon text-cream p-8 rounded-3xl shadow-xl">
+                        <h4 class="font-bold mb-4 flex items-center gap-2 border-b border-white/10 pb-2">
+                            <i class="fas fa-landmark"></i> 🏦 ମନ୍ଦିର ବ୍ୟାଙ୍କ ଖାତା ବିବରଣୀ
+                        </h4>
+                        <div class="space-y-3 font-mono text-sm">
+                            <p><span class="opacity-60">Account Name:</span> SRI MAA TEMPLE TRUST</p>
+                            <p><span class="opacity-60">A/C No:</span> 1234567890123</p>
+                            <p><span class="opacity-60">Bank:</span> State Bank of India</p>
+                            <p><span class="opacity-60">IFSC:</span> SBIN0000000</p>
+                            <p class="mt-4 pt-4 border-t border-white/10 flex items-center justify-between">
+                                <span>📲 UPI ID:</span>
+                                <span class="text-gold font-bold uppercase">temple@upi</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trust Section -->
+                <div data-aos="">
+                    <h2 class="text-3xl font-bold text-maroon mb-8 text-center md:text-left">✅ "ଆମର ପ୍ରମାଣିକତା"</h2>
+                    <div class="bg-gold/5 border-l-8 border-gold p-8 rounded-3xl space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-gold">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <div class="text-left">
+                                <p class="text-xs text-gray-400 font-bold uppercase">ମନ୍ଦିର ରେଜିଷ୍ଟ୍ରେସନ ନମ୍ବର</p>
+                                <p class="font-bold">OR/RE/2026/000123</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-gold">
+                                <i class="fas fa-file-contract"></i>
+                            </div>
+                            <div class="text-left">
+                                <p class="text-xs text-gray-400 font-bold uppercase">ଟ୍ରଷ୍ଟ ସନଦ (Trust Deed)</p>
+                                <p class="font-bold font-mono">Regn #890/2026</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-gold">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="text-left">
+                                <p class="text-xs text-gray-400 font-bold uppercase">ସମ୍ପର୍କ ସଂଖ୍ୟା (Support)</p>
+                                <p class="font-bold">+୯୧ ୯୮୭ ୬୫୪ ୩୨୧୦</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-gold">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="text-left">
+                                <p class="text-xs text-gray-400 font-bold uppercase">ଠିକଣା (Address)</p>
+                                <p class="font-bold">ଦେବୋସନ୍ ସିଟି, ଓଡ଼ିଶା - ୭୫୧୦୦୧</p>
+                            </div>
+                        </div>
+                        <p
+                            class="pt-6 text-maroon font-serif italic text-lg border-t border-gold/20 leading-relaxed text-center">
+                            "ଆପଣଙ୍କ ଦାନ ସୁରକ୍ଷିତ ଓ ପାରଦର୍ଶୀ ଭାବେ ବ୍ୟବହୃତ ହୁଏ |"
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- � Thank You Popup Modal -->
+    <div id="thank-you-modal"
+        class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+        <div class="bg-white rounded-[2.5rem] shadow-2xl max-w-sm w-full p-10 text-center transform scale-90 opacity-0 transition-all duration-500"
+            id="modal-content">
+            <div
+                class="w-24 h-24 bg-gold/20 text-gold rounded-full flex items-center justify-center mx-auto mb-6 text-5xl">
+                <i class="fas fa-heart"></i>
+            </div>
+            <h3 class="text-3xl font-bold text-maroon mb-4">🙏 ଧନ୍ୟବାଦ</h3>
+            <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                ଆପଣଙ୍କର ଏହି ପବିତ୍ର ଅବଦାନ ମନ୍ଦିରର ସେବାରେ ନିଶ୍ଚିତ ଭାବେ ସହାୟକ ହେବ | ମା'ଙ୍କ ଆଶୀର୍ବାଦ ସଦା ଆପଣଙ୍କ ସହ ରହୁ |
+            </p>
+            <button onclick="closeThankYouModal()"
+                class="w-full bg-saffron text-white font-bold py-4 rounded-xl shadow-lg hover:bg-maroon transition-all transform active:scale-95">
+                ଠିକ୍ ଅଛି (Close)
+            </button>
+        </div>
+    </div>
+
+    <!-- Spiritual Footer -->
+    <footer class="text-white py-12" style="background: linear-gradient(135deg, var(--maroon) 0%, #5C0000 100%);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Spiritual Quote Section -->
+            <div class="text-center mb-8 pb-8 border-b border-white/20">
+                <p class="text-2xl font-bold mb-4 text-yellow-200">🕉️ ॐ ସର୍ବେ ଭବନ୍ତୁ ସୁଖିନଃ 🕉️</p>
+                <p class="text-lg italic mb-2">"ସମସ୍ତ ପ୍ରାଣୀ ସୁଖୀ ହୁଅନ୍ତୁ, ସମସ୍ତ ପ୍ରାଣୀ ସୁସ୍ଥ ହୁଅନ୍ତୁ"</p>
+                <p class="text-sm text-white/80">॥ ସର୍ବେ ଭବନ୍ତୁ ସୁଖିନଃ ସର୍ବେ ସନ୍ତୁ ନିରାମୟାଃ ॥</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 flex items-center gap-2">
+                        <span></span>
+                        ମା ଭୁବନେଶ୍ଵରୀ ମନ୍ଦିର
+                    </h3>
+                    <p class="text-white/80 mb-3">ଏକ ପବିତ୍ର ବାସସ୍ଥାନ ଯେଉଁଠାରେ ଦିବ୍ୟତା ବାସ କରେ ଏବଂ ଭକ୍ତମାନେ ଶାନ୍ତି
+                        ପାଆନ୍ତି</p>
+                    <p class="text-yellow-200 italic text-sm">🙏 ଯୁଗ ଯୁଗ ଧରି ଦିବ୍ୟ ସେବା</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-yellow-200">🛕 ପବିତ୍ର ସେବା</h4>
+                    <ul class="space-y-2">
+                        <li><a href="puja.html" class="text-white/80 hover:text-white transition-colors">🙏
+                                ପୂଜା ବୁକିଂ</a></li>
+                        <li><a href="bhoga.html" class="text-white/80 hover:text-white transition-colors">🍯 ପ୍ରସାଦ
+                                ଓ ଭୋଗ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-yellow-200">📿 ଦୈନିକ ମନ୍ତ୍ର</h4>
+                    <ul class="space-y-2 text-white/80 text-sm">
+                        <li>🕉️ ଓମ୍ ନମଃ ଶିବାୟ</li>
+                        <li>🪷 ଓମ୍ ନମୋ ଭଗବତେ</li>
+                        <li>🔱 ହର ହର ମହାଦେବ</li>
+                        <li>🌺 ଜୟ ଶ୍ରୀ ରାମ</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-yellow-200">📞 ଯୋଗାଯୋଗ</h4>
+                    <ul class="space-y-2 text-white/80">
+                        <li>📱 +91 7735514529</li>
+                        <li>📧 blessings@divinetemple.com</li>
+                        <li>📍 ପବିତ୍ର ମନ୍ଦିର ପରିସର</li>
+                        <li class="text-yellow-200 mt-3">🕉️ ପ୍ରତିଦିନ ଖୋଲା: ସକାଳ ୫ - ରାତି ୯</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Divine Blessings Section -->
+            <div class="border-t border-white/20 pt-6 text-center">
+                <p class="text-yellow-200 mb-2">✨ ପ୍ରଭୁଙ୍କ ଆଶୀର୍ବାଦ ଆପଣଙ୍କ ଉପରେ ରହୁ ✨</p>
+                <p class="text-white/80 text-sm mb-4">
+                    "ଧର୍ମୋ ରକ୍ଷତି ରକ୍ଷିତଃ" - ଧର୍ମ ତାକୁ ରକ୍ଷା କରେ ଯିଏ ଧର୍ମକୁ ରକ୍ଷା କରେ
+                </p>
+                <p class="text-white/60 text-xs">
+                    © ୨୦୨୬ ପବିତ୍ର ମନ୍ଦିର | ଭକ୍ତି ଏବଂ ଉତ୍ସର୍ଗୀକୃତ ସହିତ ନିର୍ମିତ 🙏
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // --- AOS INIT ---
+        AOS.init({ duration: 1000, once: true });
+
+        // --- ADMIN CONTROLS ---
+        document.addEventListener('DOMContentLoaded', function () {
+            // 1. Check Donation Status
+            const status = localStorage.getItem('donationStatus');
+            if (status === 'disabled') {
+                document.getElementById('donation-active-view').classList.add('hidden');
+                document.getElementById('donation-disabled-view').classList.remove('hidden');
+                // Also update navbar link to be inactive
+                const navBtn = document.querySelector('nav a[href="#donation-amount-section"]');
+                if (navBtn) {
+                    navBtn.classList.add('opacity-50', 'pointer-events-none');
+                    navBtn.innerText = '🔒 ବନ୍ଦ ଅଛି';
+                }
+            }
+
+            // 2. Populate Dynamic Purposes
+            const savedPurposes = localStorage.getItem('templeDonationPurposes');
+            if (savedPurposes) {
+                try {
+                    const purposes = JSON.parse(savedPurposes);
+                    const dropdown = document.getElementById('donation-purpose');
+                    if (purposes.length > 0) {
+                        dropdown.innerHTML = '';
+                        purposes.forEach(p => {
+                            const opt = document.createElement('option');
+                            opt.value = p;
+                            opt.innerText = p;
+                            dropdown.appendChild(opt);
+                        });
+                    }
+                } catch (e) { console.error("Error parsing purposes", e); }
+            }
+        });
+
+        // --- SWIPER INIT ---
+        const swiper = new Swiper('.heroSwiper', {
+            loop: true, effect: 'fade', fadeEffect: { crossFade: true },
+            autoplay: { delay: 6000, disableOnInteraction: false },
+            pagination: { el: '.swiper-pagination', clickable: true },
+            navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }
+        });
+
+        // --- DONATION SYSTEM ---
+        function setAmount(val) {
+            document.getElementById('donation-amount').value = val;
+            document.querySelectorAll('.amount-btn').forEach(btn => {
+                btn.classList.remove('border-gold', 'bg-cream');
+                if (btn.innerText.includes(val.toLocaleString('or-IN')) || btn.innerText.includes(val)) {
+                    btn.classList.add('border-gold', 'bg-cream');
+                }
+            });
+        }
+
+        document.getElementById('donation-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const amount = parseFloat(document.getElementById('donation-amount').value);
+            const name = document.getElementById('donor-name').value;
+            const phone = document.getElementById('donor-phone').value;
+            const email = document.getElementById('donor-email').value || 'help@temple.com';
+            const gotra = document.getElementById('donor-gotra').value || 'NA';
+            const sankalpa = document.getElementById('sankalpa-name').value || 'NA';
+            const purpose = document.getElementById('donation-purpose').value;
+
+            // Razorpay Integration
+            const options = {
+                "key": "rzp_test_SFKvtuf7VzKr8W", // Provided Test Key ID
+                "amount": amount * 100, // Amount in paise
+                "currency": "INR",
+                "name": "ଶ୍ରୀ ମା' ଭୁବନେଶ୍ୱରୀ ମନ୍ଦିର",
+                "description": purpose,
+                "image": "https://bhubaneswartourism.in/images/places-to-visit/headers/ram-mandir-bhubaneswar-tourism-entry-fee-timings-holidays-reviews-header.jpg",
+                "handler": function (response) {
+                    // Payment successful
+                    const id = 'TXN-' + response.razorpay_payment_id.slice(-8);
+
+                    document.getElementById('donation-form').classList.add('hidden');
+                    document.getElementById('receipt-id').innerText = id;
+                    document.getElementById('receipt-name').innerText = name;
+                    document.getElementById('receipt-amount').innerText = '₹' + amount.toLocaleString('or-IN');
+                    document.getElementById('donation-receipt').classList.remove('hidden');
+
+                    // Show Thank You Popup
+                    showThankYouModal();
+
+                    // Scroll to receipt
+                    document.getElementById('donation-receipt').scrollIntoView({ behavior: 'smooth' });
+
+                    // Save to local storage for local records
+                    const record = {
+                        id,
+                        name,
+                        phone,
+                        email,
+                        gotra,
+                        sankalpa,
+                        amount,
+                        purpose,
+                        payment_id: response.razorpay_payment_id,
+                        date: new Date().toLocaleDateString()
+                    };
+                    const history = JSON.parse(localStorage.getItem('temple_donations') || '[]');
+                    history.push(record);
+                    localStorage.setItem('temple_donations', JSON.stringify(history));
+                },
+                "prefill": {
+                    "name": name,
+                    "email": email,
+                    "contact": phone
+                },
+                "notes": {
+                    "gotra": gotra,
+                    "sankalpa": sankalpa
+                },
+                "theme": {
+                    "color": "#FF9933"
+                }
+            };
+
+            const rzp1 = new Razorpay(options);
+            rzp1.on('payment.failed', function (response) {
+                alert("ପେମେଣ୍ଟ ବିଫଳ ହେଲା: " + response.error.description);
+            });
+            rzp1.open();
+        });
+
+        function resetDonationPage() {
+            document.getElementById('donation-form').classList.remove('hidden');
+            document.getElementById('donation-receipt').classList.add('hidden');
+            document.getElementById('donation-form').reset();
+            document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('border-gold', 'bg-cream'));
+            document.getElementById('donation-amount-section').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // --- POPUP LOGIC ---
+        function showThankYouModal() {
+            const modal = document.getElementById('thank-you-modal');
+            const content = document.getElementById('modal-content');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            setTimeout(() => {
+                content.classList.remove('scale-90', 'opacity-0');
+                content.classList.add('scale-100', 'opacity-100');
+            }, 10);
+        }
+
+        function closeThankYouModal() {
+            const modal = document.getElementById('thank-you-modal');
+            const content = document.getElementById('modal-content');
+            content.classList.remove('scale-100', 'opacity-100');
+            content.classList.add('scale-90', 'opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }, 500);
+        }
+
+        // Mobile menu toggle with Tailwind CSS
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        let isMenuOpen = false;
+
+        if (mobileMenuToggle && mobileMenu) {
+            mobileMenuToggle.addEventListener('click', function() {
+                isMenuOpen = !isMenuOpen;
+
+                if (isMenuOpen) {
+                    // Open menu
+                    mobileMenu.classList.remove('translate-x-full');
+                    mobileMenu.classList.add('translate-x-0');
+                    mobileMenuToggle.classList.add('hamburger-open');
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    // Close menu
+                    mobileMenu.classList.remove('translate-x-0');
+                    mobileMenu.classList.add('translate-x-full');
+                    mobileMenuToggle.classList.remove('hamburger-open');
+                    document.body.style.overflow = '';
+                }
+            });
+
+            // Close mobile menu when clicking on a link
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    if (isMenuOpen) {
+                        mobileMenuToggle.click();
+                    }
+                });
+            });
+        }
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('mainNav');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+
+</html>

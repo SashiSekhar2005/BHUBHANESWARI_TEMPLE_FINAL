@@ -1,0 +1,123 @@
+/* ============================================
+   Maa Bhubaneswari Temple — Mobile / Responsive
+   ============================================ */
+
+/* ---------- Tablet (≤ 900px) ---------- */
+@media (max-width: 900px) {
+    .main-nav {
+        position: fixed;
+        inset: 0;
+        background: var(--pata-red);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translateX(100%);
+        transition: transform .35s var(--ease);
+        z-index: 999;
+    }
+
+    .main-nav.open {
+        transform: translateX(0);
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .main-nav a {
+        font-size: 1.2rem;
+    }
+
+    .menu-toggle {
+        display: block;
+        z-index: 1001;
+    }
+
+    .hero { padding: 3rem var(--gutter) 2rem; }
+
+    .scroll-container {
+        margin: 1.5rem 1rem;
+        padding: 2rem 1.25rem;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* ---------- Phone (≤ 600px) ---------- */
+@media (max-width: 600px) {
+    html { font-size: 15px; }
+
+    .header-inner { padding: .5rem var(--gutter); }
+
+    .logo-text .eng { font-size: .9rem; }
+    .logo-text .odia { font-size: .75rem; }
+
+    .hero { padding: 2rem var(--gutter) 1.5rem; }
+
+    .scroll-container {
+        margin: 1rem .5rem;
+        padding: 1.5rem 1rem;
+        border-width: 2px;
+    }
+
+    .scroll-container .corner { width: 30px; height: 30px; }
+
+    .scroll-container::before,
+    .scroll-container::after {
+        height: 28px;
+        background-size: auto 28px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .festival-list {
+        grid-template-columns: 1fr;
+    }
+
+    .pata-table {
+        font-size: .82rem;
+    }
+
+    .pata-table thead th,
+    .pata-table tbody td {
+        padding: .55rem .6rem;
+    }
+
+    .timing-highlight {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .timing-box { min-width: unset; width: 100%; max-width: 100%; }
+
+    .deity-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-details {
+        grid-template-columns: 1fr;
+    }
+
+    .map-wrapper iframe { height: 260px; }
+
+    .cta-group {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn { width: 100%; justify-content: center; }
+}
+
+/* ---------- Small Phone (≤ 380px) ---------- */
+@media (max-width: 380px) {
+    html { font-size: 14px; }
+
+    .scroll-container { padding: 1rem .75rem; }
+    .scroll-container .corner { display: none; }
+}

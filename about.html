@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <title>ମା ଭୁବନେଶ୍ଵରୀ ମନ୍ଦିର | About</title>
+  
+  <!-- META -->
+  <meta name="description" content="ମା ଭୁବନେଶ୍ଵରୀ ମନ୍ଦିର ବିଷୟରେ ଜାଣନ୍ତୁ - ଇତିହାସ, ବିରାସତ, ଦିବ୍ୟ ରକ୍ଷା ଏବଂ ପବିତ୍ର ମିଶନ।">
+  <meta name="keywords" content="ମା ଭୁବନେଶ୍ଵରୀ, ମନ୍ଦିର ଇତିହାସ, ଦିବ୍ୟ ମାତା, ପବିତ୍ର, ଭୁବନେଶ୍ଵର">
+  <meta name="author" content="ମା ଭୁବନେଶ୍ଵରୀ ମନ୍ଦିର">
+  
+  <!-- FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- BOOTSTRAP -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- TAILWIND CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <!-- SHARED STYLES -->
+  <link rel="stylesheet" href="css/style.css">
+
+
+  <style>
+    /* Tailwind Custom Styles */
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;500;600;700&display=swap');
+    
+    :root {
+      --maroon: #5A0E0E;
+    }
+
+    /* Navbar gradient background */
+    .navbar-gradient {
+      background: linear-gradient(135deg, #FF9933 0%, #FFB347 20%, #D4AF37 50%, #FFA500 80%, #FF8C00 100%);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 8px 32px rgba(90, 14, 14, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    }
+
+    .navbar-gradient.scrolled {
+      box-shadow: 0 12px 48px rgba(90, 14, 14, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    }
+
+    /* Logo styling */
+    .logo-img {
+      height: 3.5rem;
+      width: 3.5rem;
+      border-radius: 50%;
+      object-fit: cover;
+      filter: brightness(1.1) contrast(1.2);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .logo-text {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: 1.5rem;
+      color: #FFFFFF;
+      text-shadow: 2px 2px 6px rgba(90, 14, 14, 0.3);
+      letter-spacing: -0.02em;
+    }
+
+    /* Nav links styling */
+    .nav-link-item {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: #FFFFFF;
+      position: relative;
+      padding: 0.625rem 0;
+      letter-spacing: 0.03em;
+      text-shadow: 1px 1px 3px rgba(90, 14, 14, 0.2);
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .nav-link-item::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #FFD700, #FFA500);
+      transition: width 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+    }
+
+    .nav-link-item:hover {
+      color: #FFF8E7;
+      text-shadow: 2px 2px 6px rgba(90, 14, 14, 0.4), 0 0 20px rgba(255, 215, 0, 0.5);
+    }
+
+    .nav-link-item:hover::after {
+      width: 100%;
+    }
+
+    /* Mobile menu toggle */
+    .hamburger-line {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background-color: white;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .hamburger-open .hamburger-line:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 6px);
+    }
+
+    .hamburger-open .hamburger-line:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger-open .hamburger-line:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    /* Mobile menu links */
+    .mobile-nav-link {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1.75rem;
+      color: #FFFFFF;
+      text-shadow: 2px 2px 8px rgba(90, 14, 14, 0.4);
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: block;
+      padding: 0.75rem;
+    }
+
+    .mobile-nav-link:hover {
+      transform: scale(1.1);
+      color: #FFF8E7;
+      text-shadow: 3px 3px 10px rgba(90, 14, 14, 0.6);
+    }
+  </style>
+</head>
+
+<body>
+  
+
+   <!-- ========== PREMIUM NAVIGATION - PURE TAILWIND CSS ========== -->
+  <nav class="navbar-gradient fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="mainNav">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between py-4">
+        
+        <!-- Logo -->
+        <a href="home.html" class="flex items-center space-x-3 relative z-40">
+          <img src="assets/logo.jpeg" alt="ମା ଭୁବନେଶ୍ଵରୀ ମନ୍ଦିର" class="logo-img">
+          <span class="logo-text  sm:inline-block">ମା ଭୁବନେଶ୍ଵରୀ</span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden lg:flex items-center space-x-8">
+          <a class="nav-link-item" href="index.html">HOME</a>
+          <a class="nav-link-item" href="about.html">ABOUT</a>
+          <a class="nav-link-item" href="puja.html">PUJASEVA</a>
+          <a class="nav-link-item" href="bhoga.html">BHOGO</a>
+          <a class="nav-link-item" href="donation.html">DONATION</a>
+          <a class="nav-link-item" href="event.html">EVENTS</a>
+          <a class="nav-link-item" href="galary.html">GALLERY</a>
+          <a class="nav-link-item" href="contact.html">CONTACT</a>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button 
+          id="mobile-menu-toggle" 
+          class="lg:hidden relative z-50 w-10 h-10 flex flex-col items-center justify-center space-y-1.5 focus:outline-none"
+          aria-label="Toggle menu"
+        >
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div 
+      id="mobile-menu" 
+      class="lg:hidden z-60 fixed inset-0 h-screen bg-gradient-to-br from-orange-600 via-amber-500 to-orange-700 transform translate-x-full transition-transform duration-300 ease-in-out z-40"
+    >
+     
+      <div class="flex flex-col items-center justify-center h-screen space-y-3 px-6 py-4 text-center">
+        <a class="mobile-nav-link" href="index.html">HOME</a>
+        <a class="mobile-nav-link" href="about.html">ABOUT</a>
+        <a class="mobile-nav-link" href="puja.html">PUJASEVA</a>
+        <a class="mobile-nav-link" href="bhoga.html">BHOGO</a>
+        <a class="mobile-nav-link" href="donation.html">DONATION</a>
+        <a class="mobile-nav-link" href="event.html">EVENTS</a>
+        <a class="mobile-nav-link" href="galary.html">GALLERY</a>
+        <a class="mobile-nav-link" href="contact.html">CONTACT</a>
+      </div>
+    </div>
+  </nav>
+  <!-- ========== MAIN CONTENT ========== -->
+  <div style="margin-top: 100px; position: relative; z-index: 2;">
+    <!-- ABOUT PAGE -->
+    <div id="page-about">
+      <section class="position-relative" style="padding: 80px 0 100px; overflow: hidden; background-color: #fdf7e6;">
+        <!-- Floating OM Elements -->
+        <div class="om-element om-section-1" style="top: 5%; left: 8%; opacity: 0.03; position: absolute; z-index: 0;" aria-hidden="true">ॐ</div>
+        <div class="om-element om-section-2" style="bottom: 10%; right: 12%; opacity: 0.025; position: absolute; z-index: 0;" aria-hidden="true">ॐ</div>
+        
+        <div class="container" style="position: relative; z-index: 1;">
+          <!-- Hero History Section -->
+          <div class="row mb-5">
+            <div class="col-12 text-center" data-aos="fade">
+              <div class="section-subtitle">ଆମାର ପବିତ୍ର ବିରାସତ</div>
+              <h1 class="section-title">ମା ଭୁବନେଶ୍ଵରୀ ମନ୍ଦିର</h1>
+              <div class="divider divider-center"></div>
+            </div>
+          </div>
+          
+          <div class="row g-5 align-items-center mb-6">
+            <div class="col-lg-6" data-aos="fade-right">
+              <div class="position-relative">
+                <img src="./assets/mandirr.jpeg" alt="Ancient Temple" class="img-fluid rounded-5 shadow-lg" style="border: 6px solid var(--deep-gold);">
+                <div class="position-absolute bottom-0 start-0 bg-white p-4 m-4 rounded-4" style="border-left: 6px solid var(--deep-gold);">
+                  <p class="mb-0 fst-italic">"୧୯୭୭ ମସିହାରେ ଠାରୁ ପବିତ୍ର"</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-left">
+              <h2 style="color: var(--dark-maroon); font-size: 2.5rem;">ଦିବ୍ୟ ଅନୁଗ୍ରହର ଇତିହାସ</h2>
+                          <div class="divider" style="width: 120px;"></div>
+                          <h1 class="text-2xl mb-4">ଓଁ ମାଆ ଭୁବନେଶ୍ୱରୀ, ଜଗତ୍‌କୀର୍ତ୍ତି ଦୁଃଖନାଶିନୀ, ଅଭୟ ବରଦାୟିନୀ, କ୍ଲେଶହାରିଣୀ, ଅଗତିର ଗତି, ଜଗଜନନୀ ମାଆ ଭୁବନେଶ୍ୱରୀ।</h1>
+                          <p class="fs-5 mb-4">ମାଆ ଭୁବନେଶ୍ୱରୀ ଆଚାର୍ଯ୍ୟ ବିହାରବାସୀଙ୍କ ଆରାଧ୍ୟ ଦେବୀ। ମନ୍ଦିରର ଲିଖିତ ତଥ୍ୟ ଅନୁସାରେ, ମାଆଙ୍କର ବିଗ୍ରହ ଉଣେଇଶହ ନବେ (1990) ମସିହାରେ ପ୍ରତିଷ୍ଠା ହୋଇଥିଲା। କିନ୍ତୁ ତାହାର ଅନେକ ବର୍ଷ ପୂର୍ବରୁ ମାଆ ଗିରିଖଣ୍ଡ ବଡ଼ ପଥର ରୂପେ ସେହି ପବିତ୍ର ସ୍ଥାନରେ ପୂଜିତ ହୁଅଉଥିଲେ। ବିପଦ-ଆପଦ ସମୟରେ ହେଉ କିମ୍ବା ବିବାହ, ବ୍ରତଘରା ପରି ଆନନ୍ଦମୟ କାର୍ଯ୍ୟକ୍ରମ ସମୟରେ, ଅନ୍ତଃବାସୀମାନେ ପ୍ରଥମେ ମାଆଙ୍କର ପୂଜା ଅର୍ଚ୍ଚନା କରି ତାଙ୍କର ଆଶୀର୍ବାଦ ଗ୍ରହଣ କରନ୍ତି। ମାଆଙ୍କ ଶାନ୍ତ ଓ ଆଶୀର୍ବାଦମୟ ମୁଦ୍ରା ଭକ୍ତମାନଙ୍କ ହୃଦୟରେ ଆନନ୍ଦ ଓ ସାହସ ସୃଷ୍ଟି କରେ। ସେ ମନକୁ ଦୃଢ଼ କରି ଶରୀରରେ ଅମାପ ଶକ୍ତି ଭରିଦିଅନ୍ତି।<br>ଉଣେଇଶହ ସତସ୍ତରୀ (1977) ମସିହାରେ ଆଚାର୍ଯ୍ୟ ବିହାର ହାଉସିଂ ବୋର୍ଡ୍ ପ୍ରତିଷ୍ଠା ପରେ ଏଠାରେ ମାଆଙ୍କ ପ୍ରତି ଭକ୍ତି ଓ ବିଶ୍ୱାସ ବଢ଼ିଥିଲା। ପରବର୍ତ୍ତୀକାଳରେ 1990 ମସିହାରେ ମନ୍ଦିର ନିର୍ମାଣ ସହ ମାଆଙ୍କ ବାମ ପାର୍ଶ୍ୱରେ (ଦକ୍ଷିଣ ଦିଗରେ) ପ୍ରଭୁ ଶ୍ରୀ ଲକ୍ଷ୍ମୀନାରାୟଣଙ୍କ ଏବଂ ତାହାର ଦକ୍ଷିଣକୁ ପ୍ରଭୁ ଶ୍ରୀ ଲୋକନାଥଙ୍କ ମନ୍ଦିର ପ୍ରତିଷ୍ଠା ହୋଇଥିଲା। ଏହା ଆଚାର୍ଯ୍ୟ ବିହାରକୁ ଏକ ଗୁରୁତ୍ୱପୂର୍ଣ୍ଣ ଆଧ୍ୟାତ୍ମିକ କେନ୍ଦ୍ରରେ ପରିଣତ କରିଥିଲା।<br>ଦୁଇ ହଜାର ଚାରି (2004) ମସିହାରେ ଶ୍ରୀ ହନୁମାନ ମନ୍ଦିର, 2007 ମସିହାରେ ଶ୍ରୀରାମ ମନ୍ଦିର, 2009 ମସିହାରେ ମା କାଳୀଙ୍କ ମନ୍ଦିର ଏବଂ 2015 ମସିହାରେ ଶ୍ରୀ ଜଗନ୍ନାଥଙ୍କ ମନ୍ଦିର ପ୍ରତିଷ୍ଠା ହୋଇଥିଲା। ପବିତ୍ର ରଥଯାତ୍ରାର ଶୁଭାରମ୍ଭ ଭକ୍ତମାନଙ୍କ ମନରେ ଅପାର ଆନନ୍ଦ ଭରିଦେଇଥିଲା।<br>ମନ୍ଦିର ପ୍ରତିଷ୍ଠାରେ ଯେଉଁ ସଭ୍ୟମାନେ ଅବଦାନ ରଖିଥିଲେ, ସେମାନଙ୍କ ମଧ୍ୟରୁ ଅନେକେ ଆଜି ସ୍ୱର୍ଗସୀଧାରିଛନ୍ତି, କିନ୍ତୁ ଆଚାର୍ଯ୍ୟ ବିହାରବାସୀମାନେ ସେମାନଙ୍କୁ ଆଜିଯାଏ ସ୍ମରଣ କରନ୍ତି। ସ୍ୱର୍ଗତ ଉଦୟନାଥ ଦାସ ପଣ୍ଡିତ, ଲିଙ୍ଗରାଜ ମହାନ୍ତି, ବିଦାୟ କୁମାର ପଣ୍ଡା, ଅଶେଷ ଦେବ ପଣ୍ଡା, ଗାନ୍ଧୀବ ସାହୁ ଓ ଅନ୍ୟାନ୍ୟ ଭକ୍ତମାନଙ୍କ ଅବଦାନ ସ୍ମରଣୀୟ।<br>ଏଠାରେ ବାର ମାସରେ ତେର ପର୍ବ ଉତ୍ସବ ଆୟୋଜିତ ହୁଏ। ପଣା ସଂକ୍ରାନ୍ତି, ଭିତର ଚନ୍ଦନ, ଶିବ ବିବାହ, ଦେବସ୍ନାନ ପୂର୍ଣ୍ଣିମା, ରଥଯାତ୍ରା, ବାହୁଡ଼ା ଯାତ୍ରା, ସୁନା ବେଶ, ଜନ୍ମାଷ୍ଟମୀ, ଶାରଦୀୟ ଦୁର୍ଗାପୂଜା, କାଳୀପୂଜା, ଧନୁର୍ ଓ ମକର ସଂକ୍ରାନ୍ତି, ସରସ୍ୱତୀ ପୂଜା, ଶିବରାତ୍ରି, ଦୋଳଯାତ୍ରା, ପ୍ରତିମାସର ଏକାଦଶୀ ଓ ନାମ ସଂକୀର୍ତ୍ତନ ଆଦି ପର୍ବଗୁଡ଼ିକ ଭକ୍ତିଭାବରେ ପାଳିତ ହୁଏ।<br>ମନ୍ଦିର ପରିସର ବଡ଼ ନ ହେଲେ ମଧ୍ୟ ଆଚାର୍ଯ୍ୟ ବିହାରବାସୀଙ୍କର ମାଆଙ୍କ ଉପରେ ପ୍ରଗାଢ଼ ଭରସା, ପରସ୍ପର ସୁସମ୍ପର୍କ ଓ ପରିଚ୍ଛନ୍ନତା ପ୍ରତି ଆଗ୍ରହ ଏହି ପୀଠକୁ ଭୁବନେଶ୍ୱରର ଏକ ଆକର୍ଷଣୀୟ ଆଧ୍ୟାତ୍ମିକ କେନ୍ଦ୍ରରେ ପରିଣତ କରିଛି। ଏଠାକୁ ଆସୁଥିବା ଭକ୍ତମାନେ ଦିବ୍ୟ ଶାନ୍ତି ଓ ଆତ୍ମିକ ସନ୍ତୋଷ ଅନୁଭବ କରନ୍ତି।
+                          </p>
+                          <p class="text-2xl">ସତ୍ୟରେ, ଜୀବନରେ ସବୁକିଛି ମାତୃକୃପାରେ ସମ୍ଭବ। ମାଆ ଭୁବନେଶ୍ୱରୀଙ୍କ କୃପା ହିଁ ସର୍ବଶ୍ରେଷ୍ଠ ଆଶ୍ରୟ। 🙏</p>
+            </div>
+          </div>
+
+          <!-- Deity Section -->
+          <!-- previous Deity Section heading removed per request -->
+
+          <!-- ========== DIVYA AVATARS (Zig-Zag Layout) ========== -->
+          <section id="divya-avatars" class="py-5">
+            <div class="container" style="position: relative; z-index: 1;">
+              <div class="text-center mb-5">
+                <h2 class="section-title">Divya Avatars of Maa Bhubaneswari</h2>
+                <div class="divider divider-center"></div>
+              </div>
+
+              <!-- Generated Avatar Rows using images from assets/ -->
+              <article class="avatar-row" data-side="left" data-aos="fade-right" data-aos-duration="900" data-aos-easing="ease-in-out">
+                <div class="avatar-image" aria-hidden="true">
+                  <!-- Avatar Image (from assets/maa_.jpeg) -->
+                  <img src="assets/maa_.jpeg" alt="Maa Bhubaneswari">
+                </div>
+                <div class="avatar-content">
+                  <h3 class="avatar-title">ମାଆ ଭୁବନେଶ୍ୱରୀ</h3>
+                  <p class="avatar-text">ମାଆ ଭୁବନେଶ୍ୱରୀ ସମସ୍ତ ବ୍ରହ୍ମାଣ୍ଡର ଆଦିଶକ୍ତି ଓ ଜଗତ୍‌ଜନନୀ। ସେ ଶକ୍ତିର ମୂଳସ୍ରୋତ ଓ ସୃଷ୍ଟିର ଆଧାର। ତାଙ୍କ ଦିବ୍ୟ ରୂପ ଶାନ୍ତି, ଦୟା ଓ କରୁଣାର ପ୍ରତୀକ। ଭକ୍ତମାନେ ବିଶ୍ୱାସ କରନ୍ତି ଯେ ସେ ସମସ୍ତ ଜୀବକୁ ମାତୃସ୍ନେହରେ ଆଲିଙ୍ଗନ କରନ୍ତି। ଆମେ ତାଙ୍କୁ ପ୍ରଶଂସା କରୁଛୁ କାରଣ ସେ ଆମକୁ ଜୀବନର ସଠିକ୍ ଦିଗ ଦେଖାନ୍ତି ଓ ଅନ୍ଧକାରରୁ ଆଲୋକକୁ ନେଇଯାନ୍ତି। ସେ ମନର ଅଶାନ୍ତି ଦୂର କରି ଆତ୍ମବଳ ଦିଅନ୍ତି। ତାଙ୍କ ଆଶୀର୍ବାଦରେ ଜ୍ଞାନ, ସମୃଦ୍ଧି ଓ ସ୍ଥିରତା ଲାଭ ହୁଏ। ଜୀବନର ସମସ୍ୟାରେ ସେ ଆମକୁ ଧୈର୍ଯ୍ୟ ଓ ଶକ୍ତି ଦିଅନ୍ତି। ଭକ୍ତି ସହିତ ତାଙ୍କୁ ସ୍ମରଣ କଲେ ମନ ପବିତ୍ର ହୁଏ ଓ ଭୟ ଦୂର ହୋଇଯାଏ।</p>
+                </div>
+              </article>
+
+              <article class="avatar-row reverse" data-side="right" data-aos="fade-left" data-aos-duration="900" data-aos-easing="ease-in-out">
+                <div class="avatar-image" aria-hidden="true">
+                  <!-- Avatar Image (from assets/maakali.jpeg) -->
+                  <img src="assets/maakali.jpeg" alt="Maa Kali">
+                </div>
+                <div class="avatar-content">
+                  <h3 class="avatar-title">ମାଆ କାଳୀ</h3>
+                  <p class="avatar-text">ମାଆ କାଳୀ ଶକ୍ତି ଓ ସଂହାରର ଦେବୀ। ତାଙ୍କର ଭୟଙ୍କର ରୂପ ଅସୁର ଶକ୍ତିର ନାଶ ପାଇଁ, କିନ୍ତୁ ଭକ୍ତଙ୍କ ପାଇଁ ସେ ଅତ୍ୟନ୍ତ କୃପାଳୁ ମାଆ। ସେ ଅନ୍ୟାୟ ଓ ଅଧର୍ମର ଶେଷ କରି ଧର୍ମର ସ୍ଥାପନା କରନ୍ତି। ଆମେ ତାଙ୍କୁ ପ୍ରଶଂସା କରୁଛୁ କାରଣ ସେ ଆମକୁ ନିର୍ଭୟତା ଓ ସାହସ ଦିଅନ୍ତି। ଜୀବନରେ ଯେତେବେଳେ ଭୟ, ସଂକଟ ବା ଅନ୍ୟାୟ ଆସେ, ମାଆ କାଳୀ ଆମକୁ ଶକ୍ତି ଦିଅନ୍ତି ତାହାକୁ ମୁକାବିଲା କରିବାର। ସେ ନେଗେଟିଭ୍ ଚିନ୍ତା ଓ ଦୁର୍ବଳତାକୁ ଦୂର କରନ୍ତି। ତାଙ୍କ ଆଶୀର୍ବାଦରେ ମନ ଦୃଢ଼ ହୁଏ ଓ ଆତ୍ମବିଶ୍ୱାସ ବଢ଼େ। ଭକ୍ତି ସହ ତାଙ୍କୁ ସ୍ମରଣ କଲେ ଭୟ ଓ ଦୁଃଖ ଦୂର ହୋଇଯାଏ।</p>
+                </div>
+              </article>
+
+              <article class="avatar-row" data-side="left" data-aos="fade-right" data-aos-duration="900" data-aos-easing="ease-in-out">
+                <div class="avatar-image" aria-hidden="true">
+                  <!-- Avatar Image (from assets/maaparvati.jpeg) -->
+                  <img src="assets/maaparvati.jpeg" alt="Maa Parvati">
+                </div>
+                <div class="avatar-content">
+                  <h3 class="avatar-title">ମାଆ ପାର୍ବତୀ</h3>
+                  <p class="avatar-text">ମାଆ ପାର୍ବତୀ ପ୍ରେମ, କରୁଣା ଓ ଦାମ୍ପତ୍ୟ ସୁଖର ଦେବୀ। ସେ ଶିବଙ୍କ ଅର୍ଧାଙ୍ଗିନୀ ଓ ଶକ୍ତିର ପ୍ରତୀକ। ତାଙ୍କର ଜୀବନ ଆମକୁ ନିଷ୍ଠା, ସହିଷ୍ଣୁତା ଓ ତ୍ୟାଗ ଶିଖାଏ। ଆମେ ତାଙ୍କୁ ପ୍ରଶଂସା କରୁଛୁ କାରଣ ସେ ପରିବାରରେ ଶାନ୍ତି ଓ ସମ୍ମିଳନ ଆଣନ୍ତି। ତାଙ୍କ ଆଶୀର୍ବାଦରେ ଘରେ ସୁଖ-ଶାନ୍ତି ଓ ସମୃଦ୍ଧି ବଢ଼େ। ସେ ଭକ୍ତଙ୍କ ମନରେ ପ୍ରେମ ଓ କରୁଣା ଜାଗ୍ରତ କରନ୍ତି। ଜୀବନରେ ବିପଦ ଆସିଲେ ସେ ଧୈର୍ଯ୍ୟ ଓ ସହନଶୀଳତା ଦିଅନ୍ତି। ତାଙ୍କୁ ସ୍ମରଣ କଲେ ମନେ ଶାନ୍ତି ଓ ଆଶା ଜନ୍ମ ନେଉଥାଏ।</p>
+                </div>
+              </article>
+
+              <article class="avatar-row reverse" data-side="right" data-aos="fade-left" data-aos-duration="900" data-aos-easing="ease-in-out">
+                <div class="avatar-image" aria-hidden="true">
+                  <!-- Avatar Image (from assets/mahadev.jpeg) -->
+                  <img src="assets/mahadev.jpeg" alt="Mahadev (Shiva)">
+                </div>
+                <div class="avatar-content">
+                  <h3 class="avatar-title">ମହାଦେବ</h3>
+                  <p class="avatar-text">ମହାଦେବ ସଂହାର ଓ ପୁନର୍ସୃଷ୍ଟିର ଦେବତା। ସେ ଭୋଳେନାଥ, ଯିଏ ଭକ୍ତଙ୍କ ପ୍ରତି ଅତ୍ୟନ୍ତ କୃପାଳୁ। ତାଙ୍କ ଧ୍ୟାନମୟ ରୂପ ଆମକୁ ଆତ୍ମଜ୍ଞାନ ଓ ଶାନ୍ତିର ପଥ ଦେଖାଏ। ଆମେ ତାଙ୍କୁ ପ୍ରଶଂସା କରୁଛୁ କାରଣ ସେ ଦୁଃଖ ଓ ପାପକୁ କ୍ଷମା କରନ୍ତି। ତାଙ୍କ ଆଶୀର୍ବାଦରେ ମନର ଅଶାନ୍ତି ଦୂର ହୁଏ। ସେ ଆମକୁ ସଠିକ୍ ପଥରେ ଆଗେଇ ନେଇଯାନ୍ତି। ବିପଦରେ ସେ ଆମକୁ ଧୈର୍ଯ୍ୟ ଓ ଶକ୍ତି ଦିଅନ୍ତି। ଭକ୍ତି ସହ ଶିବଙ୍କୁ ସ୍ମରଣ କଲେ ମନ ପବିତ୍ର ଓ ନିର୍ମଳ ହୁଏ।</p>
+                </div>
+              </article>
+
+              <article class="avatar-row" data-side="left" data-aos="fade-right" data-aos-duration="900" data-aos-easing="ease-in-out">
+                <div class="avatar-image" aria-hidden="true">
+                  <!-- Avatar Image (from assets/radha_krishna.jpeg) -->
+                  <img src="assets/radha_krishna.jpeg" alt="Radha & Krishna">
+                </div>
+                <div class="avatar-content">
+                  <h3 class="avatar-title">ରାଧା–କୃଷ୍ଣ</h3>
+                  <p class="avatar-text">ରାଧା–କୃଷ୍ଣ ଦିବ୍ୟ ପ୍ରେମ ଓ ଭକ୍ତିର ପ୍ରତୀକ। କୃଷ୍ଣ ଜ୍ଞାନ ଓ ଧର୍ମର ମାର୍ଗଦର୍ଶକ। ତାଙ୍କର ବାଂଶୀର ସୁର ହୃଦୟକୁ ଆନନ୍ଦରେ ପୂର୍ଣ୍ଣ କରେ। ଆମେ ତାଙ୍କୁ ପ୍ରଶଂସା କରୁଛୁ କାରଣ ସେ ପ୍ରେମ ଓ ଆନନ୍ଦର ସନ୍ଦେଶ ଦିଅନ୍ତି। ଜୀବନରେ ସଂକଟ ଆସିଲେ କୃଷ୍ଣ ଆମକୁ ଜ୍ଞାନ ଓ ଧୈର୍ଯ୍ୟ ଦିଅନ୍ତି। ସେ ଧର୍ମର ପଥରେ ଚାଲିବାକୁ ପ୍ରେରଣା ଦିଅନ୍ତି। ତାଙ୍କ ଆଶୀର୍ବାଦରେ ମନେ ଶାନ୍ତି ଓ ଆନନ୍ଦ ରହେ।.</p>
+                </div>
+              </article>
+
+              <article class="avatar-row reverse" data-side="right" data-aos="fade-left" data-aos-duration="900" data-aos-easing="ease-in-out">
+                <div class="avatar-image" aria-hidden="true">
+                  <!-- Avatar Image (from assets/jaganath.jpeg) -->
+                  <img src="assets/jaganath.jpeg" alt="Lord Jagannath">
+                </div>
+                <div class="avatar-content">
+                  <h3 class="avatar-title">ଶ୍ରୀଜଗନ୍ନାଥ</h3>
+                  <p class="avatar-text">ଶ୍ରୀଜଗନ୍ନାଥ ଓଡ଼ିଶାର ଅଧିଷ୍ଠାତା ଦେବତା। ସେ ସମସ୍ତଙ୍କ ପାଇଁ ସମାନ କୃପାଳୁ। ତାଙ୍କର ରଥଯାତ୍ରା ଭକ୍ତି ଓ ଏକତାର ପ୍ରତୀକ। ଆମେ ତାଙ୍କୁ ପ୍ରଶଂସା କରୁଛୁ କାରଣ ସେ ଦୟା ଓ କୃପାର ସାଗର। ତାଙ୍କ ଆଶୀର୍ବାଦରେ ଦୁଃଖ ଦୂର ହୁଏ ଓ ଆଶା ଜନ୍ମ ନେଉଥାଏ। ସେ ଭକ୍ତଙ୍କୁ ସୁରକ୍ଷା ଓ ଶାନ୍ତି ଦିଅନ୍ତି।</p>
+                </div>
+              </article>
+
+              <article class="avatar-row" data-side="left" data-aos="fade-right" data-aos-duration="900" data-aos-easing="ease-in-out">
+                <div class="avatar-image" aria-hidden="true">
+                  <!-- Avatar Image (from assets/raghunath.jpeg) -->
+                  <img src="assets/raghunath.jpeg" alt="Raghunath">
+                </div>
+                <div class="avatar-content">
+                  <h3 class="avatar-title">ରଘୁନାଥ (ଶ୍ରୀରାମ)</h3>
+                  <p class="avatar-text">ରଘୁନାଥ ସତ୍ୟ ଓ ଧର୍ମର ପ୍ରତୀକ। ତାଙ୍କର ଜୀବନ ଆଦର୍ଶ ଓ ନୀତିର ଶିକ୍ଷା ଦିଏ। ଆମେ ତାଙ୍କୁ ପ୍ରଶଂସା କରୁଛୁ କାରଣ ସେ ନ୍ୟାୟ ଓ ସତ୍ୟର ସ୍ଥାପନା କରନ୍ତି। ବିପଦରେ ସେ ଆମକୁ ସାହସ ଦିଅନ୍ତି। ତାଙ୍କ ଆଶୀର୍ବାଦରେ ଜୀବନ ଧର୍ମମୟ ହୁଏ।</p>
+                </div>
+              </article>
+
+              <article class="avatar-row reverse" data-side="right" data-aos="fade-left" data-aos-duration="900" data-aos-easing="ease-in-out">
+                <div class="avatar-image" aria-hidden="true">
+                  <!-- Avatar Image (from assets/hanuman.jpeg) -->
+                  <img src="assets/hanuman.jpeg" alt="Lord Hanuman">
+                </div>
+                <div class="avatar-content">
+                  <h3 class="avatar-title">ଶ୍ରୀହନୁମାନ</h3>
+                  <p class="avatar-text">ଶ୍ରୀହନୁମାନ ଭକ୍ତି ଓ ଶକ୍ତିର ପ୍ରତୀକ। ସେ ରାମଙ୍କ ପ୍ରତି ଅଟୁଟ ଭକ୍ତି ଦେଖାଇଛନ୍ତି। ଆମେ ତାଙ୍କୁ ପ୍ରଶଂସା କରୁଛୁ କାରଣ ସେ ସାହସ ଓ ଆତ୍ମବଳ ଦିଅନ୍ତି। ବିପଦରେ ସେ ଭକ୍ତଙ୍କୁ ସୁରକ୍ଷା କରନ୍ତି ଓ ଭୟ ଦୂର କରନ୍ତି। ତାଙ୍କ ଆଶୀର୍ବାଦରେ ମନେ ଶକ୍ତି ଓ ଧୈର୍ଯ୍ୟ ବଢ଼େ।</p>
+                </div>
+              </article>
+
+            </div>
+          </section>
+          
+          
+
+          <!-- Founder/Trust Section -->
+          <div class="row mt-6 pt-5 g-5">
+            <div class="col-md-6" data-aos="fade-up">
+              <div class="premium-card h-100">
+                <i class="fas fa-crown fs-1" style="color: var(--deep-gold);"></i>
+                <h3 class="mt-3 mb-4" style="color: var(--dark-maroon);">ପ୍ରତିଷ୍ଠିତ</h3>
+                <h4>୧୯୭୭ ମସିହାରେ</h4>
+                <p class="text-muted">ଏକ ପବିତ୍ର ତୀର୍ଥସ୍ଥଳ</p>
+                <p>ମନ୍ଦିରଟି ଏକ ମୁଖ୍ୟ ଆଧ୍ୟାତ୍ମିକ କେନ୍ଦ୍ର ଭାବରେ ପ୍ରତିଷ୍ଠିତ ହୋଇଛି, ସାଧୁ ଏବଂ ଦିବ୍ୟ ମାତାଙ୍କ ଅନୁଗ୍ରହ ଖୋଜୁଥିବା ଭକ୍ତଙ୍କ ଦ୍ବାରା ଆଶୀର୍ବାଦିତ। ଏଟି ଶତାବ୍ଦୀ ଧରି ବିଶ୍ବାସର ଏକ ମାଇଲଫଳକ ଥିଛି।</p>
+              </div>
+            </div>
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+              <div class="premium-card h-100">
+                <i class="fas fa-hands-praying fs-1" style="color: var(--deep-gold);"></i>
+                <h3 class="mt-3 mb-4" style="color: var(--dark-maroon);">ମନ୍ଦିର ବିଶ୍ୱାସ</h3>
+                <h4>ମା ଭୁବନେଶ୍ଵରୀ ମନ୍ଦିର</h4>
+                <p class="text-muted">ରେଜିସ୍ଟ୍ରିକୃତ ଓ ବିଶ୍ୱସ୍ତ</p>
+                <p>ନିବେଦିତ ପୁରୋହିତ ଏବଂ ପ୍ରଶାସନିକ ବୋର୍ଡ ଦ୍ଵାରା ପରିଚାଳିତ। ୧୨+ ବିଶ୍ୱସ୍ତ ସଦସ୍ୟ, ୩୦୦+ କର୍ମଚାରୀ। ପବିତ୍ର ଐତିହ୍ୟ ରକ୍ଷା ଏବଂ ବିଶ୍ବଜୁଡ଼ା ଲକ୍ଷ ଲକ୍ଷ ଭକ୍ତଙ୍କୁ ସେବା ପ୍ରଦାନରେ ପ୍ରତିଶ୍ରୁତିବଦ୍ଧ।</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mission & Vision -->
+          <div class="row mt-5 g-4">
+            <div class="col-md-6" data-aos="fade-right">
+              <div class="bg-white p-5 rounded-5 h-100">
+                <div class="d-flex align-items-center mb-4">
+                  <div class="rounded-circle p-3 me-3" style="background: rgba(212,175,55,0.1);">
+                    <i class="fas fa-bullseye fs-2" style="color: var(--deep-gold);"></i>
+                  </div>
+                  <h3 style="color: var(--dark-maroon);">ଲକ୍ଷ୍ୟ</h3>
+                </div>
+                <p class="fs-5">ଦିବ୍ୟ ମାତାଙ୍କ ଅନୁଗ୍ରହର ଏକ ମାଇଲଫଳକ ଭାବରେ କାଜ କରିବା, ପବିତ୍ର ଅନୁଷ୍ଠାନ ରକ୍ଷା କରିବା, ସମସ୍ତ ଭକ୍ତଙ୍କୁ ଆଧ୍ୟାତ୍ମିକ ନିର୍ଦେଶନା ଦେବା ଏବଂ ବିଶ୍ବଜୁଡ଼ା କରୁଣା ଓ ରକ୍ଷାର ବାର୍ତ୍ତା ଛଡ଼ାଇବା।</p>
+              </div>
+            </div>
+            <div class="col-md-6" data-aos="fade-left">
+              <div class="bg-white p-5 rounded-5 h-100">
+                <div class="d-flex align-items-center mb-4">
+                  <div class="rounded-circle p-3 me-3" style="background: rgba(212,175,55,0.1);">
+                    <i class="fas fa-eye fs-2" style="color: var(--deep-gold);"></i>
+                  </div>
+                  <h3 style="color: var(--dark-maroon);">ଦୃଷ୍ଟିଭଙ୍ଗି</h3>
+                </div>
+                <p class="fs-5">ମନ୍ଦିରକୁ ଦିବ୍ୟ ରକ୍ଷାର ଏକ ବିଶ୍ବ କେନ୍ଦ୍ର ଭାବରେ ପ୍ରତିଷ୍ଠିତ କରିବା, ପବିତ୍ର ଅନୁଷ୍ଠାନରେ ବିଶ୍ବଜୁଡ଼ା ଭର୍ଚୁଆଲ ଅଂଶଗ୍ରହଣ ସକ୍ଷମ କରିବା, ସମସ୍ତ ଭକ୍ତଙ୍କ କଲ୍ୟାଣ ନିଶ୍ଚିତ କରିବା ଏବଂ ଆଧ୍ୟାତ୍ମିକ ଜାଗରଣ ପ୍ରଚାର କରିବା।</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Historic Image Section -->
+          <!-- <div class="row mt-6 pt-4">
+            <div class="col-12">
+              <div class="position-relative rounded-5 overflow-hidden" data-aos="zoom-in">
+                <img src="assets/vintage.jpeg" alt="Vintage Temple Photograph" class="img-fluid w-100" style="height: 500px; object-fit: cover;">
+                <div class="position-absolute bottom-0 start-0 w-100 p-5" style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                  <h3 class="text-white">ଐତିହାସିକ ଫଟୋ, 1900 ଦଶକ</h3>
+                  <p class="text-warning mb-0"> • ବିଶ୍ୱାସ ଲୋଭନାରେ ସଂରକ୍ଷିତ</p>
+                </div>
+              </div>
+            </div>
+          </div> -->
+
+          <!-- Statistics Section -->
+          <div class="row mt-6 pt-5 text-center">
+            <div class="col-md-3" data-aos="fade-up">
+              <div class="py-4">
+                <h2 class="fw-bold" style="font-size: 2.5rem; color: var(--deep-gold);">୫୦୦+</h2>
+                <p class="fs-5">ବର୍ଷର ଇତିହାସ</p>
+              </div>
+            </div>
+            <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+              <div class="py-4">
+                <h2 class="fw-bold" style="font-size: 2.5rem; color: var(--saffron);">୨ ଲକ୍ଷ+</h2>
+                <p class="fs-5">ବାର୍ଷିକ ଭକ୍ତ</p>
+              </div>
+            </div>
+            <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+              <div class="py-4">
+                <h2 class="fw-bold" style="font-size: 2.5rem; color: var(--deep-gold);">୧୦</h2>
+                <p class="fs-5">ଦୈନନ୍ଦିନ ପୂଜା</p>
+              </div>
+            </div>
+            <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+              <div class="py-4">
+                <h2 class="fw-bold" style="font-size: 2.5rem; color: var(--saffron);">୧୫+</h2>
+                <p class="fs-5">କର୍ମଚାରୀ</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Spiritual Experience Section -->
+      <section class="spiritual-section py-5" style="position: relative; overflow: hidden;">
+        <div class="spiritual-glow"></div>
+        <div class="om-element om-spiritual-1" style="top: 15%; right: 10%; opacity: 0.03;" aria-hidden="true">ॐ</div>
+        <div class="om-element om-spiritual-2" style="bottom: 10%; left: 5%; opacity: 0.025;" aria-hidden="true">ॐ</div>
+        <div class="container" style="position: relative; z-index: 1;">
+          <div class="text-center mb-5">
+            <div class="section-subtitle">ଆଧ୍ୟାତ୍ମିକ ଯାତ୍ରା</div>
+            <h2 class="section-title">ଆଧ୍ୟାତ୍ମିକ ଅଭିଜ୍ଞତା</h2>
+            <div class="divider divider-center"></div>
+          </div>
+
+          <!-- Spiritual Description -->
+          <div class="row justify-content-center mb-5">
+            <div class="col-lg-8" data-aos="fade-up">
+              <p class="spiritual-description">
+                ମା ଭୁବନେଶ୍ଵରୀ ମନ୍ଦିର କେବଳ ଏକ ପୂଜାର ସ୍ଥାନ ନୁହେଁ, ଏଟି ଦିବ୍ୟତାର ଏକ ଆଶ୍ରୟ। ଏଠାରେ ପ୍ରତିଟି ମୁର୍ତ୍ତି, ପ୍ରତିଟି ଅନୁଷ୍ଠାନ ଏବଂ ପ୍ରତିଟି ପ୍ରାର୍ଥନା ଆପଣଙ୍କ ଆତ୍ମାକୁ ଶୁଦ୍ଧ କରେ। ଆମାଦେଶାଘୀଙ୍କ ସନ୍ନିଧିରେ ଆଶିର୍ବାଦ, ଶାନ୍ତି ଏବଂ ଆଧ୍ୟାତ୍ମିକ ଜାଗରଣ ଅନୁଭବ କରନ୍ତୁ।
+              </p>
+            </div>
+          </div>
+
+          <!-- Spiritual Features Grid -->
+          <div class="spiritual-grid">
+            <!-- Inner Peace Card -->
+            <div class="spiritual-card" data-aos="fade-up" data-aos-delay="0">
+              <div class="spiritual-card-icon">🧘</div>
+              <h3 class="spiritual-card-title">ଆନ୍ତରିକ ଶାନ୍ତି</h3>
+              <p class="spiritual-card-text">ମନଙ୍କ ଶାନ୍ତି ଏବଂ ଆତ୍ମିକ ସମତାଲ ଅନୁଭବ କରନ୍ତୁ।</p>
+            </div>
+
+            <!-- Divine Blessings Card -->
+            <div class="spiritual-card" data-aos="fade-up" data-aos-delay="100">
+              <div class="spiritual-card-icon">✨</div>
+              <h3 class="spiritual-card-title">ଦିବ୍ୟ ଆଶିର୍ବାଦ</h3>
+              <p class="spiritual-card-text">ମାତାଙ୍କ ଅସୀମ ଅନୁଗ୍ରହ ଏବଂ ଦିବ୍ୟ ଆଶିର୍ବାଦ।</p>
+            </div>
+
+            <!-- Cultural Heritage Card -->
+            <div class="spiritual-card" data-aos="fade-up" data-aos-delay="200">
+              <div class="spiritual-card-icon">🕉️</div>
+              <h3 class="spiritual-card-title">ସାଂସ୍କୃତିକ ବିରାସତ</h3>
+              <p class="spiritual-card-text">ଭାରତୀୟ ଧର୍ମ ଏବଂ ଐତିହ୍ୟର ସନ୍ଧାନ ଲାଭ।</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+       <!-- Priest Information Section -->
+      <section class="priest-section py-5 bg-white" style="position: relative; overflow: hidden;">
+        <div class="om-element om-priest-1" style="top: 10%; left: 5%; opacity: 0.03;" aria-hidden="true">ॐ</div>
+        <div class="om-element om-priest-2" style="bottom: 20%; right: 8%; opacity: 0.025;" aria-hidden="true">ॐ</div>
+        <div class="container" style="position: relative; z-index: 1;">
+          <div class="text-center mb-5">
+            <div class="section-subtitle">ଆମାର ଦଳ</div>
+            <h2 class="section-title">ପ୍ରଧାନ ପୁରୋହିତ ଏବଂ ଶ୍ରୁତିସଂଗ୍ରାହକ</h2>
+            <div class="divider divider-center"></div>
+          </div>
+
+          <!-- Priests Grid -->
+          <div class="priests-grid">
+            <!-- Priest 1 -->
+            <div class="priest-card" data-aos="zoom-in" data-aos-delay="0">
+              <div class="priest-image-wrapper">
+                <img src="nana_photo/59891b44-a97a-4fed-b794-53a62ef423be.jpeg" alt="" class="size-50">
+              </div>
+              <h3 class="priest-name">ଶ୍ରୀ ରାଜେନ୍ଦ୍ର ମିଶ୍ର</h3>
+              <p class="priest-service">୩୫ ବର୍ଷ ସେବା</p>
+              <p class="priest-bio">ମନ୍ଦିରର ପ୍ରଧାନ ପୁରୋହିତ। ବେଦ ଏବଂ ଧର୍ମ ଶାସ୍ତ୍ରର ଜ୍ଞାନୀ।</p>
+              <button class="priest-contact-btn" onclick="alert('ଯୋଗାଯୋଗ: +91 9876543210')">ଯୋଗାଯୋଗ</button>
+            </div>
+
+            <!-- Priest 2 -->
+            <div class="priest-card" data-aos="zoom-in" data-aos-delay="100">
+              <div class="priest-image-wrapper">
+                <img src="nana_photo/1cf30e87-e25b-4a7c-a0be-957795d86aa5.jpeg" alt="" class="size-50" >
+              </div>
+              <h3 class="priest-name">ଶ୍ରୀ ବିଜୟ ସାହୁ</h3>
+              <p class="priest-service">୨୮ ବର୍ଷ ସେବା</p>
+              <p class="priest-bio">ପୂଜା ଏବଂ ଅନୁଷ୍ଠାନ ପରିଚାଳନାକାରୀ। ଛାତ୍ର ତାଲିମ ଦାତା।</p>
+              <button class="priest-contact-btn" onclick="alert('ଯୋଗାଯୋଗ: +91 9876543211')">ଯୋଗାଯୋଗ</button>
+            </div>
+
+            <!-- Priest 3 -->
+            <div class="priest-card" data-aos="zoom-in" data-aos-delay="200">
+              <div class="priest-image-wrapper">
+                <img src="/nana_photo/7fba2203-14e0-4f93-8840-6b1778c7566f.png" alt="" class="size-50">
+              </div>
+              <h3 class="priest-name">ଶ୍ରୀ ଶୁଭେନ୍ଦୁ ଦାସ</h3>
+              <p class="priest-service">୧୮ ବର୍ଷ ସେବା</p>
+              <p class="priest-bio">ଦୈନିକ ଦର୍ଶନ ଏବଂ ଆରତୀ ପୂର୍ଣ୍ଣ। ଭକ୍ତ ସେବାକାରୀ।</p>
+              <button class="priest-contact-btn" onclick="alert('ଯୋଗାଯୋଗ: +91 9876543212')">ଯୋଗାଯୋଗ</button>
+            </div>
+
+            <!-- Priest 3 -->
+            <div class="priest-card" data-aos="zoom-in" data-aos-delay="200">
+              <div class="priest-image-wrapper">
+                <img src="nana_photo/3daae976-0060-4918-84a3-50b4e53de030.png" alt="" class="size-50">
+              </div>
+              <h3 class="priest-name">ଶ୍ରୀ ଶୁଭେନ୍ଦୁ ଦାସ</h3>
+              <p class="priest-service">୧୮ ବର୍ଷ ସେବା</p>
+              <p class="priest-bio">ଦୈନିକ ଦର୍ଶନ ଏବଂ ଆରତୀ ପୂର୍ଣ୍ଣ। ଭକ୍ତ ସେବାକାରୀ।</p>
+              <button class="priest-contact-btn" onclick="alert('ଯୋଗାଯୋଗ: +91 9876543212')">ଯୋଗାଯୋଗ</button>
+            </div>
+
+            <!-- Priest 3 -->
+            <div class="priest-card" data-aos="zoom-in" data-aos-delay="200">
+              <div class="priest-image-wrapper">
+                <img src="nana_photo/d2fd32f2-04bf-4210-824e-81e3d8e87ab4.png" alt="" class="size-50">
+              </div>
+              <h3 class="priest-name">ଶ୍ରୀ ଶୁଭେନ୍ଦୁ ଦାସ</h3>
+              <p class="priest-service">୧୮ ବର୍ଷ ସେବା</p>
+              <p class="priest-bio">ଦୈନିକ ଦର୍ଶନ ଏବଂ ଆରତୀ ପୂର୍ଣ୍ଣ। ଭକ୍ତ ସେବାକାରୀ।</p>
+              <button class="priest-contact-btn" onclick="alert('ଯୋଗାଯୋଗ: +91 9876543212')">ଯୋଗାଯୋଗ</button>
+            </div>
+
+            <!-- Priest 3 -->
+            <div class="priest-card" data-aos="zoom-in" data-aos-delay="200">
+              <div class="priest-image-wrapper">
+                <img src="nana_photo/6c0aceac-f6cf-4792-8c5a-4964d34e768e.png" alt="" class="size-50">
+              </div>
+              <h3 class="priest-name">ଶ୍ରୀ ଶୁଭେନ୍ଦୁ ଦାସ</h3>
+              <p class="priest-service">୧୮ ବର୍ଷ ସେବା</p>
+              <p class="priest-bio">ଦୈନିକ ଦର୍ଶନ ଏବଂ ଆରତୀ ପୂର୍ଣ୍ଣ। ଭକ୍ତ ସେବାକାରୀ।</p>
+              <button class="priest-contact-btn" onclick="alert('ଯୋଗାଯୋଗ: +91 9876543212')">ଯୋଗାଯୋଗ</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Testimonials Section -->
+      <section class="testimonials-section py-5" style="position: relative; overflow: hidden;">
+        <div class="om-element om-testimonial-1" style="top: 10%; right: 5%; opacity: 0.03;" aria-hidden="true">ॐ</div>
+        <div class="om-element om-testimonial-2" style="bottom: 15%; left: 8%; opacity: 0.025;" aria-hidden="true">ॐ</div>
+        <div class="container" style="position: relative; z-index: 1;">
+          <div class="text-center mb-5">
+            <div class="section-subtitle">ଭକ୍ତଙ୍କ ମତ</div>
+            <h2 class="section-title">ଆଶୀର୍ବାଦିତ ଅଭିଜ୍ଞତା</h2>
+            <div class="divider divider-center"></div>
+          </div>
+
+          <!-- Testimonials Grid -->
+          <div class="testimonials-grid">
+            <!-- Testimonial 1 -->
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="0">
+              <div class="testimonial-quote-icon">
+                <i class="fas fa-quote-left"></i>
+              </div>
+              <p class="testimonial-text">
+                "ମା ଭୁବନେଶ୍ଵରୀ ମନ୍ଦିରଟି ମୋ ଜୀବନର ସବୁଠାରୁ ଗୁରୁତ୍ଵପୂର୍ଣ୍ଣ ଆଧ୍ୟାତ୍ମିକ ଅସ୍ତିତ୍ଵ। ଏଠାରେ ଆସିବା ଦ୍ଵାରା ମୁଁ ଆତ୍ମିକ ଶାନ୍ତି ଏବଂ ଜୀବନୀ ଶକ୍ତି ପାଇଛି।"
+              </p>
+              <h4 class="testimonial-name">ଶ୍ରୀମତୀ ଅନିତା ଘୋଷ</h4>
+              <p class="testimonial-title">ଭକ୍ତ, ଭୁବନେଶ୍ଵର</p>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+              <div class="testimonial-quote-icon">
+                <i class="fas fa-quote-left"></i>
+              </div>
+              <p class="testimonial-text">
+                "ଏଖାନର ପୁରୋହିତଙ୍କ ଆଚରଣ, ଧର୍ମ ଜ୍ଞାନ ଏବଂ ଭକ୍ତ ସେବା ଅତୁଳନୀୟ। ମନ୍ଦିରର ଗମ୍ଭୀର ସ୍ୱୀଭାବ ମୁଁ ମହାନୁଭବ କରି ଯାଇଛି।"
+              </p>
+              <h4 class="testimonial-name">ଶ୍ରୀ ରାଜୀବ କୁମାର</h4>
+              <p class="testimonial-title">ଶିକ୍ଷକ, ଓଡ଼ିଶା</p>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+              <div class="testimonial-quote-icon">
+                <i class="fas fa-quote-left"></i>
+              </div>
+              <p class="testimonial-text">
+                "ମୋର ଦୁଃସମୟରେ ମା ଭୁବନେଶ୍ଵରୀର ଚରଣରେ ଶରଣ ନେଇ ମୁଁ ସବୁ ସମସ୍ୟା ସମାଧାନ କରୁଛି। ଏଠାର ଦିବ୍ୟ ଶକ୍ତି ସଙ୍ଗେ ସଙ୍ଗେ ମୁଁ ସୁଖୀ ଅନୁଭବ କରୁଛି।"
+              </p>
+              <h4 class="testimonial-name">ଶ୍ରୀମତୀ ସଞ୍ଜୟା ଦାସ</h4>
+              <p class="testimonial-title">ଉଦ୍ୟୋକ୍ତା, ବିଜାୟଗଢ଼</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- Spiritual Footer -->
+    <footer class="text-white py-12" style="background: linear-gradient(135deg, var(--maroon) 0%, #5C0000 100%);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Spiritual Quote Section -->
+            <div class="text-center mb-8 pb-8 border-b border-white/20">
+                <p class="text-2xl font-bold mb-4 text-yellow-200">🕉️ ॐ ସର୍ବେ ଭବନ୍ତୁ ସୁଖିନଃ 🕉️</p>
+                <p class="text-lg italic mb-2">"ସମସ୍ତ ପ୍ରାଣୀ ସୁଖୀ ହୁଅନ୍ତୁ, ସମସ୍ତ ପ୍ରାଣୀ ସୁସ୍ଥ ହୁଅନ୍ତୁ"</p>
+                <p class="text-sm text-white/80">॥ ସର୍ବେ ଭବନ୍ତୁ ସୁଖିନଃ ସର୍ବେ ସନ୍ତୁ ନିରାମୟାଃ ॥</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 flex items-center gap-2">
+                        <span>🕉️</span>
+                        ପବିତ୍ର ମନ୍ଦିର
+                    </h3>
+                    <p class="text-white/80 mb-3">ଏକ ପବିତ୍ର ବାସସ୍ଥାନ ଯେଉଁଠାରେ ଦିବ୍ୟତା ବାସ କରେ ଏବଂ ଭକ୍ତମାନେ ଶାନ୍ତି
+                        ପାଆନ୍ତି</p>
+                    <p class="text-yellow-200 italic text-sm">🙏 ଯୁଗ ଯୁଗ ଧରି ଦିବ୍ୟ ସେବା</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-yellow-200">🛕 ପବିତ୍ର ସେବା</h4>
+                    <ul class="space-y-2">
+                        <li><a href="pooja-booking.html" class="text-white/80 hover:text-white transition-colors">🙏
+                                ପୂଜା ବୁକିଂ</a></li>
+                        <li><a href="offerings.html" class="text-white/80 hover:text-white transition-colors">🍯 ପ୍ରସାଦ
+                                ଓ ଭୋଗ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-yellow-200">📿 ଦୈନିକ ମନ୍ତ୍ର</h4>
+                    <ul class="space-y-2 text-white/80 text-sm">
+                        <li>🕉️ ଓମ୍ ନମଃ ଶିବାୟ</li>
+                        <li>🪷 ଓମ୍ ନମୋ ଭଗବତେ</li>
+                        <li>🔱 ହର ହର ମହାଦେବ</li>
+                        <li>🌺 ଜୟ ଶ୍ରୀ ରାମ</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-yellow-200">📞 ଯୋଗାଯୋଗ</h4>
+                    <ul class="space-y-2 text-white/80">
+                        <li>📱 +91 7735514529</li>
+                        <li>📧 blessings@divinetemple.com</li>
+                        <li>📍 ପବିତ୍ର ମନ୍ଦିର ପରିସର</li>
+                        <li class="text-yellow-200 mt-3">🕉️ ପ୍ରତିଦିନ ଖୋଲା: ସକାଳ ୫ - ରାତି ୯</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Divine Blessings Section -->
+            <div class="border-t border-white/20 pt-6 text-center">
+                <p class="text-yellow-200 mb-2">✨ ପ୍ରଭୁଙ୍କ ଆଶୀର୍ବାଦ ଆପଣଙ୍କ ଉପରେ ରହୁ ✨</p>
+                <p class="text-white/80 text-sm mb-4">
+                    "ଧର୍ମୋ ରକ୍ଷତି ରକ୍ଷିତଃ" - ଧର୍ମ ତାକୁ ରକ୍ଷା କରେ ଯିଏ ଧର୍ମକୁ ରକ୍ଷା କରେ
+                </p>
+                <p class="text-white/60 text-xs">
+                    © ୨୦୨୬ ପବିତ୍ର ମନ୍ଦିର | ଭକ୍ତି ଏବଂ ଉତ୍ସର୍ଗୀକୃତ ସହିତ ନିର୍ମିତ 🙏
+                </p>
+            </div>
+        </div>
+    </footer>
+
+  <!-- BOOTSTRAP JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: false
+    });
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('mainNav');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Mobile menu toggle with Tailwind CSS
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    let isMenuOpen = false;
+
+    if (mobileMenuToggle && mobileMenu) {
+      mobileMenuToggle.addEventListener('click', function() {
+        isMenuOpen = !isMenuOpen;
+        
+        if (isMenuOpen) {
+          // Open menu
+          mobileMenu.classList.remove('translate-x-full');
+          mobileMenu.classList.add('translate-x-0');
+          mobileMenuToggle.classList.add('hamburger-open');
+          document.body.style.overflow = 'hidden';
+        } else {
+          // Close menu
+          mobileMenu.classList.remove('translate-x-0');
+          mobileMenu.classList.add('translate-x-full');
+          mobileMenuToggle.classList.remove('hamburger-open');
+          document.body.style.overflow = '';
+        }
+      });
+
+      // Close mobile menu when clicking on a link
+      const mobileLinks = mobileMenu.querySelectorAll('a');
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          if (isMenuOpen) {
+            mobileMenuToggle.click();
+          }
+        });
+      });
+    }
+
+    // Divya Avatars animations are handled by AOS (data-aos attributes on rows)
+  </script>
+</body>
+</html>

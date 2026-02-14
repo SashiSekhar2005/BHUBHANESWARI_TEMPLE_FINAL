@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <title>ମା ଭୁବନେଶ୍ଵରୀ ମନ୍ଦିର | Home</title>
+  
+  <!-- META -->
+  <meta name="description" content="ମା ଭୁବନେଶ୍ଵରୀ ମନ୍ଦିରର ଅଧିକାରିକ ୱେବସାଇଟ। ପୂଜା ବୁକ୍‍ଙ୍ଗ, ଦାନ, ଅନୁଷ୍ଠାନ, ଦିବ୍ୟ ଗ୍ୟାଲେରୀ, ଏବଂ ଆଧ୍ୟାତ୍ମିକ ସେବା।">
+  <meta name="keywords" content="ମା ଭୁବନେଶ୍ଵରୀ, ମନ୍ଦିର, ପୂଜା, ଦାନ, ଆଧ୍ୟାତ୍ମିକ, ଭୁବନେଶ୍ଵର, ଦେବୀ, ପବିତ୍ର">
+  <meta name="author" content="ମା ଭୁବନେଶ୍ଵରୀ ମନ୍ଦିର">
+  
+  <!-- FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- TAILWIND CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+    <!-- BOOTSTRAP -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- fancybox -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.0/dist/fancybox/fancybox.css" />
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <!-- FLOATING OM ANIMATION CSS -->
+  <link rel="stylesheet" href="/floating-omm/floating-om-animation.css">
+  
+  <!-- PREMIUM STYLES -->
+  <link rel="stylesheet" href="css/premium.css">
+  
+  <!-- SHARED STYLES -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <style>
+    /* Tailwind Custom Styles */
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;500;600;700&display=swap');
+    
+    /* Navbar gradient background */
+    .navbar-gradient {
+      background: linear-gradient(135deg, #FF9933 0%, #FFB347 20%, #D4AF37 50%, #FFA500 80%, #FF8C00 100%);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 8px 32px rgba(90, 14, 14, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    }
+
+    .navbar-gradient.scrolled {
+      box-shadow: 0 12px 48px rgba(90, 14, 14, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    }
+
+    /* Logo styling */
+    .logo-img {
+      height: 3.5rem;
+      width: 3.5rem;
+      border-radius: 50%;
+      object-fit: cover;
+      filter: brightness(1.1) contrast(1.2);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .logo-text {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: 1.5rem;
+      color: #FFFFFF;
+      text-shadow: 2px 2px 6px rgba(90, 14, 14, 0.3);
+      letter-spacing: -0.02em;
+    }
+
+    /* Nav links styling */
+    .nav-link-item {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: #FFFFFF;
+      position: relative;
+      padding: 0.625rem 0;
+      letter-spacing: 0.03em;
+      text-shadow: 1px 1px 3px rgba(90, 14, 14, 0.2);
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .nav-link-item::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #FFD700, #FFA500);
+      transition: width 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+    }
+
+    .nav-link-item:hover {
+      color: #FFF8E7;
+      text-shadow: 2px 2px 6px rgba(90, 14, 14, 0.4), 0 0 20px rgba(255, 215, 0, 0.5);
+    }
+
+    .nav-link-item:hover::after {
+      width: 100%;
+    }
+
+    /* Mobile menu toggle */
+    .hamburger-line {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background-color: white;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .hamburger-open .hamburger-line:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 6px);
+    }
+
+    .hamburger-open .hamburger-line:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger-open .hamburger-line:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    /* Mobile menu links */
+    .mobile-nav-link {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1.75rem;
+      color: #FFFFFF;
+      text-shadow: 2px 2px 8px rgba(90, 14, 14, 0.4);
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: block;
+      padding: 0.75rem;
+    }
+
+    .mobile-nav-link:hover {
+      transform: scale(1.1);
+      color: #FFF8E7;
+      text-shadow: 3px 3px 10px rgba(90, 14, 14, 0.6);
+    }
+
+    /* Golden Glowing Border for Gallery Images */
+    .gallery-image-wrapper {
+      border: 4px solid #D4AF37;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.4), 
+                  0 0 40px rgba(212, 175, 55, 0.2),
+                  inset 0 0 10px rgba(212, 175, 55, 0.1);
+      transition: all 0.3s ease;
+      height: 280px;
+    }
+
+    .gallery-image-wrapper:hover {
+      box-shadow: 0 0 30px rgba(212, 175, 55, 0.6), 
+                  0 0 60px rgba(212, 175, 55, 0.3),
+                  inset 0 0 15px rgba(212, 175, 55, 0.15);
+      transform: translateY(-5px);
+      border-color: #FFD700;
+    }
+
+    .gallery-image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-image-wrapper:hover img {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ========== FLOATING OM BACKGROUND ANIMATION ========== -->
+  <div class="floating-om-container"></div>
+
+  <!-- ========== PREMIUM NAVIGATION - PURE TAILWIND CSS ========== -->
+  <nav class="navbar-gradient fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="mainNav">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between py-4">
+        
+        <!-- Logo -->
+        <a href="home.html" class="flex items-center space-x-3 relative z-40">
+          <img src="assets/logo.jpeg" alt="ମା ଭୁବନେଶ୍ଵରୀ ମନ୍ଦିର" class="logo-img">
+          <span class="logo-text  sm:inline-block">ମା ଭୁବନେଶ୍ଵରୀ </span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden lg:flex items-center space-x-8">
+          <a class="nav-link-item" href="index.html">HOME</a>
+          <a class="nav-link-item" href="about.html">ABOUT</a>
+          <a class="nav-link-item" href="puja.html">PUJASEVA</a>
+          <a class="nav-link-item" href="bhoga.html">BHOGO</a>
+          <a class="nav-link-item" href="donation.html">DONATION</a>
+          <a class="nav-link-item" href="event.html">EVENTS</a>
+          <a class="nav-link-item" href="galary.html">GALLERY</a>
+          <a class="nav-link-item" href="contact.html">CONTACT</a>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button 
+          id="mobile-menu-toggle" 
+          class="lg:hidden relative z-50 w-10 h-10 flex flex-col items-center justify-center space-y-1.5 focus:outline-none"
+          aria-label="Toggle menu"
+        >
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div 
+      id="mobile-menu" 
+      class="lg:hidden z-60 fixed inset-0 h-screen bg-gradient-to-br from-orange-600 via-amber-500 to-orange-700 transform translate-x-full transition-transform duration-300 ease-in-out z-40"
+    >
+     
+      <div class="flex flex-col items-center justify-center h-screen space-y-3 px-6 py-4 text-center">
+        <a class="mobile-nav-link" href="index.html">HOME</a>
+        <a class="mobile-nav-link" href="about.html">ABOUT</a>
+        <a class="mobile-nav-link" href="puja.html">PUJASEVA</a>
+        <a class="mobile-nav-link" href="bhoga.html">BHOGO</a>
+        <a class="mobile-nav-link" href="donation.html">DONATION</a>
+        <a class="mobile-nav-link" href="event.html">EVENTS</a>
+        <a class="mobile-nav-link" href="galary.html">GALLERY</a>
+        <a class="mobile-nav-link" href="contact.html">CONTACT</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <div style="margin-top: 100px; position: relative; z-index: 2;">
+    <!-- HOME PAGE -->
+    <div id="page-home">
+      <!-- Hero Section -->
+      <section class="pt-10 position-relative" style=" overflow: hidden;" >
+        <div class="container" style="position: relative; z-index: 1;">
+          <div class="row align-items-center min-vh-80">
+            <div class="col-lg-7" data-aos="fade-right">
+              <div class="section-subtitle text-center">ମା ଭୁବନେଶ୍ଵରୀ ମନ୍ଦିର</div>
+              <h1 style=" line-height: 1.1;" class="lg:text-6xl text-3xl font-bold text-center" data-aos="fade-right" data-aos-delay="100">
+                ଓଁ ମାଆ ଭୁବନେଶ୍ୱରୀ,<br>ଆଚାର୍ଯ୍ୟ
+
+ବିହାର ବାସୀଙ୍କର<br>ଆରାଧ୍ୟ ଦେବୀ।
+              </h1>
+              <p class="fs-4 fw-light my-4 text-center" style="color: #6B4F3C;">
+                "ଭୁବନେଶ୍ଵରର ଶକ୍ତିପୀଠ, ପୂର୍ବର ରକ୍ଷକ"
+              </p>
+              <div class="d-flex flex-wrap gap-4 mt-4 justify-center">
+                <button class="btn-glow" onclick="location.href='donation.html'">
+                  <i class="fas fa-hand-holding-heart me-2"></i>ଏଭିଷୟେ ଦାନ କରନ୍ତୁ
+                </button>
+                <button class="btn-outline-gold" onclick="location.href='#pooja'">
+                  <i class="fas fa-pray me-2"></i>ପୂଜା ବୁକ୍‍ଙ୍ଗ
+                </button>
+              </div>
+              
+              <!-- Quick Info Cards -->
+              <div class="flex flex-wrap md:flex-nowrap space-x-1 md:space-x-0 mt-5 pt-4 g-4">
+                <div class="col-md-4">
+                  <div class="d-flex align-items-center">
+                    <div class="me-3">
+                      <i class="fas fa-clock fs-2" style="color: var(--deep-gold);"></i>
+                    </div>
+                    <div>
+                      <h6 class="mb-1 fw-bold">ମନ୍ଦିର ସମୟ</h6>
+                      <p class="mb-0 small">ସକାଳ ୫:୦୦ – ରାତ୍ରି ୯:୦୦</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="d-flex align-items-center">
+                    <div class="me-3">
+                      <i class="fas fa-map-marker-alt fs-2" style="color: var(--deep-gold);"></i>
+                    </div>
+                    <div>
+                      <h6 class="mb-1 fw-bold">ଅବସ୍ଥାନ</h6>
+                      <p class="mb-0 small">ଆଚାର୍ଯ୍ୟ
+
+ବିହାର ,ଭୁବନେଶ୍ଵର, ଓଡ଼ିଶା</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="d-flex align-items-center">
+                    <div class="me-3">
+                      <i class="fas fa-phone-alt fs-2" style="color: var(--deep-gold);"></i>
+                    </div>
+                    <div>
+                      <h6 class="mb-1 fw-bold">ଯୋଗାଯୋଗ</h6>
+                      <p class="mb-0 small">+91 542 123 4567</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-5 mt-5 mt-lg-0" data-aos="fade-left">
+              <div class="position-relative">
+                <img src="assets/mandirr.jpeg" alt="Meenakshi Amman Temple" class="img-fluid rounded-5 shadow-lg" style="border: 6px solid var(--deep-gold);">
+                <div class="position-absolute bottom-0 end-0 translate-middle-y bg-white p-4 rounded-4 shadow" style="border-right: 6px solid var(--saffron);">
+                  <span class="fs-1 fw-bold" style="color: var(--dark-maroon);">100+</span>
+                  <span class="d-block">Years of Divinity</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Preview Section -->
+      <section class="py-5 bg-white" style="position: relative; overflow: hidden;">
+        <div class="om-element om-section-1" style="top: 10%; right: 5%; opacity: 0.03;" aria-hidden="true">ॐ</div>
+        <div class="om-element om-section-2" style="bottom: 15%; left: 8%; opacity: 0.025;" aria-hidden="true">ॐ</div>
+        <div class="container" style="position: relative; z-index: 1;">
+          <div class="row g-5 align-items-center">
+            <div class="col-lg-6 " data-aos="zoom-in-right">
+              <div class="w-70 h-70">
+                <iframe width="100%" height="480px" src="https://www.youtube.com/embed/BMCGQAPUd7Q?si=w169WkdSLMEy_3kx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="border-2 rounded-3xl"></iframe>
+              </div>
+            </div>
+            <div class="col-lg-6" data-aos="zoom-in-left">
+              <div class="section-subtitle">ଅଗତିର ଗତି — ଶ୍ରୀ ଶ୍ରୀ ମାଆ ଭୁବନେଶ୍ୱରୀ ପୀଠ, ଆଚାର୍ଯ୍ୟ ବିହାର</div>
+              <h2 class="section-title">୧୯୭୭ ମସିହା ଠାରୁ ପବିତ୍ର</h2>
+              <!-- divider removed per request -->
+              <p class="fs-5 mb-4">ଭୁବନେଶ୍ୱର ନଗରୀର ଆଚାର୍ଯ୍ୟ ବିହାରରେ ଅବସ୍ଥିତ ଶ୍ରୀ ଶ୍ରୀ ମାଆ ଭୁବନେଶ୍ୱରୀ ପୀଠ ଏକ ପବିତ୍ର ଆଧ୍ୟାତ୍ମିକ କେନ୍ଦ୍ର, ଯେଉଁଠାରେ ଭକ୍ତି, ଶାନ୍ତି ଓ ଆଶ୍ରୟର ଦିବ୍ୟ ସମନ୍ୱୟ ଦେଖାଯାଏ। ଜଗଜନନୀ ମାଆ ଭୁବନେଶ୍ୱରୀ ଏଠାରେ ଦୁଃଖନାଶିନୀ, ଅଭୟବରଦାୟିନୀ ଓ କ୍ଲେଶହାରିଣୀ ରୂପେ ପୂଜିତା। ବର୍ଷଧରି ଏହି ପୀଠ ଅନେକ ଭକ୍ତଙ୍କ ଆଶା, ଆସ୍ଥା ଓ ଆତ୍ମିକ ଶକ୍ତିର କେନ୍ଦ୍ରବିନ୍ଦୁ ହୋଇରହିଛି। ବିପଦ-ଆପଦ ସମୟରେ ହେଉ କିମ୍ବା ଆନନ୍ଦମୟ ଅବସରରେ, ଭକ୍ତମାନେ ମାଆଙ୍କ ଚରଣେ ଶରଣ ନେଇ ଆଶୀର୍ବାଦ ଲାଭ କରନ୍ତି। ଶାନ୍ତ ପରିବେଶ, ନିୟମିତ ପୂଜା-ଅର୍ଚ୍ଚନା ଓ ବାରମାସିଆ ପର୍ବପର୍ବାଣୀ ଏହି ମନ୍ଦିରକୁ କେବଳ ଏକ ପୂଜାସ୍ଥଳ ନୁହେଁ, ବରଂ ଏକ ସଜୀବ ଆଧ୍ୟାତ୍ମିକ ପରିବାରରେ ପରିଣତ କରିଛି। ମାତୃକୃପା ଓ ସମୁଦାୟର ଏକତା ଏହି ପୀଠର ସର୍ବଶ୍ରେଷ୍ଠ ଶକ୍ତି।</p>
+              <div class="row g-4">
+                <div class="col-6">
+                  <h3 class="fw-bold" style="color: var(--deep-gold);">12+</h3>
+                  <p>ଦୈନନ୍ଦିନ ପୂଜା</p>
+                </div>
+                <div class="col-6">
+                  <h3 class="fw-bold" style="color: var(--deep-gold);">2 ଲକ୍ଷ+</h3>
+                  <p>ବାର୍ଷିକ ଭକ୍ତ</p>
+                </div>
+              </div>
+              <button class="btn-glow mt-3" onclick="location.href='about.html'" aria-label="ସମ୍ପୂର୍ଣ ଇତିହାସ ଜାଣନ୍ତୁ">ସମ୍ପୂର୍ଣ ଇତିହାସ ଜାଣନ୍ତୁ</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ଦୈନିକ ଦର୍ଶନ ସମୟ -->
+<section class="mb-16">
+    <div class="bg-white rounded-2xl shadow-2xl p-8 md:p-12 border-4" style="border-color: #e65100;">
+        <h2 class="text-4xl font-bold mb-8 text-center" style="color: #c24a00;">
+            🔔 ଦୈନିକ ଦର୍ଶନ ସମୟ
+        </h2>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            <!-- ପ୍ରଭାତୀ ଦର୍ଶନ -->
+            <div class="bg-gradient-to-br from-orange-50 to-yellow-50 rounded-xl p-6 border-2" style="border-color: #e65100;">
+                <div class="text-center mb-4">
+                    
+                    <h3 class="text-2xl font-bold" style="color: #c24a00;">ପ୍ରଭାତୀ ଦର୍ଶନ</h3>
+                </div>
+                <div class="space-y-2 text-center">
+                    <p class="text-xl font-semibold" style="color: #e65100;">ପ୍ରଭାତ ୫:୩୦ – ଦିନ ୧୨:୦୦</p>
+                    <div class="text-sm text-gray-700 space-y-1">
+                        <p>• ମଙ୍ଗଳ ଆରତି: ପ୍ରଭାତ ୬:୦୦</p>
+                        <p>• ଅଭିଷେକ: ପ୍ରଭାତ ୬:୩୦</p>
+                        <p>• ଶୃଙ୍ଗାର ଦର୍ଶନ: ପ୍ରଭାତ ୭:୦୦</p>
+                        <p>• ସାଧାରଣ ଦର୍ଶନ: ପ୍ରଭାତ ୮:୦୦ ପରେ</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ମଧ୍ୟାହ୍ନ ବିରତି -->
+            <div class="bg-gradient-to-br from-orange-50 to-yellow-50 rounded-xl p-6 border-2" style="border-color: #e65100;">
+                <div class="text-center mb-4">
+                    
+                    <h3 class="text-2xl font-bold" style="color: #c24a00;">ମଧ୍ୟାହ୍ନ ବିରତି</h3>
+                </div>
+                <div class="space-y-2 text-center">
+                    <p class="text-xl font-semibold" style="color: #e65100;">ଦିନ ୧୨:୦୦ – ବିକେଳ ୪:୦୦</p>
+                    <div class="text-sm text-gray-700 space-y-1">
+                        <p>• ମନ୍ଦିର ବନ୍ଦ ରହିବ</p>
+                        <p>• ଠାକୁରଙ୍କ ବିଶ୍ରାମ ସମୟ</p>
+                        <p>• ବିଶେଷ ପୂଜା ବ୍ୟବସ୍ଥା ଉପଲବ୍ଧ</p>
+                        <p>• ପୂର୍ବ ଆରକ୍ଷଣ ଆବଶ୍ୟକ</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ସନ୍ଧ୍ୟା ଦର୍ଶନ -->
+            <div class="bg-gradient-to-br from-orange-50 to-yellow-50 rounded-xl p-6 border-2" style="border-color: #e65100;">
+                <div class="text-center mb-4">
+                    
+                    <h3 class="text-2xl font-bold" style="color: #c24a00;">ସନ୍ଧ୍ୟା ଦର୍ଶନ</h3>
+                </div>
+                <div class="space-y-2 text-center">
+                    <p class="text-xl font-semibold" style="color: #e65100;">ବିକେଳ ୪:୦୦ – ରାତି ୯:୦୦</p>
+                    <div class="text-sm text-gray-700 space-y-1">
+                        <p>• ମନ୍ଦିର ପୁନଃ ଖୋଲା: ବିକେଳ ୪:୦୦</p>
+                        <p>• ସନ୍ଧ୍ୟା ଆରତି: ସନ୍ଧ୍ୟା ୭:୦୦</p>
+                        <p>• ଭୋଗ ନିବେଦନ: ରାତି ୮:୦୦</p>
+                        <p>• ଶେଷ ଦର୍ଶନ: ରାତି ୮:୪୫</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ବିଶେଷ ଦିନ -->
+            <div class="bg-gradient-to-br from-red-50 to-orange-50 rounded-xl p-6 border-2" style="border-color: #e65100;">
+                <div class="text-center mb-4">
+                    
+                    <h3 class="text-2xl font-bold" style="color: #c24a00;">ବିଶେଷ ଦିନ</h3>
+                </div>
+                <div class="space-y-2 text-center">
+                    <p class="text-xl font-semibold" style="color: #e65100;">ବିସ୍ତାରିତ ସମୟ</p>
+                    <div class="text-sm text-gray-700 space-y-1">
+                        <p>• ମଙ୍ଗଳବାର: ପ୍ରଭାତ ୫:୦୦ – ରାତି ୧୦:୦୦</p>
+                        <p>• ଶୁକ୍ରବାର: ପ୍ରଭାତ ୫:୦୦ – ରାତି ୧୦:୦୦</p>
+                        <p>• ଅମାବାସ୍ୟା: ପ୍ରଭାତ ୪:୦୦ – ରାତି ୧୧:୦୦</p>
+                        <p>• ପୂର୍ଣ୍ଣିମା: ସମ୍ପୂର୍ଣ୍ଣ ଦିନ ସେବା</p>
+                    </div>
+                </div>
+          
+            </div>
+          
+        </div>
+                <!-- Special Note -->
+          <div class="darshan-note" data-aos="zoom-in">
+            <i class="fas fa-info-circle"></i>
+            <p>ବିଶେଷ ଦିବସ ଏବଂ ଉତ୍ସବଦିନ ସମୟ ପରିବର୍ତ୍ତନଶୀଳ। ଅଧିକ ସୂଚନା ଭକ୍ତ ସେବା ୧୧ ଡାଏଲ କରନ୍ତୁ।</p>
+          </div>
+    </div>
+</section>
+
+
+     
+
+      <!-- Upcoming Event Preview -->
+      <section class="py-5" style="position: relative; overflow: hidden;">
+        <div class="om-element om-section-3" style="top: 20%; left: 5%; opacity: 0.03;" aria-hidden="true">ॐ</div>
+        <div class="om-element om-section-1" style="bottom: 10%; right: 10%; opacity: 0.02;" aria-hidden="true">ॐ</div>
+        <div class="container" style="position: relative; z-index: 1;">
+          <div class="text-center mb-5">
+            <div class="section-subtitle">ଆସନ୍ନ ଦିବ୍ୟ ଅନୁଷ୍ଠାନ</div>
+            <h2 class="section-title">ମହା ଶିବରାତ୍ରି ୨୦୨୫</h2>
+            <div class="divider divider-center"></div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-lg-10">
+              <div class="premium-card text-center p-5" data-aos="flip-up">
+                <i class="fas fa-bell fs-1" style="color: var(--deep-gold);"></i>
+                <h3 class="my-4" style="font-size: 2.5rem; color: var(--dark-maroon);">୧୫ ଫେବୃଆରୀ, ୨୦୨୫</h3>
+                <p class="fs-5 mb-4">୨୪ ଘଣ୍ଟା ନିରନ୍ତର ରୁଦ୍ରାଭିଷେକ, ଅଖଣ୍ଡ ରାମାୟଣ, ସାଂସ୍କୃତିକ ପ୍ରଦର୍ଶନୀ, ମହାପ୍ରସାଦ।</p>
+                <div class="d-flex justify-content-center gap-3">
+                  <span class="badge bg-maroon p-3" style="background-color: var(--dark-maroon);">୨୪ ଘଣ୍ଟା ଅଭିଷେକ</span>
+                  <span class="badge bg-maroon p-3" style="background-color: var(--dark-maroon);">୧୦୦୮ ପୁରୋହିତ</span>
+                  <span class="badge bg-maroon p-3" style="background-color: var(--dark-maroon);">ମୁକ୍ତ ପ୍ରସାଦ</span>
+                </div>
+                <button class="btn-glow mt-5">ସବୁ ଅନୁଷ୍ଠାନ ଦେଖନ୍ତୁ</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Emotional Donation CTA -->
+      <section class="py-5" style="position: relative; overflow: hidden;">
+        <div class="om-element om-section-2" style="top: 15%; right: 5%; opacity: 0.035;" aria-hidden="true">ॐ</div>
+        <div class="om-element om-section-3" style="bottom: 20%; left: 10%; opacity: 0.015;" aria-hidden="true">ॐ</div>
+        <div class="container" style="position: relative; z-index: 1;">
+          <div class="row justify-content-center">
+            <div class="col-lg-11">
+              <div class="bg-maroon text-white p-5 rounded-5 position-relative overflow-hidden" data-aos="zoom-in" style="background: linear-gradient(135deg, var(--dark-maroon) 0%, #7A1E1E 100%);">
+                <div class="position-absolute" style="bottom: 0; right: 0; opacity: 0.1; z-index: 0;">
+                  <i class="fas fa-hand-holding-heart" style="font-size: 200px;"></i>
+                </div>
+                <div class="row align-items-center position-relative" style="z-index: 1;">
+                  <div class="col-md-8">
+                    <span class="badge bg-warning text-dark mb-3">ଅନ୍ନଦାନ ମହାଦାନ</span>
+                    <h2 class="text-white" style="font-size: 2.8rem;">୧୦୦୦+ ଭକ୍ତଙ୍କୁ ପ୍ରତିଦିନ ଖାଇବା ଦିଅ</h2>
+                    <p class="fs-4 text-warning mb-0">ଆପଣଙ୍କ ₹୧୧୦୦ ୫୦ ଜୀବକୁ ଖାଇବାଆ ଦେୟ। ଚିରନ୍ତନ ପୁଣ୍ୟ।</p>
+                    <p class="mt-3 opacity-75">"न हि कल्याणकृत् कश्चित् दुर्गतिं तात गच्छति" — ଭଲ କାଜ କରୁଥିବା କେହି କଦାପି ଦୁଃଖ ଭୋଗ କରନ୍ତି ନାହିଁ।</p>
+                  </div>
+                  <div class="col-md-4 text-md-end mt-4 mt-md-0">
+                    <a href="donation.html"><button class="btn-glow fs-5 px-5 py-3">
+                      <i class="fas fa-seedling me-2"></i>ଅନ୍ନଦାନ ସମର୍ଥନ
+                    </button></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+  <div class="flex flex-col items-center ">
+      <h1
+        class="text-[14px] font-bold lg:text-3xl text-center  lg:my-4 bg-amber-400 mx-auto       lg:mb-12 lg:w-4/5 w-full py-4 ">
+        CELEBRATING YEARS OF DIVINE GRACE: A GLORIOUS GALLERY 
+      </h1>
+
+    </div>
+    <div class="flex justify-center mt-3 mb-10">
+      <div class="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 w-11/12 lg:w-4/5 gap-4 lg:gap-6">
+        
+        <a href="Mike_sir_photos/WhatsApp%20Image%202026-02-14%20at%2014.35.10%20(1).jpeg" data-fancybox="gallery" data-aos="fade-up" data-aos-duration="800" class="gallery-image-wrapper">
+          <img alt="Golden Jubilee Celebration #1" src="Mike_sir_photos/WhatsApp%20Image%202026-02-14%20at%2014.35.10%20(1).jpeg">
+        </a>
+        
+        <a href="Mike_sir_photos/WhatsApp%20Image%202026-02-14%20at%2014.35.10.jpeg" data-fancybox="gallery" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100" class="gallery-image-wrapper">
+          <img alt="Golden Jubilee Celebration #2" src="Mike_sir_photos/WhatsApp%20Image%202026-02-14%20at%2014.35.10.jpeg">
+        </a>
+        
+        <a href="Mike_sir_photos/WhatsApp%20Image%202026-02-14%20at%2014.35.11%20(1).jpeg" data-fancybox="gallery" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200" class="gallery-image-wrapper">
+          <img alt="Golden Jubilee Celebration #3" src="Mike_sir_photos/WhatsApp%20Image%202026-02-14%20at%2014.35.11%20(1).jpeg">
+        </a>
+        
+        <a href="Mike_sir_photos/WhatsApp%20Image%202026-02-14%20at%2014.35.11.jpeg" data-fancybox="gallery" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300" class="gallery-image-wrapper">
+          <img alt="Golden Jubilee Celebration #4" src="Mike_sir_photos/WhatsApp%20Image%202026-02-14%20at%2014.35.11.jpeg">
+        </a>
+        
+        <a href="Mike_sir_photos/WhatsApp%20Image%202026-02-14%20at%2014.35.12.jpeg" data-fancybox="gallery" data-aos="fade-up" data-aos-duration="800" class="gallery-image-wrapper">
+          <img alt="Golden Jubilee Celebration #5" src="Mike_sir_photos/WhatsApp%20Image%202026-02-14%20at%2014.35.12.jpeg">
+        </a>
+        
+        <a href="Mike_sir_photos/WhatsApp%20Image%202026-02-14%20at%2014.35.13%20(1).jpeg" data-fancybox="gallery" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100" class="gallery-image-wrapper">
+          <img alt="Golden Jubilee Celebration #6" src="Mike_sir_photos/WhatsApp%20Image%202026-02-14%20at%2014.35.13%20(1).jpeg">
+        </a>
+        
+        <a href="Mike_sir_photos/WhatsApp%20Image%202026-02-14%20at%2014.35.13.jpeg" data-fancybox="gallery" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200" class="gallery-image-wrapper">
+          <img alt="Golden Jubilee Celebration #7" src="Mike_sir_photos/WhatsApp%20Image%202026-02-14%20at%2014.35.13.jpeg">
+        </a>
+        
+        <a href="Mike_sir_photos/WhatsApp%20Image%202026-02-14%20at%2014.35.14.jpeg" data-fancybox="gallery" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300" class="gallery-image-wrapper">
+          <img alt="Golden Jubilee Celebration #8" src="Mike_sir_photos/WhatsApp%20Image%202026-02-14%20at%2014.35.14.jpeg">
+        </a>
+        
+        <a href="Mike_sir_photos/WhatsApp%20Image%202026-02-14%20at%2014.49.07%20(1).jpeg" data-fancybox="gallery" data-aos="fade-up" data-aos-duration="800" class="gallery-image-wrapper">
+          <img alt="Golden Jubilee Celebration #9" src="Mike_sir_photos/WhatsApp%20Image%202026-02-14%20at%2014.49.07%20(1).jpeg">
+        </a>
+        
+        <a href="Mike_sir_photos/WhatsApp%20Image%202026-02-14%20at%2014.49.07.jpeg" data-fancybox="gallery" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100" class="gallery-image-wrapper">
+          <img alt="Golden Jubilee Celebration #10" src="Mike_sir_photos/WhatsApp%20Image%202026-02-14%20at%2014.49.07.jpeg">
+        </a>
+        
+        <a href="Mike_sir_photos/WhatsApp%20Image%202026-02-14%20at%2014.49.08%20(1).jpeg" data-fancybox="gallery" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200" class="gallery-image-wrapper">
+          <img alt="Golden Jubilee Celebration #11" src="Mike_sir_photos/WhatsApp%20Image%202026-02-14%20at%2014.49.08%20(1).jpeg">
+        </a>
+        
+        <a href="Mike_sir_photos/WhatsApp%20Image%202026-02-14%20at%2014.49.08.jpeg" data-fancybox="gallery" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300" class="gallery-image-wrapper">
+          <img alt="Golden Jubilee Celebration #12" src="Mike_sir_photos/WhatsApp%20Image%202026-02-14%20at%2014.49.08.jpeg">
+        </a>
+        
+        <a href="Mike_sir_photos/WhatsApp%20Image%202026-02-14%20at%2014.49.09%20(1).jpeg" data-fancybox="gallery" data-aos="fade-up" data-aos-duration="800" class="gallery-image-wrapper">
+          <img alt="Golden Jubilee Celebration #13" src="Mike_sir_photos/WhatsApp%20Image%202026-02-14%20at%2014.49.09%20(1).jpeg">
+        </a>
+        
+        <a href="Mike_sir_photos/WhatsApp%20Image%202026-02-14%20at%2014.49.09.jpeg" data-fancybox="gallery" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100" class="gallery-image-wrapper">
+          <img alt="Golden Jubilee Celebration #14" src="Mike_sir_photos/WhatsApp%20Image%202026-02-14%20at%2014.49.09.jpeg">
+        </a>
+        
+        <a href="Mike_sir_photos/WhatsApp%20Image%202026-02-14%20at%2014.49.10%20(1).jpeg" data-fancybox="gallery" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200" class="gallery-image-wrapper">
+          <img alt="Golden Jubilee Celebration #15" src="Mike_sir_photos/WhatsApp%20Image%202026-02-14%20at%2014.49.10%20(1).jpeg">
+        </a>
+        
+        <a href="Mike_sir_photos/WhatsApp%20Image%202026-02-14%20at%2014.49.10.jpeg" data-fancybox="gallery" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300" class="gallery-image-wrapper">
+          <img alt="Golden Jubilee Celebration #16" src="Mike_sir_photos/WhatsApp%20Image%202026-02-14%20at%2014.49.10.jpeg">
+        </a>
+        
+        <a href="Mike_sir_photos/WhatsApp%20Image%202026-02-14%20at%2014.49.11.jpeg" data-fancybox="gallery" data-aos="fade-up" data-aos-duration="800" class="gallery-image-wrapper">
+          <img alt="Golden Jubilee Celebration #17" src="Mike_sir_photos/WhatsApp%20Image%202026-02-14%20at%2014.49.11.jpeg">
+        </a>
+        
+        <a href="Mike_sir_photos/WhatsApp%20Image%202026-02-14%20at%2014.49.12.jpeg" data-fancybox="gallery" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100" class="gallery-image-wrapper">
+          <img alt="Golden Jubilee Celebration #18" src="Mike_sir_photos/WhatsApp%20Image%202026-02-14%20at%2014.49.12.jpeg">
+        </a>
+        
+      </div>
+    </div>
+
+  <!-- Spiritual Footer -->
+    <footer class="text-white py-12" style="background: linear-gradient(135deg, var(--maroon) 0%, #5C0000 100%);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Spiritual Quote Section -->
+            <div class="text-center mb-8 pb-8 border-b border-white/20">
+                <p class="text-2xl font-bold mb-4 text-yellow-200">🕉️ ॐ ସର୍ବେ ଭବନ୍ତୁ ସୁଖିନଃ 🕉️</p>
+                <p class="text-lg italic mb-2">"ସମସ୍ତ ପ୍ରାଣୀ ସୁଖୀ ହୁଅନ୍ତୁ, ସମସ୍ତ ପ୍ରାଣୀ ସୁସ୍ଥ ହୁଅନ୍ତୁ"</p>
+                <p class="text-sm text-white/80">॥ ସର୍ବେ ଭବନ୍ତୁ ସୁଖିନଃ ସର୍ବେ ସନ୍ତୁ ନିରାମୟାଃ ॥</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 flex items-center gap-2">
+                        <span></span>
+                        ମା ଭୁବନେଶ୍ଵରୀ ମନ୍ଦିର
+                    </h3>
+                    <p class="text-white/80 mb-3">ଏକ ପବିତ୍ର ବାସସ୍ଥାନ ଯେଉଁଠାରେ ଦିବ୍ୟତା ବାସ କରେ ଏବଂ ଭକ୍ତମାନେ ଶାନ୍ତି
+                        ପାଆନ୍ତି</p>
+                    <p class="text-yellow-200 italic text-sm">🙏 ଯୁଗ ଯୁଗ ଧରି ଦିବ୍ୟ ସେବା</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-yellow-200">🛕 ପବିତ୍ର ସେବା</h4>
+                    <ul class="space-y-2">
+                        <li><a href="puja.html" class="text-white/80 hover:text-white transition-colors">🙏
+                                ପୂଜା ବୁକିଂ</a></li>
+                        <li><a href="bhoga.html" class="text-white/80 hover:text-white transition-colors">🍯 ପ୍ରସାଦ
+                                ଓ ଭୋଗ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-yellow-200">📿 ଦୈନିକ ମନ୍ତ୍ର</h4>
+                    <ul class="space-y-2 text-white/80 text-sm">
+                        <li>🕉️ ଓମ୍ ନମଃ ଶିବାୟ</li>
+                        <li>🪷 ଓମ୍ ନମୋ ଭଗବତେ</li>
+                        <li>🔱 ହର ହର ମହାଦେବ</li>
+                        <li>🌺 ଜୟ ଶ୍ରୀ ରାମ</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-yellow-200">📞 ଯୋଗାଯୋଗ</h4>
+                    <ul class="space-y-2 text-white/80">
+                        <li>📱 +91 7735514529</li>
+                        <li>📧 blessings@divinetemple.com</li>
+                        <li>📍 ପବିତ୍ର ମନ୍ଦିର ପରିସର</li>
+                        <li class="text-yellow-200 mt-3">🕉️ ପ୍ରତିଦିନ ଖୋଲା: ସକାଳ ୫ - ରାତି ୯</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Divine Blessings Section -->
+            <div class="border-t border-white/20 pt-6 text-center">
+                <p class="text-yellow-200 mb-2">✨ ପ୍ରଭୁଙ୍କ ଆଶୀର୍ବାଦ ଆପଣଙ୍କ ଉପରେ ରହୁ ✨</p>
+                <p class="text-white/80 text-sm mb-4">
+                    "ଧର୍ମୋ ରକ୍ଷତି ରକ୍ଷିତଃ" - ଧର୍ମ ତାକୁ ରକ୍ଷା କରେ ଯିଏ ଧର୍ମକୁ ରକ୍ଷା କରେ
+                </p>
+                <p class="text-white/60 text-xs">
+                    © ୨୦୨୬ ପବିତ୍ର ମନ୍ଦିର | ଭକ୍ତି ଏବଂ ଉତ୍ସର୍ଗୀକୃତ ସହିତ ନିର୍ମିତ 🙏
+                </p>
+            </div>
+        </div>
+    </footer>
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- FLOATING OM ANIMATION JS -->
+  <script src="/floating-omm/floating-om-animation.js"></script>
+
+   <!-- fancybox -->
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.0/dist/fancybox/fancybox.umd.js"></script>
+
+  <script>
+
+    Fancybox.bind("[data-fancybox]", {
+        mainStyle: {
+          "--f-toolbar-padding": "16px 32px",
+          "--f-toolbar-gap": "8px",
+          "--f-button-border-radius": "50%",
+          "--f-thumb-width": "82px",
+          "--f-thumb-height": "82px",
+          "--f-thumb-opacity": "0.5",
+          "--f-thumb-hover-opacity": "1",
+          "--f-thumb-selected-opacity": "1",
+        },
+        Carousel: {
+          Toolbar: {
+            display: {
+              right: ["toggleFull", "close"],
+            },
+          },
+        },
+      });
+    // Initialize AOS
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: false
+    });
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('mainNav');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Mobile menu toggle with Tailwind CSS
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    let isMenuOpen = false;
+
+    if (mobileMenuToggle && mobileMenu) {
+      mobileMenuToggle.addEventListener('click', function() {
+        isMenuOpen = !isMenuOpen;
+        
+        if (isMenuOpen) {
+          // Open menu
+          mobileMenu.classList.remove('translate-x-full');
+          mobileMenu.classList.add('translate-x-0');
+          mobileMenuToggle.classList.add('hamburger-open');
+          document.body.style.overflow = 'hidden';
+        } else {
+          // Close menu
+          mobileMenu.classList.remove('translate-x-0');
+          mobileMenu.classList.add('translate-x-full');
+          mobileMenuToggle.classList.remove('hamburger-open');
+          document.body.style.overflow = '';
+        }
+      });
+
+      // Close mobile menu when clicking on a link
+      const mobileLinks = mobileMenu.querySelectorAll('a');
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          if (isMenuOpen) {
+            mobileMenuToggle.click();
+          }
+        });
+      });
+    }
+  </script>
+</body>
+</html>

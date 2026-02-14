@@ -1,0 +1,710 @@
+/* ============================================
+   Maa Bhubaneswari Temple — Digital Pattachitra
+   Global Stylesheet
+   ============================================ */
+
+/* ---------- Google Fonts ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=Noto+Sans+Oriya:wght@400;500;600;700&display=swap');
+
+/* ---------- CSS Variables ---------- */
+:root {
+    /* Backgrounds */
+    --bg-canvas: #FDF6E3;
+    --bg-paper:  #FFF8DC;
+
+    /* Pattachitra Primary Colors */
+    --pata-red:    #800000;
+    --pata-yellow: #FFC300;
+    --pata-black:  #1A1A1A;
+    --pata-green:  #2E8B57;
+
+    /* Derived */
+    --pata-red-light: #a0302f;
+    --pata-yellow-soft: #ffe58a;
+    --shadow-warm: rgba(128, 0, 0, 0.12);
+
+    /* Typography */
+    --font-eng: 'Cinzel Decorative', 'Cinzel', serif;
+    --font-eng-body: 'Cinzel', serif;
+    --font-odia: 'Noto Sans Oriya', sans-serif;
+
+    /* Layout */
+    --max-width: 1140px;
+    --gutter: 1.5rem;
+    --border-radius: 4px;
+
+    /* Transitions */
+    --ease: cubic-bezier(.4, 0, .2, 1);
+}
+
+/* ---------- Reset ---------- */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-eng-body);
+    background: var(--bg-canvas);
+    color: var(--pata-black);
+    line-height: 1.7;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+img, svg { max-width: 100%; display: block; }
+a { color: var(--pata-red); text-decoration: none; transition: color .25s var(--ease); }
+a:hover { color: var(--pata-green); }
+ul { list-style: none; }
+
+/* ---------- Utility ---------- */
+.container {
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+}
+
+.odia { font-family: var(--font-odia); }
+.sr-only {
+    position: absolute; width: 1px; height: 1px;
+    padding: 0; margin: -1px; overflow: hidden;
+    clip: rect(0,0,0,0); border: 0;
+}
+
+/* ---------- Scroll Container (Talapatra) ---------- */
+.scroll-container {
+    background: var(--bg-paper);
+    border: 3px solid var(--pata-red);
+    border-radius: 6px;
+    position: relative;
+    margin: 2rem auto;
+    padding: 2.5rem 2rem;
+    box-shadow:
+        0 4px 24px var(--shadow-warm),
+        inset 0 0 60px rgba(253, 246, 227, 0.5);
+}
+
+.scroll-container::before,
+.scroll-container::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 40px;
+    background: url('../assets/patterns/border-top.svg') repeat-x center;
+    background-size: auto 40px;
+}
+
+.scroll-container::before { margin-bottom: 1.5rem; }
+.scroll-container::after  { margin-top: 1.5rem; }
+
+/* Corner ornaments */
+.scroll-container .corner {
+    position: absolute;
+    width: 50px; height: 50px;
+    background: url('../assets/patterns/corner.svg') no-repeat center / contain;
+}
+.scroll-container .corner.tl { top: 4px; left: 4px; }
+.scroll-container .corner.tr { top: 4px; right: 4px; transform: scaleX(-1); }
+.scroll-container .corner.bl { bottom: 4px; left: 4px; transform: scaleY(-1); }
+.scroll-container .corner.br { bottom: 4px; right: 4px; transform: scale(-1, -1); }
+
+/* ---------- Section Title ---------- */
+.section-title {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.section-title h1,
+.section-title h2.eng-title {
+    font-family: var(--font-eng);
+    font-weight: 700;
+    color: var(--pata-red);
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    letter-spacing: .04em;
+}
+
+.section-title .odia-subtitle {
+    font-family: var(--font-odia);
+    font-weight: 500;
+    color: var(--pata-black);
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    margin-top: .25rem;
+    opacity: .85;
+}
+
+.section-title .divider {
+    display: block;
+    margin: .75rem auto 0;
+    width: min(300px, 60%);
+}
+
+/* ================================================
+   HEADER / NAVIGATION
+   ================================================ */
+.site-header {
+    background: var(--pata-red);
+    color: var(--bg-paper);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 12px var(--shadow-warm);
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .6rem var(--gutter);
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.logo-group {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+}
+
+.logo-group img {
+    width: 40px;
+    height: 40px;
+    filter: brightness(0) invert(1);
+}
+
+.logo-text {
+    line-height: 1.2;
+}
+
+.logo-text .eng {
+    font-family: var(--font-eng);
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: .03em;
+}
+
+.logo-text .odia {
+    font-family: var(--font-odia);
+    font-size: .85rem;
+    opacity: .85;
+}
+
+/* Desktop Nav */
+.main-nav ul {
+    display: flex;
+    gap: 1.8rem;
+}
+
+.main-nav a {
+    font-family: var(--font-eng-body);
+    color: var(--bg-paper);
+    font-size: .85rem;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    position: relative;
+    padding: .25rem 0;
+    transition: color .25s var(--ease);
+}
+
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 0; height: 2px;
+    background: var(--pata-yellow);
+    transition: width .3s var(--ease);
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: var(--pata-yellow);
+}
+
+.main-nav a:hover::after,
+.main-nav a.active::after {
+    width: 100%;
+}
+
+/* Hamburger */
+.menu-toggle {
+    display: none;
+    background: none; border: none; cursor: pointer;
+    width: 36px; height: 36px; padding: 2px;
+}
+
+.menu-toggle img {
+    width: 100%;
+    filter: brightness(0) invert(1);
+}
+
+/* ================================================
+   HERO
+   ================================================ */
+.hero {
+    text-align: center;
+    padding: 4rem var(--gutter) 3rem;
+    background:
+        linear-gradient(0deg, var(--bg-canvas) 0%, transparent 40%),
+        radial-gradient(ellipse at 50% 20%, var(--pata-yellow-soft) 0%, var(--bg-canvas) 70%);
+}
+
+.hero .om-icon {
+    width: 64px; height: 64px;
+    margin: 0 auto 1rem;
+    opacity: .6;
+}
+
+.hero h1 {
+    font-family: var(--font-eng);
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    color: var(--pata-red);
+    font-weight: 900;
+    letter-spacing: .05em;
+}
+
+.hero .odia-hero {
+    font-family: var(--font-odia);
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    color: var(--pata-black);
+    margin-top: .3rem;
+    font-weight: 600;
+}
+
+.hero .tagline {
+    margin-top: 1rem;
+    font-size: .95rem;
+    color: var(--pata-black);
+    opacity: .75;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.hero .hero-divider {
+    width: min(360px, 70%);
+    margin: 1.5rem auto 0;
+}
+
+/* CTA Buttons */
+.cta-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    padding: .7rem 1.6rem;
+    border-radius: var(--border-radius);
+    font-family: var(--font-eng-body);
+    font-size: .85rem;
+    font-weight: 600;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: 2px solid var(--pata-red);
+    transition: all .3s var(--ease);
+}
+
+.btn-primary {
+    background: var(--pata-red);
+    color: var(--bg-paper);
+}
+
+.btn-primary:hover {
+    background: var(--pata-red-light);
+    color: var(--bg-paper);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--pata-red);
+}
+
+.btn-outline:hover {
+    background: var(--pata-red);
+    color: var(--bg-paper);
+}
+
+.btn img {
+    width: 18px; height: 18px;
+}
+
+/* ================================================
+   INFO CARDS GRID
+   ================================================ */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.info-card {
+    background: var(--bg-paper);
+    border: 2px solid var(--pata-red);
+    border-radius: 6px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+}
+
+.info-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px var(--shadow-warm);
+}
+
+.info-card .card-icon {
+    width: 48px; height: 48px;
+    margin: 0 auto .75rem;
+}
+
+.info-card h3 {
+    font-family: var(--font-eng);
+    color: var(--pata-red);
+    font-size: 1.05rem;
+    margin-bottom: .15rem;
+}
+
+.info-card .card-odia {
+    font-family: var(--font-odia);
+    font-size: .9rem;
+    color: var(--pata-black);
+    opacity: .75;
+    margin-bottom: .75rem;
+}
+
+.info-card p {
+    font-size: .9rem;
+    line-height: 1.6;
+}
+
+.info-card .card-link {
+    display: inline-block;
+    margin-top: .75rem;
+    font-size: .8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: var(--pata-red);
+    border-bottom: 1px solid var(--pata-yellow);
+    padding-bottom: 2px;
+}
+
+.info-card .card-link:hover {
+    color: var(--pata-green);
+    border-color: var(--pata-green);
+}
+
+/* ================================================
+   TABLES (Puja Rates / Timings)
+   ================================================ */
+.pata-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+    font-size: .9rem;
+}
+
+.pata-table thead th {
+    background: var(--pata-red);
+    color: var(--bg-paper);
+    font-family: var(--font-eng-body);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    padding: .75rem 1rem;
+    text-align: left;
+}
+
+.pata-table tbody td {
+    padding: .7rem 1rem;
+    border-bottom: 1px solid rgba(128, 0, 0, 0.15);
+}
+
+.pata-table tbody tr:nth-child(even) {
+    background: rgba(255, 195, 0, 0.06);
+}
+
+.pata-table tbody tr:hover {
+    background: rgba(255, 195, 0, 0.12);
+}
+
+.pata-table .odia-cell {
+    font-family: var(--font-odia);
+    font-size: .85rem;
+    display: block;
+    opacity: .7;
+    margin-top: 2px;
+}
+
+.pata-table .price {
+    font-weight: 700;
+    color: var(--pata-red);
+    white-space: nowrap;
+}
+
+/* ================================================
+   EVENTS / FESTIVAL CARDS
+   ================================================ */
+.festival-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.festival-card {
+    background: var(--bg-paper);
+    border: 2px solid var(--pata-red);
+    border-radius: 6px;
+    padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+}
+
+.festival-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px var(--shadow-warm);
+}
+
+.festival-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 4px; height: 100%;
+    background: var(--pata-yellow);
+}
+
+.festival-card h3 {
+    font-family: var(--font-eng);
+    color: var(--pata-red);
+    font-size: 1.05rem;
+}
+
+.festival-card .fest-odia {
+    font-family: var(--font-odia);
+    font-size: .9rem;
+    opacity: .75;
+    margin-bottom: .5rem;
+}
+
+.festival-card p {
+    font-size: .9rem;
+    line-height: 1.6;
+}
+
+/* ================================================
+   CONTACT / MAP
+   ================================================ */
+.map-wrapper {
+    margin-top: 1.5rem;
+    border: 2px solid var(--pata-red);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.map-wrapper iframe {
+    width: 100%;
+    height: 380px;
+    border: none;
+    display: block;
+}
+
+.contact-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: .75rem;
+}
+
+.contact-item img {
+    width: 28px; height: 28px;
+    flex-shrink: 0;
+    margin-top: 4px;
+}
+
+.contact-item strong {
+    display: block;
+    font-family: var(--font-eng-body);
+    font-size: .9rem;
+    color: var(--pata-red);
+}
+
+.contact-item span {
+    font-size: .85rem;
+    line-height: 1.5;
+}
+
+.contact-item .odia {
+    display: block;
+    font-family: var(--font-odia);
+    opacity: .75;
+    font-size: .82rem;
+}
+
+/* ================================================
+   FOOTER
+   ================================================ */
+.site-footer {
+    margin-top: auto;
+    background: var(--pata-red);
+    color: var(--bg-paper);
+    text-align: center;
+    padding: 1.5rem var(--gutter);
+}
+
+.site-footer .footer-border {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 1rem;
+    filter: brightness(0) invert(1);
+    opacity: .3;
+}
+
+.site-footer p {
+    font-size: .8rem;
+    opacity: .8;
+    line-height: 1.6;
+}
+
+.site-footer .odia {
+    display: block;
+    font-family: var(--font-odia);
+    font-size: .75rem;
+    margin-top: .25rem;
+}
+
+/* ================================================
+   ABOUT PAGE — Deities
+   ================================================ */
+.deity-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.deity-card {
+    background: var(--bg-paper);
+    border: 2px solid var(--pata-red);
+    border-radius: 6px;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.deity-card h3 {
+    font-family: var(--font-eng);
+    color: var(--pata-red);
+    font-size: 1.1rem;
+}
+
+.deity-card .deity-odia {
+    font-family: var(--font-odia);
+    opacity: .75;
+    margin-bottom: .5rem;
+}
+
+.deity-card p {
+    font-size: .9rem;
+    line-height: 1.6;
+}
+
+/* ================================================
+   ANIMATIONS
+   ================================================ */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity .6s var(--ease), transform .6s var(--ease);
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ================================================
+   ABOUT PROSE
+   ================================================ */
+.prose {
+    font-size: .95rem;
+    line-height: 1.8;
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.prose p + p { margin-top: 1rem; }
+
+.prose .odia-block {
+    font-family: var(--font-odia);
+    background: rgba(255, 195, 0, 0.08);
+    border-left: 3px solid var(--pata-yellow);
+    padding: .75rem 1rem;
+    margin-top: 1rem;
+    border-radius: 0 4px 4px 0;
+}
+
+/* ================================================
+   TIMING HIGHLIGHT BOXES
+   ================================================ */
+.timing-highlight {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.timing-box {
+    background: var(--bg-paper);
+    border: 2px solid var(--pata-red);
+    border-radius: 6px;
+    padding: 1rem 1.5rem;
+    text-align: center;
+    min-width: 200px;
+    flex: 1;
+    max-width: 300px;
+}
+
+.timing-box .label {
+    font-family: var(--font-eng-body);
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: var(--pata-red);
+    font-weight: 600;
+}
+
+.timing-box .time {
+    font-family: var(--font-eng);
+    font-size: 1.4rem;
+    color: var(--pata-black);
+    margin-top: .25rem;
+}
+
+.timing-box .odia {
+    font-family: var(--font-odia);
+    font-size: .82rem;
+    opacity: .7;
+}

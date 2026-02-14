@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ମା ଭୁବନେଶ୍ଵରୀ ମନ୍ଦିର | Gallery</title>
+    
+    <!-- TAILWIND CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="gallery_js_css/style.css">
+    <link rel="stylesheet" href="gallery_js_css/mobile.css">
+    <link rel="stylesheet" href="gallery_js_css/gallery.css">
+    
+    <style>
+    :root {
+        --maroon: #5A0E0E;
+    }
+
+    /* Navbar gradient background */
+    .navbar-gradient {
+      background: linear-gradient(135deg, #FF9933 0%, #FFB347 20%, #D4AF37 50%, #FFA500 80%, #FF8C00 100%);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 8px 32px rgba(90, 14, 14, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    }
+
+    .navbar-gradient.scrolled {
+      box-shadow: 0 12px 48px rgba(90, 14, 14, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    }
+
+    /* Logo styling */
+    .logo-img {
+      height: 3.5rem;
+      width: 3.5rem;
+      border-radius: 50%;
+      object-fit: cover;
+      filter: brightness(1.1) contrast(1.2);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .logo-text {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: 1.5rem;
+      color: #FFFFFF;
+      text-shadow: 2px 2px 6px rgba(90, 14, 14, 0.3);
+      letter-spacing: -0.02em;
+    }
+
+    /* Nav links styling */
+    .nav-link-item {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: #FFFFFF;
+      position: relative;
+      padding: 0.625rem 0;
+      letter-spacing: 0.03em;
+      text-shadow: 1px 1px 3px rgba(90, 14, 14, 0.2);
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .nav-link-item::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #FFD700, #FFA500);
+      transition: width 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+    }
+
+    .nav-link-item:hover {
+      color: #FFF8E7;
+      text-shadow: 2px 2px 6px rgba(90, 14, 14, 0.4), 0 0 20px rgba(255, 215, 0, 0.5);
+    }
+
+    .nav-link-item:hover::after {
+      width: 100%;
+    }
+
+    /* Mobile menu toggle */
+    .hamburger-line {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background-color: white;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .hamburger-open .hamburger-line:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 6px);
+    }
+
+    .hamburger-open .hamburger-line:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger-open .hamburger-line:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    /* Mobile menu links */
+    .mobile-nav-link {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1.75rem;
+      color: #FFFFFF;
+      text-shadow: 2px 2px 8px rgba(90, 14, 14, 0.4);
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: block;
+      padding: 0.75rem;
+    }
+
+    .mobile-nav-link:hover {
+      transform: scale(1.1);
+      color: #FFF8E7;
+      text-shadow: 3px 3px 10px rgba(90, 14, 14, 0.6);
+    }
+    </style>
+    
+</head>
+<body>
+  <!-- ========== PREMIUM NAVIGATION - PURE TAILWIND CSS ========== -->
+  <nav class="navbar-gradient fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="mainNav">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between py-4">
+        
+         <!-- Logo -->
+        <a href="home.html" class="flex items-center space-x-3 relative z-40">
+          <img src="assets/logo.jpeg" alt="ମା ଭୁବନେଶ୍ଵରୀ ମନ୍ଦିର" class="logo-img">
+          <span class="logo-text  sm:inline-block">ମା ଭୁବନେଶ୍ଵରୀ</span>
+        </a> 
+
+        <!-- Desktop Navigation -->
+        <div class="hidden lg:flex items-center space-x-8">
+          <a class="nav-link-item" href="index.html">HOME</a>
+          <a class="nav-link-item" href="about.html">ABOUT</a>
+          <a class="nav-link-item" href="puja.html">PUJASEVA</a>
+          <a class="nav-link-item" href="bhoga.html">BHOGO</a>
+          <a class="nav-link-item" href="donation.html">DONATION</a>
+          <a class="nav-link-item" href="event.html">EVENTS</a>
+          <a class="nav-link-item" href="galary.html">GALLERY</a>
+          <a class="nav-link-item" href="contact.html">CONTACT</a>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button 
+          id="mobile-menu-toggle" 
+          class="lg:hidden relative z-50 w-10 h-10 flex flex-col items-center justify-center space-y-1.5 focus:outline-none"
+          aria-label="Toggle menu"
+        >
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div 
+      id="mobile-menu" 
+      class="lg:hidden z-60 fixed inset-0 h-screen bg-gradient-to-br from-orange-600 via-amber-500 to-orange-700 transform translate-x-full transition-transform duration-300 ease-in-out"
+    >
+     
+      <div class="flex flex-col items-center justify-center h-screen space-y-3 px-6 py-4 text-center">
+        <a class="mobile-nav-link" href="index.html">HOME</a>
+        <a class="mobile-nav-link" href="about.html">ABOUT</a>
+        <a class="mobile-nav-link" href="puja.html">PUJASEVA</a>
+        <a class="mobile-nav-link" href="bhoga.html">BHOGO</a>
+        <a class="mobile-nav-link" href="donation.html">DONATION</a>
+        <a class="mobile-nav-link" href="event.html">EVENTS</a>
+        <a class="mobile-nav-link" href="galary.html">GALLERY</a>
+        <a class="mobile-nav-link" href="contact.html">CONTACT</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Add padding to prevent content from being hidden under fixed navbar -->
+  <div style="padding-top: 100px;"></div>
+
+     <!-- ==================== GALLERY ==================== -->
+    <section class="container fade-in">
+        <div class="scroll-container">
+            <span class="corner tl"></span>
+            <span class="corner tr"></span>
+            <span class="corner bl"></span>
+            <span class="corner br"></span>
+
+            <div class="section-title">
+                <h2 class="eng-title">Temple Gallery</h2>
+                <p class="odia-subtitle">ମନ୍ଦିର ଗ୍ୟାଲେରୀ</p>
+                <img src="assets/patterns/divider.svg" alt="" class="divider">
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">ALL</button>
+                <button class="filter-btn" data-filter="temple">Temple</button>
+                <button class="filter-btn" data-filter="god">God</button>
+                <button class="filter-btn" data-filter="festival">Festival</button>
+                <button class="filter-btn" data-filter="rituals">Rituals</button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="gallery-grid">
+                <!-- Temple Images -->
+                <div class="gallery-item" data-category="temple" data-index="1">
+                    <img src="temple-gallery/Temple/Temple2.jpeg" alt="Temple Architecture">
+                    <div class="gallery-actions">
+                        <button class="action-btn view-btn" onclick="viewPhoto('temple-gallery/Temple/Temple2.jpeg')">View</button>
+                        <button class="action-btn download-btn" onclick="downloadPhoto('temple-gallery/Temple/Temple2.jpeg', 'Temple-Front-Gate.jpeg')">Download</button>
+                        <button class="action-btn lang-toggle-btn" onclick="toggleLang(this)">ଓଡ଼ିଆ</button>
+                    </div>
+                    <div class="gallery-description">
+                        <p class="desc-en">The Front Gate is the main entrance of the temple, welcoming devotees with divine presence and architectural elegance. It represents devotion and respect. Devotees pass through this gate with pure hearts to receive blessings, peace, and prosperity from the Goddess.</p>
+                        <p class="desc-od" style="display:none;">ମୁଖ୍ୟ ଦ୍ୱାର ମନ୍ଦିରର ପ୍ରଧାନ ପ୍ରବେଶ ଦ୍ୱାର, ଯାହା ଦେବତାଙ୍କୁ ଦେବୀ ଉପସ୍ଥିତି ଓ ସ୍ଥାପତ୍ୟ ସୁନ୍ଦରତା ସହିତ ସ୍ୱାଗତ କରେ। ଏହା ଭକ୍ତି ଓ ସମ୍ମାନର ପ୍ରତୀକ। ଭକ୍ତମାନେ ଶୁଦ୍ଧ ହୃଦୟରେ ଏହି ଦ୍ୱାର ଦିୟେ ଯାଇ ଦେବୀଙ୍କ ଆଶୀର୍ବାଦ, ଶାନ୍ତି ଓ ସମୃଦ୍ଧି ପ୍ରାପ୍ତ କରନ୍ତି।</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="temple" data-index="2">
+                    <img src="temple-gallery/Temple/Temple3.jpeg" alt="Temple">
+                    <div class="gallery-actions">
+                        <button class="action-btn view-btn" onclick="viewPhoto('temple-gallery/Temple/Temple3.jpeg')">View</button>
+                        <button class="action-btn download-btn" onclick="downloadPhoto('temple-gallery/Temple/Temple3.jpeg', 'Temple-East-Gate.jpeg')">Download</button>
+                        <button class="action-btn lang-toggle-btn" onclick="toggleLang(this)">ଓଡ଼ିଆ</button>
+                    </div>
+                    <div class="gallery-description">
+                        <p class="desc-en">The East Gate is considered highly sacred as it faces the rising sun, symbolizing positivity and new beginnings. Devotees entering from this gate believe it brings spiritual energy, hope, and divine blessings from Maa Bhubaneswari.</p>
+                        <p class="desc-od" style="display:none;">ପୂର୍ବ ଦ୍ୱାର ଅତ୍ୟନ୍ତ ପବିତ୍ର ବଲି ବିଚାରିତ କାରଣ ଏହା ଉଦୟାଚଳ ସୂର୍ଯ୍ୟକୁ ମୁହଁ କରିଥାଏ, ଯାହା ସକାରାତ୍ମକତା ଓ ନୂତନ ଆରମ୍ଭର ପ୍ରତୀକ। ଏହି ଦ୍ୱାର ଦିୟେ ପ୍ରବେଶ କରୁଥିବା ଭକ୍ତମାନେ ବିଶ୍ୱାସ କରନ୍ତି ଯେ ଏହା ଆଧ୍ୟାତ୍ମିକ ଶକ୍ତି, ଆଶା ଓ ମାଁ ଭୁବନେଶ୍ୱରୀଙ୍କ ଦେବୀ ଆଶୀର୍ବାଦ ଆଣିଥାଏ।</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="temple" data-index="3">
+                    <img src="temple-gallery/Temple/Temple4.jpeg" alt="Temple">
+                    <div class="gallery-actions">
+                        <button class="action-btn view-btn" onclick="viewPhoto('temple-gallery/Temple/Temple4.jpeg')">View</button>
+                        <button class="action-btn download-btn" onclick="downloadPhoto('temple-gallery/Temple/Temple4.jpeg', 'Temple-South-Gate.jpeg')">Download</button>
+                        <button class="action-btn lang-toggle-btn" onclick="toggleLang(this)">ଓଡ଼ିଆ</button>
+                    </div>
+                    <div class="gallery-description">
+                        <p class="desc-en">The South Gate of Maa Bhubaneswari Temple is an important entrance for devotees. It reflects traditional temple architecture and spiritual beauty. Devotees enter with faith and devotion, seeking the blessings of Maa Bhubaneswari for strength, protection, and peace in their lives.</p>
+                        <p class="desc-od" style="display:none;">ଦକ୍ଷିଣ ଦ୍ୱାର ମାଁ ଭୁବନେଶ୍ୱରୀ ମନ୍ଦିରର ଏକ ଗୁରୁତ୍ୱପୂର୍ଣ୍ଣ ପ୍ରବେଶ ଦ୍ୱାର। ଏହା ପାରମ୍ପରିକ ମନ୍ଦିର ସ୍ଥାପତ୍ୟ ଓ ଆଧ୍ୟାତ୍ମିକ ସୁନ୍ଦରତାର ପ୍ରତିଫଳନ କରେ। ଭକ୍ତମାନେ ବିଶ୍ୱାସ ଓ ଭକ୍ତି ସହିତ ପ୍ରବେଶ କରି ମାଁ ଭୁବନେଶ୍ୱରୀଙ୍କ ଶକ୍ତି, ସୁରକ୍ଷା ଓ ଶାନ୍ତିର ଆଶୀର୍ବାଦ ପାଇଁ ଅନୁରୋଧ କରନ୍ତି।</p>
+                    </div>
+                </div>
+
+                <!-- God Images -->
+                <div class="gallery-item" data-category="god" data-index="4">
+                    <img src="temple-gallery/God/God1.jpeg" alt="Deity">
+                    <div class="gallery-actions">
+                        <button class="action-btn view-btn" onclick="viewPhoto('temple-gallery/God/God1.jpeg')">View</button>
+                        <button class="action-btn download-btn" onclick="downloadPhoto('temple-gallery/God/God1.jpeg', 'Maa-Bhubaneswari.jpeg')">Download</button>
+                        <button class="action-btn lang-toggle-btn" onclick="toggleLang(this)">ଓଡ଼ିଆ</button>
+                    </div>
+                    <div class="gallery-description">
+                        <p class="desc-en">Maa Bhubaneswari is a powerful form of Goddess Shakti. She represents creation, protection, and compassion. Devotees worship her for strength, prosperity, wisdom, and spiritual peace. She blesses devotees with divine energy and guidance.</p>
+                        <p class="desc-od" style="display:none;">ମାଁ ଭୁବନେଶ୍ୱରୀ ଦେବୀ ଶକ୍ତିର ଏକ ଶକ୍ତିଶାଳୀ ରୂପ। ସେ ସୃଷ୍ଟି, ସୁରକ୍ଷା ଓ କରୁଣାର ପ୍ରତୀକ। ଭକ୍ତମାନେ ଶକ୍ତି, ସମୃଦ୍ଧି, ଜ୍ଞାନ ଓ ଆଧ୍ୟାତ୍ମିକ ଶାନ୍ତି ପାଇଁ ତାଙ୍କୁ ପୂଜା କରନ୍ତି। ସେ ଭକ୍ତମାନଙ୍କୁ ଦେବୀ ଶକ୍ତି ଓ ମାର୍ଗଦର୍ଶନ ଦେଇଥାନ୍ତି।</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="god" data-index="5">
+                    <img src="temple-gallery/God/God2.jpeg" alt="Deity">
+                    <div class="gallery-actions">
+                        <button class="action-btn view-btn" onclick="viewPhoto('temple-gallery/God/God2.jpeg')">View</button>
+                        <button class="action-btn download-btn" onclick="downloadPhoto('temple-gallery/God/God2.jpeg', 'Lord-Rama.jpeg')">Download</button>
+                        <button class="action-btn lang-toggle-btn" onclick="toggleLang(this)">ଓଡ଼ିଆ</button>
+                    </div>
+                    <div class="gallery-description">
+                        <p class="desc-en">Lord Rama, Lakshmana, and Sita represent truth, duty, and devotion. They symbolize righteousness and ideal family values. Devotees worship them for peace, protection, and moral strength.</p>
+                        <p class="desc-od" style="display:none;">ଭଗବାନ ରାମ, ଲକ୍ଷ୍ମଣ ଓ ସୀତା ସତ୍ୟ, କର୍ତ୍ତବ୍ୟ ଓ ଭକ୍ତିର ପ୍ରତୀକ। ସେମାନେ ଧର୍ମ ଓ ଆଦର୍ଶ ପାରିବାରିକ ମୂଲ୍ୟବୋଧର ପ୍ରତୀକ। ଭକ୍ତମାନେ ଶାନ୍ତି, ସୁରକ୍ଷା ଓ ନୈତିକ ଶକ୍ତି ପାଇଁ ତାଙ୍କୁ ପୂଜା କରନ୍ତି।</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="god" data-index="6">
+                    <img src="temple-gallery/God/God3.jpeg" alt="Deity">
+                    <div class="gallery-actions">
+                        <button class="action-btn view-btn" onclick="viewPhoto('temple-gallery/God/God3.jpeg')">View</button>
+                        <button class="action-btn download-btn" onclick="downloadPhoto('temple-gallery/God/God3.jpeg', 'Lord-Shiva.jpeg')">Download</button>
+                        <button class="action-btn lang-toggle-btn" onclick="toggleLang(this)">ଓଡ଼ିଆ</button>
+                    </div>
+                    <div class="gallery-description">
+                        <p class="desc-en">Lord Shiva is the Supreme God of transformation and destruction in Hinduism. He represents meditation, wisdom, and cosmic power. Devotees worship him for inner peace, strength, protection, and liberation from negativity and ignorance.</p>
+                        <p class="desc-od" style="display:none;">ଭଗବାନ ଶିବ ହିନ୍ଦୁ ଧର୍ମରେ ପରିବର୍ତ୍ତନ ଓ ବିନାଶର ସର୍ବୋଚ୍ଚ ଦେବତା। ସେ ଧ୍ୟାନ, ଜ୍ଞାନ ଓ ବ୍ରହ୍ମାଣ୍ଡ ଶକ୍ତିର ପ୍ରତୀକ। ଭକ୍ତମାନେ ଅନ୍ତର୍ମୁଖୀ ଶାନ୍ତି, ଶକ୍ତି, ସୁରକ୍ଷା ଓ ନକାରାତ୍ମକତା ଓ ଅଜ୍ଞାନତାରୁ ମୁକ୍ତି ପାଇଁ ତାଙ୍କୁ ପୂଜା କରନ୍ତି।</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="god" data-index="7">
+                    <img src="temple-gallery/God/God4.jpeg" alt="Deity">
+                    <div class="gallery-actions">
+                        <button class="action-btn view-btn" onclick="viewPhoto('temple-gallery/God/God4.jpeg')">View</button>
+                        <button class="action-btn download-btn" onclick="downloadPhoto('temple-gallery/God/God4.jpeg', 'Lord-Jagannatha.jpeg')">Download</button>
+                        <button class="action-btn lang-toggle-btn" onclick="toggleLang(this)">ଓଡ଼ିଆ</button>
+                    </div>
+                    <div class="gallery-description">
+                        <p class="desc-en">Lord Jagannatha, Balabhadra, and Subhadra symbolize unity, love, and divine protection. They are worshipped for happiness, peace, and prosperity. Devotees seek their blessings for spiritual growth and protection</p>
+                        <p class="desc-od" style="display:none;">ଭଗବାନ ଜଗନ୍ନାଥ, ବଳଭଦ୍ର ଓ ସୁଭଦ୍ରା ଏକତା, ପ୍ରେମ ଓ ଦେବୀ ସୁରକ୍ଷାର ପ୍ରତୀକ। ସେମାନଙ୍କୁ ସୁଖ, ଶାନ୍ତି ଓ ସମୃଦ୍ଧି ପାଇଁ ପୂଜା କରାଯାଏ। ଭକ୍ତମାନେ ଆଧ୍ୟାତ୍ମିକ ଉନ୍ନତି ଓ ସୁରକ୍ଷା ପାଇଁ ତାଙ୍କ ଆଶୀର୍ବାଦ ଅନୁରୋଧ କରନ୍ତି।</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="god" data-index="8">
+                    <img src="temple-gallery/God/God5.jpeg" alt="Deity">
+                    <div class="gallery-actions">
+                        <button class="action-btn view-btn" onclick="viewPhoto('temple-gallery/God/God5.jpeg')">View</button>
+                        <button class="action-btn download-btn" onclick="downloadPhoto('temple-gallery/God/God5.jpeg', 'Lord-Hanuman.jpeg')">Download</button>
+                        <button class="action-btn lang-toggle-btn" onclick="toggleLang(this)">ଓଡ଼ିଆ</button>
+                    </div>
+                    <div class="gallery-description">
+                        <p class="desc-en">Lord Hanuman is the symbol of strength, devotion, and loyalty. He is a devoted follower of Lord Rama. Devotees worship him for courage, protection, success, and removal of obstacles.</p>
+                        <p class="desc-od" style="display:none;">ଭଗବାନ ହନୁମାନ ଶକ୍ତି, ଭକ୍ତି ଓ ନିଷ୍ଠାର ପ୍ରତୀକ। ସେ ଭଗବାନ ରାମଙ୍କର ଏକ ନିଷ୍ଠାବାନ ଅନୁଗାମୀ। ଭକ୍ତମାନେ ସାହସ, ସୁରକ୍ଷା, ସଫଳତା ଓ ବାଧା ଦୂରୀକରଣ ପାଇଁ ତାଙ୍କୁ ପୂଜା କରନ୍ତି।</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="god" data-index="9">
+                    <img src="temple-gallery/God/God6.jpeg" alt="Deity">
+                    <div class="gallery-actions">
+                        <button class="action-btn view-btn" onclick="viewPhoto('temple-gallery/God/God6.jpeg')">View</button>
+                        <button class="action-btn download-btn" onclick="downloadPhoto('temple-gallery/God/God6.jpeg', 'Goddess-Lakshmi.jpeg')">Download</button>
+                        <button class="action-btn lang-toggle-btn" onclick="toggleLang(this)">ଓଡ଼ିଆ</button>
+                    </div>
+                    <div class="gallery-description">
+                        <p class="desc-en">Goddess Lakshmi and Lord Narayana symbolize wealth, prosperity, and protection. They bless devotees with financial stability, happiness, and spiritual growth. Their worship brings success, peace, and divine blessings.</p>
+                        <p class="desc-od" style="display:none;">ଦେବୀ ଲକ୍ଷ୍ମୀ ଓ ଭଗବାନ ନାରାୟଣ ଧନ, ସମୃଦ୍ଧି ଓ ସୁରକ୍ଷାର ପ୍ରତୀକ। ସେମାନେ ଭକ୍ତମାନଙ୍କୁ ଆର୍ଥିକ ସ୍ଥିରତା, ସୁଖ ଓ ଆଧ୍ୟାତ୍ମିକ ଉନ୍ନତିର ଆଶୀର୍ବାଦ ଦେଇଥାନ୍ତି। ତାଙ୍କ ପୂଜା ସଫଳତା, ଶାନ୍ତି ଓ ଦେବୀ ଆଶୀର୍ବାଦ ଆଣିଥାଏ।</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="god" data-index="10">
+                    <img src="temple-gallery/God/God7.jpeg" alt="Deity">
+                    <div class="gallery-actions">
+                        <button class="action-btn view-btn" onclick="viewPhoto('temple-gallery/God/God7.jpeg')">View</button>
+                        <button class="action-btn download-btn" onclick="downloadPhoto('temple-gallery/God/God7.jpeg', 'Goddess-Parvati.jpeg')">Download</button>
+                        <button class="action-btn lang-toggle-btn" onclick="toggleLang(this)">ଓଡ଼ିଆ</button>
+                    </div>
+                    <div class="gallery-description">
+                        <p class="desc-en">Goddess Parvati is the divine mother and symbol of love, devotion, and nurturing strength. She represents Shakti, the cosmic energy. Devotees pray to her for family harmony, courage, prosperity, and spiritual growth.</p>
+                        <p class="desc-od" style="display:none;">ଦେବୀ ପାର୍ବତୀ ଦେବୀ ମାତା ଓ ପ୍ରେମ, ଭକ୍ତି ଓ ପୋଷଣ ଶକ୍ତିର ପ୍ରତୀକ। ସେ ଶକ୍ତି, ବ୍ରହ୍ମାଣ୍ଡ ଶକ୍ତିର ପ୍ରତିନିଧିତ୍ୱ କରନ୍ତି। ଭକ୍ତମାନେ ପାରିବାରିକ ସଦ୍ଭାବ, ସାହସ, ସମୃଦ୍ଧି ଓ ଆଧ୍ୟାତ୍ମିକ ଉନ୍ନତି ପାଇଁ ତାଙ୍କୁ ପ୍ରାର୍ଥନା କରନ୍ତି।</p>
+                    </div>
+                </div>
+
+                <!-- Festival Images -->
+                <div class="gallery-item" data-category="festival" data-index="11">
+                    <img src="temple-gallery/Festival/pana-sankranti.jpg" alt="Pana Sankranti">
+                    <div class="gallery-actions">
+                        <button class="action-btn view-btn" onclick="viewPhoto('temple-gallery/Festival/pana-sankranti.jpg')">View</button>
+                        <button class="action-btn download-btn" onclick="downloadPhoto('temple-gallery/Festival/pana-sankranti.jpg', 'Pana-Sankranti.jpg')">Download</button>
+                        <button class="action-btn lang-toggle-btn" onclick="toggleLang(this)">ଓଡ଼ିଆ</button>
+                    </div>
+                    <div class="gallery-description">
+                        <p class="desc-en">Pana Sankranti marks the Odia New Year and is celebrated at Maa Bhubaneswari Temple with special prayers and offerings. Devotees offer traditional pana drink to the Goddess. The festival symbolizes new beginnings, prosperity, and gratitude, bringing spiritual positivity and blessings to devotees.</p>
+                        <p class="desc-od" style="display:none;">ପଣା ସଂକ୍ରାନ୍ତି ଓଡ଼ିଆ ନୂଆ ବର୍ଷକୁ ଚିହ୍ନିତ କରେ ଓ ମାଁ ଭୁବନେଶ୍ୱରୀ ମନ୍ଦିରରେ ବିଶେଷ ପୂଜା ଓ ଉପଚାର ସହିତ ଉଦ୍ଯାପିତ ହୁଏ। ଭକ୍ତମାନେ ଦେବୀଙ୍କୁ ପାରମ୍ପରିକ ପଣା ପାନୀୟ ଉପଚାର ଦେଇଥାନ୍ତି। ଏହି ପର୍ବ ନୂତନ ଆରମ୍ଭ, ସମୃଦ୍ଧି ଓ କୃତଜ୍ଞତାର ପ୍ରତୀକ, ଯାହା ଭକ୍ତମାନଙ୍କୁ ଆଧ୍ୟାତ୍ମିକ ସକାରାତ୍ମକତା ଓ ଆଶୀର୍ବାଦ ଆଣିଥାଏ।</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="festival" data-index="12">
+                    <img src="temple-gallery/Festival/Rathyatra.jpg" alt="Ratha Yatra">
+                    <div class="gallery-actions">
+                        <button class="action-btn view-btn" onclick="viewPhoto('temple-gallery/Festival/Rathyatra.jpg')">View</button>
+                        <button class="action-btn download-btn" onclick="downloadPhoto('temple-gallery/Festival/Rathyatra.jpg', 'Ratha-Yatra.jpg')">Download</button>
+                        <button class="action-btn lang-toggle-btn" onclick="toggleLang(this)">ଓଡ଼ିଆ</button>
+                    </div>
+                    <div class="gallery-description">
+                        <p class="desc-en">Rath Yatra celebrates the divine journey of Lord Jagannatha, Lord Balabhadra, and Devi Subhadra. Devotees offer prayers and participate in special temple rituals. The festival symbolizes devotion, unity, and surrender to God. People seek blessings for protection, happiness, and spiritual growth during this sacred celebration.</p>
+                        <p class="desc-od" style="display:none;">ରଥଯାତ୍ରା ଭଗବାନ ଜଗନ୍ନାଥ, ଭଗବାନ ବଳଭଦ୍ର ଓ ଦେବୀ ସୁଭଦ୍ରାଙ୍କ ଦେବୀ ଯାତ୍ରାକୁ ଉଦ୍ଯାପନ କରେ। ଭକ୍ତମାନେ ପ୍ରାର୍ଥନା କରନ୍ତି ଓ ମନ୍ଦିରର ବିଶେଷ ଅନୁଷ୍ଠାନରେ ଅଂଶଗ୍ରହଣ କରନ୍ତି। ଏହି ପର୍ବ ଭକ୍ତି, ଏକତା ଓ ଈଶ୍ୱରଙ୍କ ପ୍ରତି ଆତ୍ମସମର୍ପଣର ପ୍ରତୀକ। ଲୋକମାନେ ଏହି ପବିତ୍ର ଉଦ୍ଯାପନ ସମୟରେ ସୁରକ୍ଷା, ସୁଖ ଓ ଆଧ୍ୟାତ୍ମିକ ଉନ୍ନତି ପାଇଁ ଆଶୀର୍ବାଦ ଅନୁରୋଧ କରନ୍ତି।</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="festival" data-index="13">
+                    <img src="temple-gallery/Festival/Shivratri.jpg" alt="Maha Shivaratri">
+                    <div class="gallery-actions">
+                        <button class="action-btn view-btn" onclick="viewPhoto('temple-gallery/Festival/Shivratri.jpg')">View</button>
+                        <button class="action-btn download-btn" onclick="downloadPhoto('temple-gallery/Festival/Shivratri.jpg', 'Maha-Shivaratri.jpg')">Download</button>
+                        <button class="action-btn lang-toggle-btn" onclick="toggleLang(this)">ଓଡ଼ିଆ</button>
+                    </div>
+                    <div class="gallery-description">
+                        <p class="desc-en">Maha Shivratri is celebrated with great devotion at Maa Bhubaneswari Temple. Devotees observe fasting, offer prayers, and perform special rituals. The temple is beautifully decorated, and devotees chant sacred mantras. This festival symbolizes spiritual growth, devotion, and seeking blessings for peace, strength, and prosperity.</p>
+                        <p class="desc-od" style="display:none;">ମହା ଶିବରାତ୍ରି ମାଁ ଭୁବନେଶ୍ୱରୀ ମନ୍ଦିରରେ ଅତ୍ୟନ୍ତ ଭକ୍ତି ସହିତ ଉଦ୍ଯାପିତ ହୁଏ। ଭକ୍ତମାନେ ଉପବାସ କରନ୍ତି, ପ୍ରାର୍ଥନା କରନ୍ତି ଓ ବିଶେଷ ଅନୁଷ୍ଠାନ କରନ୍ତି। ମନ୍ଦିର ସୁନ୍ଦର ଭାବରେ ସଜ୍ଜିତ ହୁଏ ଓ ଭକ୍ତମାନେ ପବିତ୍ର ମନ୍ତ୍ର ଉଚ୍ଚାରଣ କରନ୍ତି। ଏହି ପର୍ବ ଆଧ୍ୟାତ୍ମିକ ଉନ୍ନତି, ଭକ୍ତି ଓ ଶାନ୍ତି, ଶକ୍ତି ଓ ସମୃଦ୍ଧିର ଆଶୀର୍ବାଦ ପାଇଁ ଅନୁରୋଧର ପ୍ରତୀକ।</p>
+                    </div>
+                </div>
+
+                <!-- Rituals Images -->
+                <div class="gallery-item" data-category="rituals" data-index="14">
+                    <img src="temple-gallery/Ritual/Ritual1.jpeg" alt="Ritual">
+                    <div class="gallery-actions">
+                        <button class="action-btn view-btn" onclick="viewPhoto('temple-gallery/Ritual/Ritual1.jpeg')">View</button>
+                        <button class="action-btn download-btn" onclick="downloadPhoto('temple-gallery/Ritual/Ritual1.jpeg', 'Temple-Ritual-1.jpeg')">Download</button>
+                        <button class="action-btn lang-toggle-btn" onclick="toggleLang(this)">ଓଡ଼ିଆ</button>
+                    </div>
+                    <div class="gallery-description">
+                        <p class="desc-en">Daily temple rituals and worship ceremonies</p>
+                        <p class="desc-od" style="display:none;">ଦୈନିକ ମନ୍ଦିର ଅନୁଷ୍ଠାନ ଓ ପୂଜା ଉପଚାର</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="rituals" data-index="15">
+                    <img src="temple-gallery/Ritual/Ritual2.jpeg" alt="Ritual">
+                    <div class="gallery-actions">
+                        <button class="action-btn view-btn" onclick="viewPhoto('temple-gallery/Ritual/Ritual2.jpeg')">View</button>
+                        <button class="action-btn download-btn" onclick="downloadPhoto('temple-gallery/Ritual/Ritual2.jpeg', 'Temple-Ritual-2.jpeg')">Download</button>
+                        <button class="action-btn lang-toggle-btn" onclick="toggleLang(this)">ଓଡ଼ିଆ</button>
+                    </div>
+                    <div class="gallery-description">
+                        <p class="desc-en">Sacred temple rituals and offerings</p>
+                        <p class="desc-od" style="display:none;">ପବିତ୍ର ମନ୍ଦିର ଅନୁଷ୍ଠାନ ଓ ଉପଚାର</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="rituals" data-index="16">
+                    <img src="temple-gallery/Ritual/Ritual3.jpeg" alt="Ritual">
+                    <div class="gallery-actions">
+                        <button class="action-btn view-btn" onclick="viewPhoto('temple-gallery/Ritual/Ritual3.jpeg')">View</button>
+                        <button class="action-btn download-btn" onclick="downloadPhoto('temple-gallery/Ritual/Ritual3.jpeg', 'Temple-Ritual-3.jpeg')">Download</button>
+                        <button class="action-btn lang-toggle-btn" onclick="toggleLang(this)">ଓଡ଼ିଆ</button>
+                    </div>
+                    <div class="gallery-description">
+                        <p class="desc-en">Traditional worship and prayer ceremonies</p>
+                        <p class="desc-od" style="display:none;">ପାରମ୍ପରିକ ପୂଜା ଓ ପ୍ରାର୍ଥନା ଉପଚାର</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Show More/Less Button -->
+            <div class="show-more-container">
+                <button class="btn btn-primary" id="showMoreBtn">Show All</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Spiritual Footer -->
+    <footer class="text-white py-12" style="background: linear-gradient(135deg, var(--maroon) 0%, #5C0000 100%);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Spiritual Quote Section -->
+            <div class="text-center mb-8 pb-8 border-b border-white/20">
+                <p class="text-2xl font-bold mb-4 text-yellow-200">🕉️ ॐ ସର୍ବେ ଭବନ୍ତୁ ସୁଖିନଃ 🕉️</p>
+                <p class="text-lg italic mb-2">"ସମସ୍ତ ପ୍ରାଣୀ ସୁଖୀ ହୁଅନ୍ତୁ, ସମସ୍ତ ପ୍ରାଣୀ ସୁସ୍ଥ ହୁଅନ୍ତୁ"</p>
+                <p class="text-sm text-white/80">॥ ସର୍ବେ ଭବନ୍ତୁ ସୁଖିନଃ ସର୍ବେ ସନ୍ତୁ ନିରାମୟାଃ ॥</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 flex items-center gap-2">
+                        <span>🕉️</span>
+                        ପବିତ୍ର ମନ୍ଦିର
+                    </h3>
+                    <p class="text-white/80 mb-3">ଏକ ପବିତ୍ର ବାସସ୍ଥାନ ଯେଉଁଠାରେ ଦିବ୍ୟତା ବାସ କରେ ଏବଂ ଭକ୍ତମାନେ ଶାନ୍ତି
+                        ପାଆନ୍ତି</p>
+                    <p class="text-yellow-200 italic text-sm">🙏 ଯୁଗ ଯୁଗ ଧରି ଦିବ୍ୟ ସେବା</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-yellow-200">🛕 ପବିତ୍ର ସେବା</h4>
+                    <ul class="space-y-2">
+                        <li><a href="pooja-booking.html" class="text-white/80 hover:text-white transition-colors">🙏
+                                ପୂଜା ବୁକିଂ</a></li>
+                        <li><a href="offerings.html" class="text-white/80 hover:text-white transition-colors">🍯 ପ୍ରସାଦ
+                                ଓ ଭୋଗ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-yellow-200">📿 ଦୈନିକ ମନ୍ତ୍ର</h4>
+                    <ul class="space-y-2 text-white/80 text-sm">
+                        <li>🕉️ ଓମ୍ ନମଃ ଶିବାୟ</li>
+                        <li>🪷 ଓମ୍ ନମୋ ଭଗବତେ</li>
+                        <li>🔱 ହର ହର ମହାଦେବ</li>
+                        <li>🌺 ଜୟ ଶ୍ରୀ ରାମ</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-yellow-200">📞 ଯୋଗାଯୋଗ</h4>
+                    <ul class="space-y-2 text-white/80">
+                        <li>📱 +91 7735514529</li>
+                        <li>📧 blessings@divinetemple.com</li>
+                        <li>📍 ପବିତ୍ର ମନ୍ଦିର ପରିସର</li>
+                        <li class="text-yellow-200 mt-3">🕉️ ପ୍ରତିଦିନ ଖୋଲା: ସକାଳ ୫ - ରାତି ୯</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Divine Blessings Section -->
+            <div class="border-t border-white/20 pt-6 text-center">
+                <p class="text-yellow-200 mb-2">✨ ପ୍ରଭୁଙ୍କ ଆଶୀର୍ବାଦ ଆପଣଙ୍କ ଉପରେ ରହୁ ✨</p>
+                <p class="text-white/80 text-sm mb-4">
+                    "ଧର୍ମୋ ରକ୍ଷତି ରକ୍ଷିତଃ" - ଧର୍ମ ତାକୁ ରକ୍ଷା କରେ ଯିଏ ଧର୍ମକୁ ରକ୍ଷା କରେ
+                </p>
+                <p class="text-white/60 text-xs">
+                    © ୨୦୨୬ ପବିତ୍ର ମନ୍ଦିର | ଭକ୍ତି ଏବଂ ଉତ୍ସର୍ଗୀକୃତ ସହିତ ନିର୍ମିତ 🙏
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="gallery_js_css/main.js"></script>
+    <script src="gallery_js_css/gallery.js"></script>
+    
+    <script>
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('mainNav');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Mobile menu toggle with Tailwind CSS
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    let isMenuOpen = false;
+
+    if (mobileMenuToggle && mobileMenu) {
+      mobileMenuToggle.addEventListener('click', function() {
+        isMenuOpen = !isMenuOpen;
+        
+        if (isMenuOpen) {
+          // Open menu
+          mobileMenu.classList.remove('translate-x-full');
+          mobileMenu.classList.add('translate-x-0');
+          mobileMenuToggle.classList.add('hamburger-open');
+          document.body.style.overflow = 'hidden';
+        } else {
+          // Close menu
+          mobileMenu.classList.remove('translate-x-0');
+          mobileMenu.classList.add('translate-x-full');
+          mobileMenuToggle.classList.remove('hamburger-open');
+          document.body.style.overflow = '';
+        }
+      });
+
+      // Close mobile menu when clicking on a link
+      const mobileLinks = mobileMenu.querySelectorAll('a');
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          if (isMenuOpen) {
+            mobileMenuToggle.click();
+          }
+        });
+      });
+    }
+    </script>
+</body>
+</html>

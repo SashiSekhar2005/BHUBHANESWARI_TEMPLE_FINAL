@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pooja Booking - Divine Temple</title>
+    <meta name="description"
+        content="Book sacred poojas and rituals at our divine temple. Choose from various vedic ceremonies.">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- TailwindCSS CDN v3.4.1 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Typewriter Effect CSS -->
+    <link rel="stylesheet" href="css/typewriter.css">
+
+    <!-- Premium Spiritual Design CSS -->
+    <link rel="stylesheet" href="css/premium.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+    /* Tailwind Custom Styles */
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;500;600;700&display=swap');
+    
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--cream);
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+
+    /* Navbar gradient background */
+    .navbar-gradient {
+      background: linear-gradient(135deg, #FF9933 0%, #FFB347 20%, #D4AF37 50%, #FFA500 80%, #FF8C00 100%);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 8px 32px rgba(90, 14, 14, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    }
+
+    .navbar-gradient.scrolled {
+      box-shadow: 0 12px 48px rgba(90, 14, 14, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    }
+
+    /* Logo styling */
+    .logo-img {
+      height: 3.5rem;
+      width: 3.5rem;
+      border-radius: 50%;
+      object-fit: cover;
+      filter: brightness(1.1) contrast(1.2);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .logo-text {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: 1.5rem;
+      color: #FFFFFF;
+      text-shadow: 2px 2px 6px rgba(90, 14, 14, 0.3);
+      letter-spacing: -0.02em;
+    }
+
+    /* Nav links styling */
+    .nav-link-item {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: #FFFFFF;
+      position: relative;
+      padding: 0.625rem 0;
+      letter-spacing: 0.03em;
+      text-shadow: 1px 1px 3px rgba(90, 14, 14, 0.2);
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .nav-link-item::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #FFD700, #FFA500);
+      transition: width 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+    }
+
+    .nav-link-item:hover {
+      color: #FFF8E7;
+      text-shadow: 2px 2px 6px rgba(90, 14, 14, 0.4), 0 0 20px rgba(255, 215, 0, 0.5);
+    }
+
+    .nav-link-item:hover::after {
+      width: 100%;
+    }
+
+    /* Mobile menu toggle */
+    .hamburger-line {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background-color: white;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .hamburger-open .hamburger-line:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 6px);
+    }
+
+    .hamburger-open .hamburger-line:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger-open .hamburger-line:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    /* Mobile menu links */
+    .mobile-nav-link {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1.75rem;
+      color: #FFFFFF;
+      text-shadow: 2px 2px 8px rgba(90, 14, 14, 0.4);
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: block;
+      padding: 0.75rem;
+    }
+
+    .mobile-nav-link:hover {
+      transform: scale(1.1);
+      color: #FFF8E7;
+      text-shadow: 3px 3px 10px rgba(90, 14, 14, 0.6);
+    }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Override footer anchor styles for this page */
+        footer a {
+            color: rgba(255, 255, 255, 0.8) !important;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        footer a:hover {
+            color: rgba(255, 255, 255, 1) !important;
+            padding-left: 5px;
+        }
+    </style>
+</head>
+
+<body>
+ 
+   <!-- ========== PREMIUM NAVIGATION - PURE TAILWIND CSS ========== -->
+  <nav class="navbar-gradient fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="mainNav">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between py-4">
+        
+        <!-- Logo -->
+        <a href="home.html" class="flex items-center space-x-3 relative z-40">
+          <img src="assets/logo.jpeg" alt="ମା ଭୁବନେଶ୍ଵରୀ ମନ୍ଦିର" class="logo-img">
+          <span class="logo-text  sm:inline-block">ମା ଭୁବନେଶ୍ଵରୀ</span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden lg:flex items-center space-x-8">
+          <a class="nav-link-item" href="index.html">HOME</a>
+          <a class="nav-link-item" href="about.html">ABOUT</a>
+          <a class="nav-link-item" href="puja.html">PUJASEVA</a>
+          <a class="nav-link-item" href="bhoga.html">BHOGO</a>
+          <a class="nav-link-item" href="donation.html">DONATION</a>
+          <a class="nav-link-item" href="event.html">EVENTS</a>
+          <a class="nav-link-item" href="galary.html">GALLERY</a>
+          <a class="nav-link-item" href="contact.html">CONTACT</a>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button 
+          id="mobile-menu-toggle" 
+          class="lg:hidden relative z-50 w-10 h-10 flex flex-col items-center justify-center space-y-1.5 focus:outline-none"
+          aria-label="Toggle menu"
+        >
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div 
+      id="mobile-menu" 
+      class="lg:hidden z-60 fixed inset-0 h-screen bg-gradient-to-br from-orange-600 via-amber-500 to-orange-700 transform translate-x-full transition-transform duration-300 ease-in-out"
+    >
+     
+      <div class="flex flex-col items-center justify-center h-screen space-y-3 px-6 py-4 text-center">
+        <a class="mobile-nav-link" href="index.html">HOME</a>
+        <a class="mobile-nav-link" href="about.html">ABOUT</a>
+        <a class="mobile-nav-link" href="puja.html">PUJASEVA</a>
+        <a class="mobile-nav-link" href="bhoga.html">BHOGO</a>
+        <a class="mobile-nav-link" href="donation.html">DONATION</a>
+        <a class="mobile-nav-link" href="event.html">EVENTS</a>
+        <a class="mobile-nav-link" href="galary.html">GALLERY</a>
+        <a class="mobile-nav-link" href="contact.html">CONTACT</a>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 px-4 overflow-hidden" style="background: linear-gradient(135deg, #FF9933 0%, #FFB347 20%, #D4AF37 50%, #FFA500 80%, #FF8C00 100%);">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute inset-0" style="background-image: radial-gradient(circle, #5A0E0E 1px, transparent 1px); background-size: 30px 30px;"></div>
+        </div>
+        
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="images/Temple.jpeg" alt="Temple" class="w-full h-full object-cover opacity-20" onerror="this.style.display='none'">
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-orange-500/30 to-orange-600/50"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="max-w-7xl mx-auto text-center relative z-10">
+            <div class="inline-block mb-6">
+                <span class="text-7xl animate-pulse drop-shadow-2xl">🛕</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 drop-shadow-2xl" style="font-family: 'Playfair Display', serif; letter-spacing: -0.02em;">
+                ପବିତ୍ର ପୂଜା ସେବା
+            </h1>
+            <p class="text-xl md:text-2xl text-white/95 mb-8 max-w-3xl mx-auto drop-shadow-lg font-medium">
+                ଈଶ୍ବରଙ୍କ ଆଶୀର୍ବାଦ ପାଇବା ପାଇଁ ଆପଣଙ୍କ ପୂଜା ଏବଂ ରୀତିନୀତି ବୁକ୍ କରନ୍ତୁ
+            </p>
+            <div class="flex flex-wrap justify-center gap-4 mb-8">
+                <div class="bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full border-2 border-white/40 shadow-xl">
+                    <span class="text-white font-semibold">🕉️ ବୈଦିକ ପରମ୍ପରା</span>
+                </div>
+                <div class="bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full border-2 border-white/40 shadow-xl">
+                    <span class="text-white font-semibold">🙏 ଅଭିଜ୍ଞ ପଣ୍ଡିତ</span>
+                </div>
+                <div class="bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full border-2 border-white/40 shadow-xl">
+                    <span class="text-white font-semibold">✨ ଦିବ୍ୟ ଆଶୀର୍ବାଦ</span>
+                </div>
+            </div>
+            <a href="#pooja-list" class="inline-block bg-white text-orange-600 px-8 py-4 rounded-full font-bold text-lg shadow-2xl hover:shadow-orange-500/50 transform hover:scale-105 transition-all duration-300">
+                ପୂଜା ଦେଖନ୍ତୁ 🔽
+            </a>
+        </div>
+
+        <!-- Decorative Elements -->
+        <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-cream to-transparent"></div>
+    </section>
+
+    <!-- Pooja List Section -->
+    <section id="pooja-list-section" class="py-16 px-4 sm:px-6 lg:px-8 bg-cream">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <span class="inline-block text-5xl mb-4">🕉️</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" style="color: var(--maroon); font-family: 'Playfair Display', serif;">ଉପଲବ୍ଧ ପୂଜା</h2>
+                <div class="w-24 h-1 mx-auto mb-4" style="background-color: var(--gold);"></div>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">ଆପଣଙ୍କ ଇଚ୍ଛା ଓ ଆବଶ୍ୟକତା ଅନୁସାରେ ଉପଯୁକ୍ତ ପୂଜା ବାଛନ୍ତୁ</p>
+            </div>
+
+            <div id="pooja-list" class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Poojas will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Book With Us Section -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-orange-50 to-yellow-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" style="color: var(--maroon); font-family: 'Playfair Display', serif;">ଆମ ସହିତ କାହିଁକି ବୁକ୍ କରିବେ?</h2>
+                <div class="w-24 h-1 mx-auto" style="background-color: var(--gold);"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center p-6 bg-white rounded-xl shadow-lg hover:shadow-2xl transition-shadow">
+                    <div class="text-5xl mb-4">📿</div>
+                    <h3 class="text-xl font-bold mb-3" style="color: var(--maroon);">ବୈଦିକ ବିଧି</h3>
+                    <p class="text-gray-600">ପ୍ରାଚୀନ ଶାସ୍ତ୍ର ଅନୁସାରେ ସମସ୍ତ ପୂଜା ସମ୍ପାଦିତ</p>
+                </div>
+                <div class="text-center p-6 bg-white rounded-xl shadow-lg hover:shadow-2xl transition-shadow">
+                    <div class="text-5xl mb-4">👨‍🦳</div>
+                    <h3 class="text-xl font-bold mb-3" style="color: var(--maroon);">ଅନୁଭବୀ ପଣ୍ଡିତ</h3>
+                    <p class="text-gray-600">ଉଚ୍ଚ ଶିକ୍ଷିତ ଏବଂ ଅନୁଭବୀ ବ୍ରାହ୍ମଣମାନଙ୍କ ଦ୍ୱାରା ପୂଜା</p>
+                </div>
+                <div class="text-center p-6 bg-white rounded-xl shadow-lg hover:shadow-2xl transition-shadow">
+                    <div class="text-5xl mb-4">💫</div>
+                    <h3 class="text-xl font-bold mb-3" style="color: var(--maroon);">ପୂର୍ଣ୍ଣ ଆଶୀର୍ବାଦ</h3>
+                    <p class="text-gray-600">ଦେବତାଙ୍କ ସମ୍ପୂର୍ଣ୍ଣ ଅନୁଗ୍ରହ ଏବଂ ଆଶୀର୍ବାଦ ସୁନିଶ୍ଚିତ</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Form Section -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" style="color: var(--maroon);">ଆପଣଙ୍କ ପୂଜା ବୁକ୍ କରନ୍ତୁ
+                </h2>
+                <div class="w-24 h-1 mx-auto mb-4" style="background-color: var(--gold);"></div>
+                <p class="text-gray-600">ବୁକିଂ ସମ୍ପୂର୍ଣ୍ଣ କରିବାକୁ ଆପଣଙ୍କର ବିବରଣୀ ପୂରଣ କରନ୍ତୁ</p>
+            </div>
+
+            <form id="booking-form"
+                class="bg-gradient-to-br from-orange-50 to-yellow-50 rounded-2xl p-8 shadow-xl border-2 relative overflow-hidden"
+                style="border-color: var(--gold);">
+                <div
+                    class="absolute top-0 right-0 w-32 h-32 bg-yellow-200/20 rounded-full -mr-16 -mt-16 pointer-events-none">
+                </div>
+                <div
+                    class="absolute bottom-0 left-0 w-24 h-24 bg-orange-200/20 rounded-full -ml-12 -mb-12 pointer-events-none">
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
+                    <!-- Select Pooja -->
+                    <div class="md:col-span-2">
+                        <label class="block font-semibold mb-2" style="color: var(--maroon);">ପୂଜା ଚୟନ କରନ୍ତୁ *</label>
+                        <select id="pooja-select" required
+                            class="w-full px-4 py-3 rounded-lg input-premium focus:outline-none cursor-pointer">
+                            <option value="">ଏକ ପୂଜା ବାଛନ୍ତୁ</option>
+                        </select>
+                    </div>
+
+                    <!-- Select Deity (Dynamic) -->
+                    <div class="md:col-span-2">
+                        <label class="block font-semibold mb-2" style="color: var(--maroon);">ଦେବତା ଚୟନ କରନ୍ତୁ *</label>
+                        <select id="deity-select" required
+                            class="w-full px-4 py-3 rounded-lg input-premium focus:outline-none cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
+                            disabled>
+                            <option value="">ପ୍ରଥମେ ଏକ ପୂଜା ବାଛନ୍ତୁ</option>
+                        </select>
+                        <p class="text-sm text-gray-600 mt-1">ଆପଣଙ୍କର ପୂଜା ଚୟନ ଉପରେ ଆଧାର କରି ଉପଲବ୍ଧ ଦେବତାମାନେ ଦେଖାଯିବେ
+                        </p>
+                    </div>
+
+                    <!-- Devotee Name -->
+                    <div class="md:col-span-2">
+                        <label class="block font-semibold mb-2" style="color: var(--maroon);">ଭକ୍ତଙ୍କ ନାମ *</label>
+                        <input type="text" id="devotee-name" required
+                            class="w-full px-4 py-3 rounded-lg input-premium focus:outline-none"
+                            placeholder="ଆପଣଙ୍କ ପୂର୍ଣ୍ଣ ନାମ ଲେଖନ୍ତୁ">
+                    </div>
+
+                    <!-- Mobile -->
+                    <div>
+                        <label class="block font-semibold mb-2" style="color: var(--maroon);">ମୋବାଇଲ୍ ନମ୍ବର *</label>
+                        <input type="tel" id="mobile" required pattern="[0-9]{10}"
+                            class="w-full px-4 py-3 rounded-lg input-premium focus:outline-none"
+                            placeholder="୧୦ ଅଙ୍କ ବିଶିଷ୍ଟ ମୋବାଇଲ୍ ନମ୍ବର">
+                    </div>
+
+                    <!-- Email -->
+                    <div>
+                        <label class="block font-semibold mb-2" style="color: var(--maroon);">ଇମେଲ୍ *</label>
+                        <input type="email" id="email" required
+                            class="w-full px-4 py-3 rounded-lg input-premium focus:outline-none"
+                            placeholder="your@email.com">
+                    </div>
+
+                    <!-- Address (Added) -->
+                    <div class="md:col-span-2">
+                        <label class="block font-semibold mb-2" style="color: var(--maroon);">ଠିକଣା (Address) *</label>
+                        <textarea id="address" required rows="2"
+                            class="w-full px-4 py-3 rounded-lg input-premium focus:outline-none"
+                            placeholder="ଆପଣଙ୍କ ସମ୍ପୂର୍ଣ୍ଣ ଠିକଣା"></textarea>
+                    </div>
+
+                    <!-- Date -->
+                    <div>
+                        <label class="block font-semibold mb-2" style="color: var(--maroon);">ପସନ୍ଦର ତାରିଖ *</label>
+                        <input type="date" id="booking-date" required
+                            class="w-full px-4 py-3 rounded-lg input-premium focus:outline-none cursor-pointer">
+                    </div>
+
+                    <!-- Gotra -->
+                    <div>
+                        <label class="block font-semibold mb-2" style="color: var(--maroon);">ଗୋତ୍ର (ବୈକଳ୍ପିକ)</label>
+                        <input type="text" id="gotra"
+                            class="w-full px-4 py-3 rounded-lg input-premium focus:outline-none"
+                            placeholder="ଆପଣଙ୍କ ଗୋତ୍ର">
+                    </div>
+
+                    <!-- Special Notes -->
+                    <div class="md:col-span-2">
+                        <label class="block font-semibold mb-2" style="color: var(--maroon);">ବିଶେଷ ସୂଚନା
+                            (ବୈକଳ୍ପିକ)</label>
+                        <textarea id="notes" rows="3"
+                            class="w-full px-4 py-3 rounded-lg input-premium focus:outline-none"
+                            placeholder="କୌଣସି ବିଶେଷ ଆବଶ୍ୟକତା କିମ୍ବା ଅନୁରୋଧ"></textarea>
+                    </div>
+                </div>
+
+                <div class="mt-8">
+                    <button type="submit"
+                        class="btn-divine w-full py-4 rounded-lg font-bold text-lg text-white transition-all hover:scale-105 shadow-lg flex items-center justify-center gap-2">
+                        <span>🙏</span> ବୁକିଂ ନିଶ୍ଚିତ କରନ୍ତୁ ଏବଂ ହ୍ୱାଟ୍ସଆପ୍ ପଠାନ୍ତୁ
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Spiritual Footer -->
+    <footer class="text-white py-12" style="background: linear-gradient(135deg, var(--maroon) 0%, #5C0000 100%);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Spiritual Quote Section -->
+            <div class="text-center mb-8 pb-8 border-b border-white/20">
+                <p class="text-2xl font-bold mb-4 text-yellow-200">🕉️ ॐ ସର୍ବେ ଭବନ୍ତୁ ସୁଖିନଃ 🕉️</p>
+                <p class="text-lg italic mb-2">"ସମସ୍ତ ପ୍ରାଣୀ ସୁଖୀ ହୁଅନ୍ତୁ, ସମସ୍ତ ପ୍ରାଣୀ ସୁସ୍ଥ ହୁଅନ୍ତୁ"</p>
+                <p class="text-sm text-white/80">॥ ସର୍ବେ ଭବନ୍ତୁ ସୁଖିନଃ ସର୍ବେ ସନ୍ତୁ ନିରାମୟାଃ ॥</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 flex items-center gap-2">
+                        <span>🕉️</span>
+                        ପବିତ୍ର ମନ୍ଦିର
+                    </h3>
+                    <p class="text-white/80 mb-3">ଏକ ପବିତ୍ର ବାସସ୍ଥାନ ଯେଉଁଠାରେ ଦିବ୍ୟତା ବାସ କରେ ଏବଂ ଭକ୍ତମାନେ ଶାନ୍ତି
+                        ପାଆନ୍ତି</p>
+                    <p class="text-yellow-200 italic text-sm">🙏 ଯୁଗ ଯୁଗ ଧରି ଦିବ୍ୟ ସେବା</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-yellow-200">🛕 ପବିତ୍ର ସେବା</h4>
+                    <ul class="space-y-2">
+                        <li><a href="pooja-booking.html" class="text-white/80 hover:text-white transition-colors">🙏
+                                ପୂଜା ବୁକିଂ</a></li>
+                        <li><a href="offerings.html" class="text-white/80 hover:text-white transition-colors">🍯 ପ୍ରସାଦ
+                                ଓ ଭୋଗ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-yellow-200">📿 ଦୈନିକ ମନ୍ତ୍ର</h4>
+                    <ul class="space-y-2 text-white/80 text-sm">
+                        <li>🕉️ ଓମ୍ ନମଃ ଶିବାୟ</li>
+                        <li>🪷 ଓମ୍ ନମୋ ଭଗବତେ</li>
+                        <li>🔱 ହର ହର ମହାଦେବ</li>
+                        <li>🌺 ଜୟ ଶ୍ରୀ ରାମ</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-yellow-200">📞 ଯୋଗାଯୋଗ</h4>
+                    <ul class="space-y-2 text-white/80">
+                        <li>📱 +91 7735514529</li>
+                        <li>📧 blessings@divinetemple.com</li>
+                        <li>📍 ପବିତ୍ର ମନ୍ଦିର ପରିସର</li>
+                        <li class="text-yellow-200 mt-3">🕉️ ପ୍ରତିଦିନ ଖୋଲା: ସକାଳ ୫ - ରାତି ୯</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Divine Blessings Section -->
+            <div class="border-t border-white/20 pt-6 text-center">
+                <p class="text-yellow-200 mb-2">✨ ପ୍ରଭୁଙ୍କ ଆଶୀର୍ବାଦ ଆପଣଙ୍କ ଉପରେ ରହୁ ✨</p>
+                <p class="text-white/80 text-sm mb-4">
+                    "ଧର୍ମୋ ରକ୍ଷତି ରକ୍ଷିତଃ" - ଧର୍ମ ତାକୁ ରକ୍ଷା କରେ ଯିଏ ଧର୍ମକୁ ରକ୍ଷା କରେ
+                </p>
+                <p class="text-white/60 text-xs">
+                    © ୨୦୨୬ ପବିତ୍ର ମନ୍ଦିର | ଭକ୍ତି ଏବଂ ଉତ୍ସର୍ଗୀକୃତ ସହିତ ନିର୍ମିତ 🙏
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="js/products.js"></script>
+    <script src="js/main.js?v=2.2"></script>
+
+    <!-- Typewriter Effect JavaScript -->
+    <script src="js/typewriter.js"></script>
+
+    <script>
+        let selectedPooja = null;
+
+        // Load all poojas into the list
+        function loadPoojaList() {
+            const poojas = getPoojas();
+            const container = document.getElementById('pooja-list');
+            const select = document.getElementById('pooja-select');
+
+            // Populate pooja cards
+            container.innerHTML = poojas.map((pooja, index) => {
+                const requiredItems = pooja.requiredItems || [];
+                const supportedDeities = pooja.supportedDeities || [];
+
+                return `
+                <div class="card-premium rounded-xl overflow-hidden fade-in-up" style="animation-delay: ${index * 0.1}s;">
+                    <div class="md:flex">
+                        <div class="md:w-1/3 h-64 md:h-auto bg-gradient-to-br from-orange-100 to-yellow-100 overflow-hidden relative img-zoom-container">
+                            <img src="${pooja.image}" 
+                                 alt="${pooja.name}" 
+                                 class="w-full h-full object-cover transition-transform duration-700"
+                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="w-full h-full absolute inset-0 flex items-center justify-center bg-gradient-to-br from-orange-100 to-yellow-100" style="display:none;">
+                                <span class="text-7xl shadow-lg rounded-full p-4 bg-white/50">🛕</span>
+                            </div>
+                        </div>
+                        <div class="md:w-2/3 p-6 relative">
+                            <h3 class="text-2xl font-bold mb-3 text-gold-gradient">${pooja.name}</h3>
+                            <p class="text-gray-600 mb-4 typewriter-text leading-relaxed">${pooja.description}</p>
+                            
+                            <div class="mb-4">
+                                <h4 class="font-semibold mb-2 flex items-center gap-2" style="color: var(--saffron);">
+                                    <span>🕉️</span> ଆବଶ୍ୟକ ସାମଗ୍ରୀ:
+                                </h4>
+                                <div class="flex flex-wrap gap-2">
+                                    ${requiredItems.map(item => `
+                                        <span class="px-3 py-1 bg-orange-50 text-orange-800 rounded-full text-sm border border-orange-100 shadow-sm">${item}</span>
+                                    `).join('')}
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <h4 class="font-semibold mb-2 flex items-center gap-2" style="color: var(--saffron);">
+                                    <span>✨</span> ଲାଭ:
+                                </h4>
+                                <p class="text-gray-600 text-sm typewriter-text italic border-l-4 border-yellow-400 pl-3 bg-yellow-50/50 py-2 rounded-r-lg">${pooja.benefits}</p>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <h4 class="font-semibold mb-2 flex items-center gap-2" style="color: var(--saffron);">
+                                    <span>🙏</span> ସମ୍ବନ୍ଧିତ ଦେବତା:
+                                </h4>
+                                <div class="flex flex-wrap gap-2">
+                                    ${supportedDeities.map(deity => `
+                                        <span class="px-3 py-1 bg-yellow-50 text-yellow-800 rounded-full text-sm font-medium border border-yellow-200 shadow-sm">${deity}</span>
+                                    `).join('')}
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center justify-between pt-4 border-t border-orange-100 mt-2">
+                                <div>
+                                    <span class="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-orange-600 to-red-600">₹${pooja.price}</span>
+                                    <span class="text-gray-500 ml-2 text-sm font-medium">⏱️ ${pooja.duration}</span>
+                                </div>
+                                <button onclick="scrollToBooking('${pooja.id}')" class="btn-divine px-8 py-3 rounded-lg font-bold shadow-lg transform transition hover:-translate-y-1">
+                                    ବୁକିଂ କରନ୍ତୁ
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            }).join('');
+
+            // Populate select dropdown
+            select.innerHTML = '<option value="">ଏକ ପୂଜା ବାଛନ୍ତୁ</option>' +
+                poojas.map(pooja => `<option value="${pooja.id}">${pooja.name} - ₹${pooja.price}</option>`).join('');
+
+            // Apply typewriter effect to newly loaded content
+            setTimeout(() => {
+                if (window.typewriter) {
+                    window.typewriter.refresh('.typewriter-text');
+                }
+            }, 100);
+        }
+
+        // Scroll to booking form and pre-select pooja
+        function scrollToBooking(poojaId) {
+            document.getElementById('pooja-select').value = poojaId;
+            document.getElementById('pooja-select').dispatchEvent(new Event('change'));
+            document.getElementById('booking-form').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        // Handle pooja selection change
+        document.getElementById('pooja-select').addEventListener('change', function (e) {
+            const poojaId = e.target.value;
+            const deitySelect = document.getElementById('deity-select');
+
+            if (poojaId) {
+                const poojas = getPoojas();
+                selectedPooja = poojas.find(p => p.id === poojaId);
+
+                // Update deity dropdown Dynamically
+                const deitySelect = document.getElementById('deity-select');
+                if (deitySelect) {
+                    const deities = selectedPooja.supportedDeities || [];
+                    if (deities.length > 0) {
+                        deitySelect.innerHTML = '<option value="">ଦେବତା ଚୟନ କରନ୍ତୁ</option>' +
+                            deities.map(d => `<option value="${d}">${d}</option>`).join('');
+                        deitySelect.disabled = false;
+                    } else {
+                        deitySelect.innerHTML = '<option value="">No specific deities listed</option>';
+                        deitySelect.disabled = true; // Or keep enabled if text input allowed? Assuming selection required.
+                    }
+                }
+            } else {
+                document.getElementById('deity-select').innerHTML = '<option value="">ପ୍ରଥମେ ଏକ ପୂଜା ବାଛନ୍ତୁ</option>';
+                document.getElementById('deity-select').disabled = true;
+                selectedPooja = null;
+            }
+        });
+
+        // Handle form submission
+        document.getElementById('booking-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            if (!selectedPooja) {
+                showNotification('ଦୟାକରି ଏକ ପୂଜା ବାଛନ୍ତୁ', 'error');
+                return;
+            }
+
+            const bookingData = {
+                id: generateBookingID(),
+                poojaId: selectedPooja.id,
+                poojaName: selectedPooja.name,
+                deity: document.getElementById('deity-select').value,
+                devoteeName: document.getElementById('devotee-name').value,
+                mobile: document.getElementById('mobile').value,
+                email: document.getElementById('email').value,
+                date: document.getElementById('booking-date').value,
+                gotra: document.getElementById('gotra').value,
+                notes: document.getElementById('notes').value,
+                price: selectedPooja.price,
+                duration: selectedPooja.duration,
+                status: 'pending',
+                date: document.getElementById('booking-date').value,
+                gotra: document.getElementById('gotra').value,
+                notes: document.getElementById('notes').value,
+                price: selectedPooja.price,
+                duration: selectedPooja.duration,
+                status: 'pending',
+                address: document.getElementById('address').value,
+                timestamp: Date.now()
+            };
+
+            // Save booking
+            saveBooking(bookingData);
+
+            // Show success message
+            showNotification('ବୁକିଂ ନିଶ୍ଚିତ ହୋଇଛି! ହ୍ୱାଟସ୍ଆପ୍ ଖୋଲୁଛି...', 'success');
+
+            // Send WhatsApp message
+            setTimeout(() => {
+                sendWhatsAppMessage(bookingData);
+            }, 1000);
+
+            // Reset form
+            setTimeout(() => {
+                this.reset();
+                document.getElementById('deity-select').disabled = true;
+                selectedPooja = null;
+            }, 1500);
+        });
+
+        // Set minimum date to today
+        document.getElementById('booking-date').min = new Date().toISOString().split('T')[0];
+
+        // Load poojas on page load and pageshow
+        document.addEventListener('DOMContentLoaded', loadPoojaList);
+        window.addEventListener('pageshow', (event) => {
+            if (event.persisted) {
+                loadPoojaList();
+            }
+        });
+
+        // Mobile dropdown toggle
+        document.getElementById('mobile-dropdown-toggle')?.addEventListener('click', function () {
+            const dropdown = document.getElementById('mobile-services-dropdown');
+            dropdown.classList.toggle('hidden');
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('mainNav');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle with Tailwind CSS
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        let isMenuOpen = false;
+
+        if (mobileMenuToggle && mobileMenu) {
+            mobileMenuToggle.addEventListener('click', function() {
+                isMenuOpen = !isMenuOpen;
+                
+                if (isMenuOpen) {
+                    // Open menu
+                    mobileMenu.classList.remove('translate-x-full');
+                    mobileMenu.classList.add('translate-x-0');
+                    mobileMenuToggle.classList.add('hamburger-open');
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    // Close menu
+                    mobileMenu.classList.remove('translate-x-0');
+                    mobileMenu.classList.add('translate-x-full');
+                    mobileMenuToggle.classList.remove('hamburger-open');
+                    document.body.style.overflow = '';
+                }
+            });
+
+            // Close mobile menu when clicking on a link
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    if (isMenuOpen) {
+                        mobileMenuToggle.click();
+                    }
+                });
+            });
+        }
+    </script>
+</body>
+
+</html>

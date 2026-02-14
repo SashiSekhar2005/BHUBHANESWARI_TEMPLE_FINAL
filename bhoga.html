@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temple Offerings & Prasad - Divine Temple</title>
+    <meta name="description" content="Order blessed prasad and sacred temple items from our divine temple.">
+
+    <!-- TailwindCSS CDN v3.4.1 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Typewriter Effect CSS -->
+    <link rel="stylesheet" href="css/typewriter.css">
+
+    <!-- Premium Spiritual Design CSS -->
+    <link rel="stylesheet" href="css/premium.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--cream);
+            padding-top: 90px; /* Space for fixed navbar */
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+
+
+
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .unavailable-overlay {
+            position: relative;
+        }
+
+        .unavailable-overlay::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(128, 128, 128, 0.7);
+            border-radius: 0.75rem;
+        }
+
+    /* Navbar gradient background */
+    .navbar-gradient {
+      background: linear-gradient(135deg, #FF9933 0%, #FFB347 20%, #D4AF37 50%, #FFA500 80%, #FF8C00 100%);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 8px 32px rgba(90, 14, 14, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    }
+
+    .navbar-gradient.scrolled {
+      box-shadow: 0 12px 48px rgba(90, 14, 14, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    }
+
+    /* Logo styling */
+    .logo-img {
+      height: 3.5rem;
+      width: 3.5rem;
+      border-radius: 50%;
+      object-fit: cover;
+      filter: brightness(1.1) contrast(1.2);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .logo-text {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: 1.5rem;
+      color: #FFFFFF;
+      text-shadow: 2px 2px 6px rgba(90, 14, 14, 0.3);
+      letter-spacing: -0.02em;
+    }
+
+    /* Nav links styling */
+    .nav-link-item {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: #FFFFFF;
+      position: relative;
+      padding: 0.625rem 0;
+      letter-spacing: 0.03em;
+      text-shadow: 1px 1px 3px rgba(90, 14, 14, 0.2);
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .nav-link-item::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #FFD700, #FFA500);
+      transition: width 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+    }
+
+    .nav-link-item:hover {
+      color: #FFF8E7;
+      text-shadow: 2px 2px 6px rgba(90, 14, 14, 0.4), 0 0 20px rgba(255, 215, 0, 0.5);
+    }
+
+    .nav-link-item:hover::after {
+      width: 100%;
+    }
+
+    /* Mobile menu toggle */
+    .hamburger-line {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background-color: white;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .hamburger-open .hamburger-line:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 6px);
+    }
+
+    .hamburger-open .hamburger-line:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger-open .hamburger-line:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    /* Mobile menu links */
+    .mobile-nav-link {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1.75rem;
+      color: #FFFFFF;
+      text-shadow: 2px 2px 8px rgba(90, 14, 14, 0.4);
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: block;
+      padding: 0.75rem;
+    }
+
+    .mobile-nav-link:hover {
+      transform: scale(1.1);
+      color: #FFF8E7;
+      text-shadow: 3px 3px 10px rgba(90, 14, 14, 0.6);
+    }
+    </style>
+</head>
+
+<body>
+  
+   <!-- ========== PREMIUM NAVIGATION - PURE TAILWIND CSS ========== -->
+  <nav class="navbar-gradient  fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="mainNav">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between py-4">
+        
+        <!-- Logo -->
+        <a href="home.html" class="flex items-center space-x-3 relative z-40">
+          <img src="assets/logo.jpeg" alt="ମା ଭୁବନେଶ୍ଵରୀ ମନ୍ଦିର" class="logo-img">
+          <span class="logo-text  sm:inline-block">ମା ଭୁବନେଶ୍ଵରୀ</span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden lg:flex items-center space-x-8">
+          <a class="nav-link-item" href="index.html">HOME</a>
+          <a class="nav-link-item" href="about.html">ABOUT</a>
+          <a class="nav-link-item" href="puja.html">PUJASEVA</a>
+          <a class="nav-link-item" href="bhoga.html">BHOGO</a>
+          <a class="nav-link-item" href="donation.html">DONATION</a>
+          <a class="nav-link-item" href="event.html">EVENTS</a>
+          <a class="nav-link-item" href="galary.html">GALLERY</a>
+          <a class="nav-link-item" href="contact.html">CONTACT</a>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button 
+          id="mobile-menu-toggle" 
+          class="lg:hidden relative z-50 w-10 h-10 flex flex-col items-center justify-center space-y-1.5 focus:outline-none"
+          aria-label="Toggle menu"
+        >
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div 
+      id="mobile-menu" 
+      class="lg:hidden z-60 fixed inset-0 h-screen bg-gradient-to-br from-orange-600 via-amber-500 to-orange-700 transform translate-x-full transition-transform duration-300 ease-in-out"
+    >
+     
+      <div class="flex flex-col items-center justify-center h-screen space-y-3 px-6 py-4 text-center">
+        <a class="mobile-nav-link" href="index.html">HOME</a>
+        <a class="mobile-nav-link" href="about.html">ABOUT</a>
+        <a class="mobile-nav-link" href="puja.html">PUJASEVA</a>
+        <a class="mobile-nav-link" href="bhoga.html">BHOGO</a>
+        <a class="mobile-nav-link" href="donation.html">DONATION</a>
+        <a class="mobile-nav-link" href="event.html">EVENTS</a>
+        <a class="mobile-nav-link" href="galary.html">GALLERY</a>
+        <a class="mobile-nav-link" href="contact.html">CONTACT</a>
+      </div>
+    </div>
+  </nav>
+
+   <!-- Page Header -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 text-center"
+        style="background: linear-gradient(135deg, var(--saffron) 0%, var(--gold) 100%);">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">ମନ୍ଦିର ଭୋଗ ଓ ପ୍ରସାଦ</h1>
+            <p class="text-xl text-white/90">ଆମ ମନ୍ଦିରରୁ ପବିତ୍ର ପ୍ରସାଦ ଏବଂ ସାମଗ୍ରୀ ଅର୍ଡର କରନ୍ତୁ</p>
+        </div>
+    </section>
+
+    <!-- Prasad Section -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" style="color: var(--maroon);">🍯 ପବିତ୍ର ପ୍ରସାଦ</h2>
+                <div class="w-24 h-1 mx-auto mb-4" style="background-color: var(--gold);"></div>
+                <p class="text-gray-600">ଦେବତାଙ୍କ ଠାରୁ ଆଶୀର୍ବାଦ ପ୍ରାପ୍ତ ଖାଦ୍ୟ ଅର୍ପଣ</p>
+            </div>
+
+            <div id="prasad-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Prasad items will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Mahaprasad Booking Section -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8" style="background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%);">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" style="color: var(--maroon);">🍛 ମହାପ୍ରସାଦ ବୁକିଂ</h2>
+                <div class="w-24 h-1 mx-auto mb-4" style="background-color: var(--gold);"></div>
+                <p class="text-gray-600">ପ୍ରଭୁ ଜଗନ୍ନାଥଙ୍କ ମନ୍ଦିର ରୋଷେଇ ଘରୁ ପବିତ୍ର ଖାଦ୍ୟ ଅର୍ପଣ</p>
+            </div>
+
+            <!-- Mahaprasad Image and Spiritual Context -->
+            <div class="mb-12">
+                <div class="rounded-2xl overflow-hidden shadow-2xl mb-6 border-4" style="border-color: var(--gold);">
+                    <img src="images/Mahaprasad.jpg" alt="Sacred Mahaprasad" class="w-full h-96 object-cover">
+                </div>
+
+                <div class="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-lg border-2"
+                    style="border-color: var(--saffron);">
+                    <h3 class="text-2xl font-bold mb-4 text-center" style="color: var(--maroon);">🕉️ ମହାପ୍ରସାଦର ଦିବ୍ୟ
+                        ମହତ୍ତ୍ୱ</h3>
+
+                    <div class="space-y-4 text-gray-700 leading-relaxed">
+                        <p class="text-center italic" style="color: var(--saffron); font-size: 1.1rem;">
+                            "ମହାପ୍ରସାଦ କେବଳ ଖାଦ୍ୟ ନୁହେଁ, ଏହା ହେଉଛି ପ୍ରଭୁ ଜଗନ୍ନାଥଙ୍କର ଦିବ୍ୟ କୃପା"
+                        </p>
+
+                        <p>
+                            ପ୍ରଭୁ ଜଗନ୍ନାଥଙ୍କ ପବିତ୍ର ପରମ୍ପରାରେ, <strong>ମହାପ୍ରସାଦ</strong> ସର୍ବୋଚ୍ଚ ଆଧ୍ୟାତ୍ମିକ ମହତ୍ତ୍ୱ
+                            ରଖେ |
+                            ଏହା ବିଶ୍ୱାସ କରାଯାଏ ଯେ ପ୍ରଭୁଙ୍କୁ ଅର୍ପଣ କରାଯାଇଥିବା ଖାଦ୍ୟ ତାଙ୍କ ଦିବ୍ୟ ସ୍ପର୍ଶ ଦ୍ୱାରା ପବିତ୍ର
+                            ହୋଇଯାଏ,
+                            ଯାହା <em>ପ୍ରସାଦ</em>ରେ ପରିଣତ ହୁଏ - ଖାଦ୍ୟ ରୂପରେ ପ୍ରଭୁଙ୍କ କୃପା |
+                        </p>
+
+                        <p>
+                            ପାରମ୍ପାରିକ ମହାପ୍ରସାଦରେ ପାଞ୍ଚଟି ପବିତ୍ର ଜିନିଷ ଥାଏ: <strong>ଅର୍ଣ୍ଣ</strong> (ଚାଉଳ - ଶୁଦ୍ଧତାର
+                            ପ୍ରତୀକ),
+                            <strong>ଡାଲି</strong> (ବଞ୍ଚିବା ପାଇଁ), <strong>ଖଟା</strong> (ଜୀବନର ସନ୍ତୁଳନ),
+                            <strong>ଖିରି</strong> (ଦିବ୍ୟ ମିଠା), ଏବଂ <strong>ଶାଗ</strong> (ସ୍ୱାସ୍ଥ୍ୟ ଏବଂ ଶକ୍ତି) |
+                        </p>
+
+                        <p class="font-semibold" style="color: var(--maroon);">
+                            🙏 କୁହାଯାଏ ଯେ ଭକ୍ତିର ସହିତ ମହାପ୍ରସାଦ ସେବନ କଲେ ମନ ପବିତ୍ର ହୁଏ, ଅତୀତର ପାପ ଧୋଇଯାଏ,
+                            ଏବଂ ଭକ୍ତ ଓ ତାଙ୍କ ପରିବାର ଉପରେ ପ୍ରଭୁ ଜଗନ୍ନାଥଙ୍କ ଆଶୀର୍ବାଦ ବର୍ଷା ହୁଏ |
+                        </p>
+
+                        <p class="text-center mt-6 p-4 rounded-lg" style="background-color: var(--cream);">
+                            <span class="text-sm italic text-gray-600">
+                                "ମହାପ୍ରସାଦ ଦେହି ଦେବ - ହେ ପ୍ରଭୁ, ମୋତେ ତୁମର ପବିତ୍ର ପ୍ରସାଦ ପ୍ରଦାନ କର"
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-xl p-8 border-2" style="border-color: var(--gold);">
+                <!-- Item Selection -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-bold mb-4" style="color: var(--saffron);">ପ୍ରସାଦ ସାମଗ୍ରୀ ଚୟନ କରନ୍ତୁ:</h3>
+                    <div id="mahaprasad-items-list" class="space-y-3">
+                        <!-- Will be populated dynamically -->
+                    </div>
+                </div>
+
+                <!-- Total Display -->
+                <div class="mb-6 p-4 rounded-lg" style="background-color: var(--cream);">
+                    <div class="flex justify-between items-center">
+                        <span class="text-lg font-semibold" style="color: var(--maroon);">ମୋଟ ରାଶି:</span>
+                        <span id="mahaprasad-total" class="text-2xl font-bold" style="color: var(--saffron);">₹0</span>
+                    </div>
+                </div>
+
+                <!-- Booking Form -->
+                <form id="mahaprasad-booking-form" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">ପୂର୍ଣ୍ଣ ନାମ *</label>
+                            <input type="text" id="mp-name" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">ମୋବାଇଲ୍ ନମ୍ବର *</label>
+                            <input type="tel" id="mp-mobile" pattern="[0-9]{10}" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">ଇମେଲ୍</label>
+                            <input type="email" id="mp-email"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">ସଂଗ୍ରହ ତାରିଖ *</label>
+                            <input type="date" id="mp-date" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">ବିଶେଷ ସୂଚନା</label>
+                        <textarea id="mp-notes" rows="3"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"></textarea>
+                    </div>
+
+                    <button type="submit"
+                        class="w-full py-4 rounded-lg font-bold text-white text-lg transition-all hover:scale-105 shadow-lg"
+                        style="background-color: var(--saffron);">
+                        🕉️ ମହାପ୍ରସାଦ ବୁକ୍ କରନ୍ତୁ
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Temple Items Section -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" style="color: var(--maroon);">🪔 ମନ୍ଦିର ସାମଗ୍ରୀ</h2>
+                <div class="w-24 h-1 mx-auto mb-4" style="background-color: var(--gold);"></div>
+                <p class="text-gray-600">ପୂଜା ପାଇଁ ପବିତ୍ର ସାମଗ୍ରୀ ଏବଂ ଆଧ୍ୟାତ୍ମିକ ଅଭ୍ୟାସ</p>
+            </div>
+
+            <div id="temple-items-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Temple items will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Spiritual Footer -->
+    <footer class="text-white py-12" style="background: linear-gradient(135deg, var(--maroon) 0%, #5C0000 100%);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Spiritual Quote Section -->
+            <div class="text-center mb-8 pb-8 border-b border-white/20">
+                <p class="text-2xl font-bold mb-4 text-yellow-200">🕉️ ॐ ସର୍ବେ ଭବନ୍ତୁ ସୁଖିନଃ 🕉️</p>
+                <p class="text-lg italic mb-2">"ସମସ୍ତ ପ୍ରାଣୀ ସୁଖୀ ହୁଅନ୍ତୁ, ସମସ୍ତ ପ୍ରାଣୀ ସୁସ୍ଥ ହୁଅନ୍ତୁ"</p>
+                <p class="text-sm text-white/80">॥ ସର୍ବେ ଭବନ୍ତୁ ସୁଖିନଃ ସର୍ବେ ସନ୍ତୁ ନିରାମୟାଃ ॥</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 flex items-center gap-2">
+                        <span>🕉️</span>
+                        ପବିତ୍ର ମନ୍ଦିର
+                    </h3>
+                    <p class="text-white/80 mb-3">ଏକ ପବିତ୍ର ବାସସ୍ଥାନ ଯେଉଁଠାରେ ଦିବ୍ୟତା ବାସ କରେ ଏବଂ ଭକ୍ତମାନେ ଶାନ୍ତି
+                        ପାଆନ୍ତି</p>
+                    <p class="text-yellow-200 italic text-sm">🙏 ଯୁଗ ଯୁଗ ଧରି ଦିବ୍ୟ ସେବା</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-yellow-200">🛕 ପବିତ୍ର ସେବା</h4>
+                    <ul class="space-y-2">
+                        <li><a href="pooja-booking.html" class="text-white/80 hover:text-white transition-colors">🙏
+                                ପୂଜା ବୁକିଂ</a></li>
+                        <li><a href="offerings.html" class="text-white/80 hover:text-white transition-colors">🍯 ପ୍ରସାଦ
+                                ଓ ଭୋଗ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-yellow-200">📿 ଦୈନିକ ମନ୍ତ୍ର</h4>
+                    <ul class="space-y-2 text-white/80 text-sm">
+                        <li>🕉️ ଓମ୍ ନମଃ ଶିବାୟ</li>
+                        <li>🪷 ଓମ୍ ନମୋ ଭଗବତେ</li>
+                        <li>🔱 ହର ହର ମହାଦେବ</li>
+                        <li>🌺 ଜୟ ଶ୍ରୀ ରାମ</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-yellow-200">📞 ଯୋଗାଯୋଗ</h4>
+                    <ul class="space-y-2 text-white/80">
+                        <li>📱 +91 7735514529</li>
+                        <li>📧 blessings@divinetemple.com</li>
+                        <li>📍 ପବିତ୍ର ମନ୍ଦିର ପରିସର</li>
+                        <li class="text-yellow-200 mt-3">🕉️ ପ୍ରତିଦିନ ଖୋଲା: ସକାଳ ୫ - ରାତି ୯</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Divine Blessings Section -->
+            <div class="border-t border-white/20 pt-6 text-center">
+                <p class="text-yellow-200 mb-2">✨ ପ୍ରଭୁଙ୍କ ଆଶୀର୍ବାଦ ଆପଣଙ୍କ ଉପରେ ରହୁ ✨</p>
+                <p class="text-white/80 text-sm mb-4">
+                    "ଧର୍ମୋ ରକ୍ଷତି ରକ୍ଷିତଃ" - ଧର୍ମ ତାକୁ ରକ୍ଷା କରେ ଯିଏ ଧର୍ମକୁ ରକ୍ଷା କରେ
+                </p>
+                <p class="text-white/60 text-xs">
+                    © ୨୦୨୬ ପବିତ୍ର ମନ୍ଦିର | ଭକ୍ତି ଏବଂ ଉତ୍ସର୍ଗୀକୃତ ସହିତ ନିର୍ମିତ 🙏
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="js/main.js?v=3.0"></script>
+    <!-- NEW DATA LOGIC -->
+    <script src="js/products.js"></script>
+    <!-- Dynamic Data Loading handled by inline script below -->
+
+    <!-- Typewriter Effect JavaScript -->
+    <script src="js/typewriter.js"></script>
+
+    <script>
+        // Load Prasad Items
+        function loadPrasadItems() {
+            const items = getItems();
+            const prasadItems = items.filter(item => item.category === 'prasad');
+            const container = document.getElementById('prasad-list');
+
+            container.innerHTML = prasadItems.map(item => {
+                const isUnavailable = item.status === 'unavailable';
+
+                return `
+                    <div class="card-premium rounded-xl overflow-hidden fade-in-up ${isUnavailable ? 'unavailable-overlay' : ''}">
+                        <div class="h-56 relative overflow-hidden img-zoom-container">
+                            <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%2280%22 text-anchor=%22middle%22 dy=%22.3em%22%3E🍯%3C/text%3E%3C/svg%3E';">
+                            ${isUnavailable ? '<div class="absolute top-4 right-4 bg-gray-600 text-white px-3 py-1 rounded-full text-sm font-semibold z-10">Currently Unavailable</div>' : '<div class="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">Available</div>'}
+                        </div>
+                        <div class="p-6 relative z-10">
+                            <h3 class="text-2xl font-bold mb-2 text-gold-gradient">${item.name}</h3>
+                            <p class="text-gray-600 mb-4 typewriter-text">${item.description}</p>
+                            <div class="flex items-center justify-between mb-4">
+                                <div>
+                                    <span class="text-2xl font-bold" style="color: var(--saffron);">₹${item.price}</span>
+                                    <span class="text-sm text-gray-600"> / unit</span>
+                                </div>
+                            </div>
+                            
+                            ${!isUnavailable ? `
+                            <div class="flex items-center justify-between gap-4">
+                                <div class="flex items-center gap-2 bg-yellow-50 rounded-lg p-2 border border-yellow-200">
+                                    <button onclick="updateQuantity('${item.id}', -1)" class="w-10 h-10 rounded-lg bg-white border border-yellow-300 qty-btn font-bold text-xl flex items-center justify-center shadow-sm" style="color: var(--maroon);">
+                                        −
+                                    </button>
+                                    <span id="qty-${item.id}" class="text-xl font-bold w-10 text-center text-gray-800">0</span>
+                                    <button onclick="updateQuantity('${item.id}', 1)" class="w-10 h-10 rounded-lg bg-white border border-yellow-300 qty-btn font-bold text-xl flex items-center justify-center shadow-sm" style="color: var(--maroon);">
+                                        +
+                                    </button>
+                                </div>
+                                <button onclick="addToCart('${item.id}', '${item.name}', ${item.price})" class="btn-divine flex-1 py-3 rounded-lg font-bold flex items-center justify-center gap-2 text-sm uppercase tracking-wide">
+                                    🛒 Add to Cart
+                                </button>
+                            </div>
+                            ` : `
+                            <button disabled class="w-full py-3 rounded-lg font-semibold bg-gray-400 cursor-not-allowed text-white shadow-inner">
+                                Unavailable
+                            </button>
+                            `}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            // Apply typewriter effect to newly loaded content
+            setTimeout(() => {
+                if (window.typewriter) {
+                    window.typewriter.refresh('.typewriter-text');
+                }
+            }, 100);
+        }
+
+        // Load Temple Items
+        function loadTempleItems() {
+            const items = getItems();
+            const templeItems = items.filter(item => item.category === 'temple-item');
+            const container = document.getElementById('temple-items-list');
+
+            container.innerHTML = templeItems.map(item => {
+                const isUnavailable = item.status === 'unavailable';
+
+                return `
+                    <div class="card-premium rounded-xl overflow-hidden fade-in-up ${isUnavailable ? 'unavailable-overlay' : ''}">
+                        <div class="h-56 relative overflow-hidden img-zoom-container">
+                            <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%2280%22 text-anchor=%22middle%22 dy=%22.3em%22%3E🪔%3C/text%3E%3C/svg%3E';">
+                            ${isUnavailable ? '<div class="absolute top-4 right-4 bg-gray-600 text-white px-3 py-1 rounded-full text-sm font-semibold z-10">ବର୍ତ୍ତମାନ ଉପଲବ୍ଧ ନାହିଁ</div>' : '<div class="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">ଉପଲବ୍ଧ</div>'}
+                        </div>
+                        <div class="p-6 relative z-10">
+                            <h3 class="text-2xl font-bold mb-2 text-gold-gradient">${item.name}</h3>
+                            <p class="text-gray-600 mb-4 typewriter-text">${item.description}</p>
+                            <div class="flex items-center justify-between mb-4">
+                                <div>
+                                    <span class="text-2xl font-bold" style="color: var(--saffron);">₹${item.price}</span>
+                                    <span class="text-sm text-gray-600"> / ଏକକ</span>
+                                </div>
+                            </div>
+                            
+                            ${!isUnavailable ? `
+                            <div class="flex items-center justify-between gap-4">
+                                <div class="flex items-center gap-2 bg-yellow-50 rounded-lg p-2 border border-yellow-200">
+                                    <button onclick="updateQuantity('${item.id}', -1)" class="w-10 h-10 rounded-lg bg-white border border-yellow-300 qty-btn font-bold text-xl flex items-center justify-center shadow-sm" style="color: var(--maroon);">
+                                        −
+                                    </button>
+                                    <span id="qty-${item.id}" class="text-xl font-bold w-10 text-center text-gray-800">0</span>
+                                    <button onclick="updateQuantity('${item.id}', 1)" class="w-10 h-10 rounded-lg bg-white border border-yellow-300 qty-btn font-bold text-xl flex items-center justify-center shadow-sm" style="color: var(--maroon);">
+                                        +
+                                    </button>
+                                </div>
+                                <button onclick="addToCart('${item.id}', '${item.name}', ${item.price})" class="btn-divine flex-1 py-3 rounded-lg font-bold flex items-center justify-center gap-2 text-sm uppercase tracking-wide">
+                                    🛒 ଟୋକେଇରେ ଯୋଡନ୍ତୁ
+                                </button>
+                            </div>
+                            ` : `
+                            <button disabled class="w-full py-3 rounded-lg font-semibold bg-gray-400 cursor-not-allowed text-white shadow-inner">
+                                ଉପଲବ୍ଧ ନାହିଁ
+                            </button>
+                            `}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            // Apply typewriter effect to newly loaded content
+            setTimeout(() => {
+                if (window.typewriter) {
+                    window.typewriter.refresh('.typewriter-text');
+                }
+            }, 100);
+        }
+
+        // Update Quantity Function
+        function updateQuantity(itemId, change) {
+            const qtyElement = document.getElementById(`qty-${itemId}`);
+            let currentQty = parseInt(qtyElement.textContent);
+            let newQty = currentQty + change;
+
+            // Don't allow negative quantities
+            if (newQty < 0) newQty = 0;
+
+            qtyElement.textContent = newQty;
+        }
+
+        // Add to Cart Function
+        function addToCart(itemId, itemName, price) {
+            const qtyElement = document.getElementById(`qty-${itemId}`);
+            const quantity = parseInt(qtyElement.textContent);
+
+            if (quantity === 0) {
+                showNotification('ଦୟାକରି ପ୍ରଥମେ ପରିମାଣ ଚୟନ କରନ୍ତୁ', 'error');
+                return;
+            }
+
+            const total = price * quantity;
+
+            // Create WhatsApp message
+            const whatsappNumber = '917735514529';
+            const message = `🕉️ *ଦିବ୍ୟ ମନ୍ଦିର ଅର୍ଡର* 🕉️
+
+📦 *ସାମଗ୍ରୀ:* ${itemName}
+💰 *ମୂଲ୍ୟ:* ₹${price} ପ୍ରତି ଏକକ
+🔢 *ପରିମାଣ:* ${quantity}
+💳 *ମୋଟ ରାଶି:* ₹${total}
+
+🙏 ମୁଁ ଏହି ପବିତ୍ର ଭୋଗ ଅର୍ଡର କରିବାକୁ ଚାହୁଁଛି।
+
+*ଭଗବାନ ଆପଣଙ୍କୁ ଆଶୀର୍ବାଦ କରନ୍ତୁ!*`;
+
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+
+            // Reset quantity
+            qtyElement.textContent = '0';
+
+            showNotification(`${itemName} ଯୋଡାଗଲା! ହ୍ୱାଟସ୍ଆପ୍ ଖୋଲୁଛି...`, 'success');
+        }
+
+        // Order Item Function
+        function orderItem(itemId) {
+            const items = getItems();
+            const item = items.find(i => i.id === itemId);
+
+            if (!item) {
+                showNotification('ସାମଗ୍ରୀ ମିଳିଲା ନାହିଁ', 'error');
+                return;
+            }
+
+            if (item.status === 'unavailable') {
+                showNotification('ଏହି ସାମଗ୍ରୀ ବର୍ତ୍ତମାନ ଉପଲବ୍ଧ ନାହିଁ', 'error');
+                return;
+            }
+
+            // Create WhatsApp message for item order
+            const phoneNumber = '917735514529';
+            const message = `🕉️ *ମନ୍ଦିର ସାମଗ୍ରୀ ଅର୍ଡର ଅନୁରୋଧ* 🕉️
+
+📦 *ସାମଗ୍ରୀ ବିବରଣୀ:*
+   • ନାମ: ${item.name}
+   • ବର୍ଗ: ${item.category === 'prasad' ? 'ପବିତ୍ର ପ୍ରସାଦ' : 'ମନ୍ଦିର ସାମଗ୍ରୀ'}
+   • ମୂଲ୍ୟ: ₹${item.price}
+
+📝 *ବର୍ଣ୍ଣନା:*
+${item.description}
+
+🙏 ମୁଁ ଏହି ସାମଗ୍ରୀ ଅର୍ଡର କରିବାକୁ ଚାହୁଁଛି। ଦୟାକରି ଉପଲବ୍ଧତା ଏବଂ ବିତରଣ ବିବରଣୀ ନିଶ୍ଚିତ କରନ୍ତୁ।`;
+
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+            showNotification('ଆପଣଙ୍କ ଅର୍ଡର ସମ୍ପୂର୍ଣ୍ଣ କରିବାକୁ ହ୍ୱାଟସ୍ଆପ୍ ଖୋଲୁଛି...', 'success');
+            setTimeout(() => {
+                window.open(whatsappURL, '_blank');
+            }, 1000);
+        }
+
+        //Load Mahaprasad Items
+        function loadMahaprasadItems() {
+            const items = getMahaprasadItems();
+            const container = document.getElementById('mahaprasad-items-list');
+
+            container.innerHTML = items.map(item => {
+                const isAvailable = item.status === 'available';
+
+                return `
+                    <div class="flex items-center justify-between p-4 rounded-lg border-2 transition-all ${isAvailable ? 'hover:shadow-md' : 'opacity-60'}" style="border-color: ${isAvailable ? 'var(--gold)' : '#ccc'};">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="font-bold text-lg" style="color: var(--maroon);">${item.name}</span>
+                                <span class="text-gray-600">(${item.nameEnglish})</span>
+                                ${!isAvailable ? '<span class="ml-2 text-red-500 text-sm font-semibold">ବର୍ତ୍ତମାନ ଉପଲବ୍ଧ ନାହିଁ</span>' : ''}
+                            </div>
+                            <p class="text-sm text-gray-500 mb-2">${item.description}</p>
+                            <div class="flex items-center gap-4">
+                                <span class="text-lg font-bold" style="color: var(--saffron);">₹${item.price}</span>
+                                <span class="text-sm text-gray-600">ପ୍ରତି ଭାଗ</span>
+                            </div>
+                        </div>
+                        
+                        ${isAvailable ? `
+                        <div class="flex items-center gap-3 bg-gray-100 rounded-lg p-2">
+                            <button onclick="updateMahaprasadQty('${item.id}', -1)" class="w-10 h-10 rounded-lg bg-white border-2 border-gray-300 hover:border-orange-500 font-bold text-xl transition-all hover:scale-110" style="color: var(--saffron);">
+                                −
+                            </button>
+                            <span id="mp-qty-${item.id}" data-price="${item.price}" class="text-xl font-bold w-12 text-center">0</span>
+                            <button onclick="updateMahaprasadQty('${item.id}', 1)" class="w-10 h-10 rounded-lg bg-white border-2 border-gray-300 hover:border-orange-500 font-bold text-xl transition-all hover:scale-110" style="color: var(--saffron);">
+                                +
+                            </button>
+                        </div>
+                        ` : '<span class="text-gray-500 text-sm">ଉପଲବ୍ଧ ନାହିଁ</span>'}
+                    </div>
+                `;
+            }).join('');
+        }
+
+
+        // Update Mahaprasad Quantity
+        window.updateMahaprasadQty = function (itemId, change) {
+            const qtyElement = document.getElementById(`mp-qty-${itemId}`);
+            if (!qtyElement) return;
+
+            let currentQty = parseInt(qtyElement.textContent);
+            let newQty = currentQty + change;
+
+            // Don't allow negative quantities
+            if (newQty < 0) newQty = 0;
+
+            qtyElement.textContent = newQty;
+            updateMahaprasadTotal();
+        };
+
+        //Update Total Calculation
+        function updateMahaprasadTotal() {
+            const qtyElements = document.querySelectorAll('[id^="mp-qty-"]');
+            let total = 0;
+
+            qtyElements.forEach(element => {
+                const qty = parseInt(element.textContent);
+                const price = parseInt(element.dataset.price);
+                total += qty * price;
+            });
+
+            document.getElementById('mahaprasad-total').textContent = `₹${total}`;
+        }
+
+        //WhatsApp Integration for Mahaprasad
+        function sendMahaprasadWhatsApp(booking) {
+            const phoneNumber = '917735514529';
+
+            const itemsList = booking.selectedItems.map(item =>
+                `   • ${item.name} (${item.nameEnglish}) x${item.quantity} - ₹${item.price} each = ₹${item.subtotal}`
+            ).join('\n');
+
+            const message = `🕉️ *MAHAPRASAD BOOKING CONFIRMATION* 🕉️\n\n📋 *Booking ID:* ${booking.id}\n\n🍛 *Selected Items:*\n${itemsList}\n\n💰 *Total Amount:* ₹${booking.total}\n\n👤 *Customer Details:*\n   • Name: ${booking.customerName}\n   • Mobile: ${booking.mobile}\n   • Email: ${booking.email}\n\n📅 *Collection Date:* ${formatDate(booking.collectionDate)}\n\n${booking.notes ? `📝 *Special Instructions:* ${booking.notes}` : ''}\n\n🙏 *Thank you for your devotion!*\n_May Lord Jagannath bless you and your family._`;
+
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+            window.open(whatsappURL, '_blank');
+        }
+
+        // Load items on page load and pageshow (for bfcache)
+        function initPage() {
+            loadPrasadItems();
+            loadMahaprasadItems();
+            loadTempleItems();
+
+            // Set minimum date to today
+            const dateInput = document.getElementById('mp-date');
+            if (dateInput) {
+                const today = new Date().toISOString().split('T')[0];
+                dateInput.min = today;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', initPage);
+        window.addEventListener('pageshow', (event) => {
+            if (event.persisted) {
+                initPage();
+            }
+        });
+
+        // Handle Mahaprasad Booking Form
+        const mahaprasadForm = document.getElementById('mahaprasad-booking-form');
+        if (mahaprasadForm) {
+            mahaprasadForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                // Get items with quantities
+                const qtyElements = document.querySelectorAll('[id^="mp-qty-"]');
+                const selectedItems = [];
+                let total = 0;
+
+                qtyElements.forEach(element => {
+                    const qty = parseInt(element.textContent);
+                    if (qty > 0) {
+                        const itemId = element.id.replace('mp-qty-', '');
+                        const allItems = getMahaprasadItems();
+                        const item = allItems.find(i => i.id === itemId);
+
+                        selectedItems.push({
+                            id: item.id,
+                            name: item.name,
+                            nameEnglish: item.nameEnglish,
+                            price: item.price,
+                            quantity: qty,
+                            subtotal: item.price * qty
+                        });
+
+                        total += item.price * qty;
+                    }
+                });
+
+                if (selectedItems.length === 0) {
+                    showNotification('Please select at least one prasad item', 'error');
+                    return;
+                }
+
+                // Create booking object
+                const booking = {
+                    id: generateMahaprasadID(),
+                    customerName: document.getElementById('mp-name').value,
+                    mobile: document.getElementById('mp-mobile').value,
+                    email: document.getElementById('mp-email').value || 'N/A',
+                    collectionDate: document.getElementById('mp-date').value,
+                    notes: document.getElementById('mp-notes').value || '',
+                    selectedItems: selectedItems,
+                    total: total,
+                    bookingDate: new Date().toISOString()
+                };
+
+                //Save booking
+                saveMahaprasadBooking(booking);
+
+                //Send WhatsApp message
+                sendMahaprasadWhatsApp(booking);
+
+                // Show success message
+                showNotification('Mahaprasad booking confirmed! Opening WhatsApp...', 'success');
+
+                // Reset form
+                this.reset();
+
+                // Reset all quantities to 0
+                qtyElements.forEach(element => {
+                    element.textContent = '0';
+                });
+
+                updateMahaprasadTotal();
+            });
+        }
+
+        // Mobile dropdown toggle
+        document.getElementById('mobile-dropdown-toggle')?.addEventListener('click', function () {
+            const dropdown = document.getElementById('mobile-services-dropdown');
+            dropdown.classList.toggle('hidden');
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('mainNav');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle with Tailwind CSS
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        let isMenuOpen = false;
+
+        if (mobileMenuToggle && mobileMenu) {
+            mobileMenuToggle.addEventListener('click', function() {
+                isMenuOpen = !isMenuOpen;
+                
+                if (isMenuOpen) {
+                    // Open menu
+                    mobileMenu.classList.remove('translate-x-full');
+                    mobileMenu.classList.add('translate-x-0');
+                    mobileMenuToggle.classList.add('hamburger-open');
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    // Close menu
+                    mobileMenu.classList.remove('translate-x-0');
+                    mobileMenu.classList.add('translate-x-full');
+                    mobileMenuToggle.classList.remove('hamburger-open');
+                    document.body.style.overflow = '';
+                }
+            });
+
+            // Close mobile menu when clicking on a link
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    if (isMenuOpen) {
+                        mobileMenuToggle.click();
+                    }
+                });
+            });
+        }
+    </script>
+</body>
+
+</html>
