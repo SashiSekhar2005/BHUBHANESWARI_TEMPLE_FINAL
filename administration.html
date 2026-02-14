@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <title>ମା ଭୁବନେଶ୍ଵରୀ ମନ୍ଦିର | Administration</title>
+  
+  <!-- META -->
+  <meta name="description" content="ମା ଭୁବନେଶ୍ଵରୀ ମନ୍ଦିର ପରିଚାଳନା ଦଳ - ପ୍ରଧାନ ପୁରୋହିତ ଏବଂ ଶ୍ରୁତିସଂଗ୍ରାହକ।">
+  <meta name="keywords" content="ମା ଭୁବନେଶ୍ଵରୀ, ପୁରୋହିତ, ମନ୍ଦିର ପରିଚାଳନା, ଭୁବନେଶ୍ଵର">
+  <meta name="author" content="ମା ଭୁବନେଶ୍ଵରୀ ମନ୍ଦିର">
+  
+  <!-- FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- BOOTSTRAP -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- TAILWIND CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <!-- SHARED STYLES -->
+  <link rel="stylesheet" href="css/style.css">
+
+
+  <style>
+    /* Tailwind Custom Styles */
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;500;600;700&display=swap');
+    
+    :root {
+      --maroon: #5A0E0E;
+    }
+
+    /* Navbar gradient background */
+    .navbar-gradient {
+      background: linear-gradient(135deg, #FF9933 0%, #FFB347 20%, #D4AF37 50%, #FFA500 80%, #FF8C00 100%);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 8px 32px rgba(90, 14, 14, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    }
+
+    .navbar-gradient.scrolled {
+      box-shadow: 0 12px 48px rgba(90, 14, 14, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    }
+
+    /* Logo styling */
+    .logo-img {
+      height: 3.5rem;
+      width: 3.5rem;
+      border-radius: 50%;
+      object-fit: cover;
+      filter: brightness(1.1) contrast(1.2);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .logo-text {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: 1.5rem;
+      color: #FFFFFF;
+      text-shadow: 2px 2px 6px rgba(90, 14, 14, 0.3);
+      letter-spacing: -0.02em;
+    }
+
+    /* Nav links styling */
+    .nav-link-item {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: #FFFFFF;
+      position: relative;
+      padding: 0.625rem 0;
+      letter-spacing: 0.03em;
+      text-shadow: 1px 1px 3px rgba(90, 14, 14, 0.2);
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .nav-link-item::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #FFD700, #FFA500);
+      transition: width 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+    }
+
+    .nav-link-item:hover {
+      color: #FFF8E7;
+      text-shadow: 2px 2px 6px rgba(90, 14, 14, 0.4), 0 0 20px rgba(255, 215, 0, 0.5);
+    }
+
+    .nav-link-item:hover::after {
+      width: 100%;
+    }
+
+    /* Mobile menu toggle */
+    .hamburger-line {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background-color: white;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .hamburger-open .hamburger-line:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 6px);
+    }
+
+    .hamburger-open .hamburger-line:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger-open .hamburger-line:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    /* Mobile menu links */
+    .mobile-nav-link {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1.75rem;
+      color: #FFFFFF;
+      text-shadow: 2px 2px 8px rgba(90, 14, 14, 0.4);
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: block;
+      padding: 0.75rem;
+    }
+
+    .mobile-nav-link:hover {
+      transform: scale(1.1);
+      color: #FFF8E7;
+      text-shadow: 3px 3px 10px rgba(90, 14, 14, 0.6);
+    }
+  </style>
+</head>
+
+<body>
+  
+
+  <!-- ========== PREMIUM NAVIGATION - PURE TAILWIND CSS ========== -->
+  <nav class="navbar-gradient fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="mainNav">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between py-4">
+        
+        <!-- Logo -->
+        <div  class="flex items-center space-x-3 relative z-40">
+          <img src="assets/logo.jpeg" alt="ମା ଭୁବନେଶ୍ଵରୀ ମନ୍ଦିର" class="logo-img">
+          <h1 id="nameBox" class="logo-text  sm:inline-block">ମା ଭୁବନେଶ୍ଵରୀ </h1>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden lg:flex items-center space-x-8">
+          <a class="nav-link-item" href="index.html">HOME</a>
+          <a class="nav-link-item" href="about.html">ABOUT</a>
+          <!-- <a class="nav-link-item" href="puja.html">PUJASEVA</a>
+          <a class="nav-link-item" href="bhoga.html">BHOGO</a> -->
+          <a class="nav-link-item" href="administration.html">ADMINISTRATION</a>
+          <a class="nav-link-item" href="event.html">EVENTS</a>
+          <a class="nav-link-item" href="galary.html">GALLERY</a>
+          <a class="nav-link-item" href="contact.html">CONTACT</a>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button 
+          id="mobile-menu-toggle" 
+          class="lg:hidden relative z-50 w-10 h-10 flex flex-col items-center justify-center space-y-1.5 focus:outline-none"
+          aria-label="Toggle menu"
+        >
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div 
+      id="mobile-menu" 
+      class="lg:hidden z-60 fixed inset-0 h-screen bg-gradient-to-br from-orange-600 via-amber-500 to-orange-700 transform translate-x-full transition-transform duration-300 ease-in-out z-40"
+    >
+     
+      <div class="flex flex-col items-center justify-center h-screen space-y-3 px-6 py-4 text-center">
+        <a class="mobile-nav-link" href="index.html">HOME</a>
+        <a class="mobile-nav-link" href="about.html">ABOUT</a>
+        <!-- <a class="mobile-nav-link" href="puja.html">PUJASEVA</a>
+        <a class="mobile-nav-link" href="bhoga.html">BHOGO</a> -->
+        <a class="mobile-nav-link" href="administration.html">ADMINISTRATION</a>
+        <a class="mobile-nav-link" href="event.html">EVENTS</a>
+        <a class="mobile-nav-link" href="galary.html">GALLERY</a>
+        <a class="mobile-nav-link" href="contact.html">CONTACT</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <div style="margin-top: 100px; position: relative; z-index: 2;">
+    <!-- ADMINISTRATION PAGE -->
+    <div id="page-administration">
+      
+      <!-- Priest Information Section -->
+      <section class="priest-section py-5 bg-white" style="position: relative; overflow: hidden;">
+        <div class="om-element om-priest-1" style="top: 10%; left: 5%; opacity: 0.03;" aria-hidden="true">ॐ</div>
+        <div class="om-element om-priest-2" style="bottom: 20%; right: 8%; opacity: 0.025;" aria-hidden="true">ॐ</div>
+        <div class="container" style="position: relative; z-index: 1;">
+          <div class="text-center mb-5">
+            
+            <h2 class="section-title">ମନ୍ଦିର ପରିଚାଳନା କମିଟି</h2>
+            <div class="divider divider-center"></div>
+          </div>
+
+          <!-- Priests Grid -->
+          <div class="priests-grid">
+            <!-- Priest 1 -->
+            <div class="priest-card" data-aos="zoom-in" data-aos-delay="0">
+              <div class="priest-image-wrapper">
+                <img src="nana_photo/27a78caa-aa1f-421e-99b6-be7bc0e3971e.png" alt="" class="size-50">
+              </div>
+              <h3 class="priest-name">ଡକ୍ଟର ଦେବେନ୍ଦ୍ର କୁମାର ରାଉତ</h3>
+              <p class="priest-service">ସଭାପତି</p>
+              
+            </div>
+            <!-- Priest 1 -->
+            <div class="priest-card" data-aos="zoom-in" data-aos-delay="0">
+              <div class="priest-image-wrapper">
+                <img src="nana_photo/479ab9e9-0206-44f7-a54b-6a6424f5f209.png" alt="" class="size-50">
+              </div>
+              <h3 class="priest-name">ଶ୍ରୀ ଗଙ୍ଗାଧର ସାହୁ </h3>
+              <p class="priest-service">ସହ ସମ୍ପାଦକ</p>
+              
+            </div>
+            <!-- Priest 1 -->
+            <div class="priest-card" data-aos="zoom-in" data-aos-delay="0">
+              <div class="priest-image-wrapper">
+                <img src="nana_photo/59891b44-a97a-4fed-b794-53a62ef423be.jpeg" alt="" class="size-50">
+              </div>
+              <h3 class="priest-name">ଶ୍ରୀ ଦେବେନ୍ଦ୍ର ନାଥ</h3>
+              <p class="priest-service">ସଚିବ</p>
+              
+            </div>
+
+            <!-- Priest 2 -->
+            <div class="priest-card" data-aos="zoom-in" data-aos-delay="100">
+              <div class="priest-image-wrapper">
+                <img src="nana_photo/1cf30e87-e25b-4a7c-a0be-957795d86aa5.jpeg" alt="" class="size-50" >
+              </div>
+              <h3 class="priest-name">ଶ୍ରୀ ବିକାଶ ଦାସ</h3>
+              <p class="priest-service">କୋଷ ଦକ୍ଷ </p>
+              
+            </div>
+
+            <!-- Priest 3 -->
+            <div class="priest-card" data-aos="zoom-in" data-aos-delay="200">
+              <div class="priest-image-wrapper">
+                <img src="/nana_photo/7fba2203-14e0-4f93-8840-6b1778c7566f.png" alt="" class="size-50">
+              </div>
+              <h3 class="priest-name">ଶ୍ରୀ ନିର୍ମଳ କୁମାର ରଥ </h3>
+              <p class="priest-service">ମୁଖ୍ୟ ପୂଜକ</p>
+              
+            </div>
+
+            <!-- Priest 4 -->
+            <div class="priest-card" data-aos="zoom-in" data-aos-delay="200">
+              <div class="priest-image-wrapper">
+                <img src="nana_photo/3daae976-0060-4918-84a3-50b4e53de030.png" alt="" class="size-50">
+              </div>
+              <h3 class="priest-name">ଶ୍ରୀ ଅଖୟ କୁମାର କର</h3>
+              <p class="priest-service">ପୂଜକ</p>
+              
+            </div>
+
+            <!-- Priest 5 -->
+            <div class="priest-card" data-aos="zoom-in" data-aos-delay="200">
+              <div class="priest-image-wrapper">
+                <img src="nana_photo/d2fd32f2-04bf-4210-824e-81e3d8e87ab4.png" alt="" class="size-50">
+              </div>
+              <h3 class="priest-name">ଶ୍ରୀ ପ୍ରତାପ ଚନ୍ଦ୍ର ପଣ୍ଡା</h3>
+              <p class="priest-service">ପୂଜକ</p>
+              
+            </div>
+
+            <!-- Priest 6 -->
+            <div class="priest-card" data-aos="zoom-in" data-aos-delay="200">
+              <div class="priest-image-wrapper">
+                <img src="nana_photo/6c0aceac-f6cf-4792-8c5a-4964d34e768e.png" alt="" class="size-50">
+              </div>
+              <h3 class="priest-name">ଶ୍ରୀ ଅରୁଣ କୁମାର କର</h3>
+              <p class="priest-service">ପୂଜକ</p>
+             
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- Spiritual Footer -->
+    <footer class="text-white py-12" style="background: linear-gradient(135deg, var(--maroon) 0%, #5C0000 100%);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Spiritual Quote Section -->
+            <div class="text-center mb-8 pb-8 border-b border-white/20">
+                <p class="text-2xl font-bold mb-1 text-yellow-200">॥ ସର୍ବେ ଭବନ୍ତୁ ସୁଖିନଃ </p>
+                <p class="text-2xl font-bold mb-1 text-yellow-200">ସର୍ବେ ସନ୍ତୁ ନିରାମୟାଃ । </p>
+                <p class="text-2xl font-bold mb-1 text-yellow-200">ସର୍ବେ ଭଦ୍ରାଣି ପଶ୍ୟନ୍ତୁ </p>
+                <p class="text-2xl font-bold mb-1 text-yellow-200">ମା କଶ୍ଚିଦ୍ ଦୁଃଖଭାଗ୍ ଭବେତ୍ ॥ </p>
+                
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 flex items-center gap-2">
+                        <span></span>
+                        ମା ଭୁବନେଶ୍ଵରୀ ମନ୍ଦିର
+                    </h3>
+                    <p class="text-white/80 mb-3">ଏକ ପବିତ୍ର ବାସସ୍ଥାନ ଯେଉଁଠାରେ ଦିବ୍ୟତା ବାସ କରେ ଏବଂ ଭକ୍ତମାନେ ଶାନ୍ତି
+                        ପାଆନ୍ତି</p>
+                    <p class="text-yellow-200 italic text-sm">🙏 ଯୁଗ ଯୁଗ ଧରି ଦିବ୍ୟ ସେବା</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-yellow-200">🔗 ଦ୍ରୁତ ଲିଙ୍କ</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-white/80 hover:text-white transition-colors">
+                                🏠 ମୁଖ୍ୟ ପୃଷ୍ଠା (HOME)</a></li>
+                        <li><a href="about.html"  class="text-white/80 hover:text-white transition-colors">📖 ଆମ ବିଷୟରେ (ABOUT)</a></li>
+                        <li><a href="administration.html" class="text-white/80 hover:text-white transition-colors">
+                                🏛️ ପରିଚାଳନା ସମିତି (ADMINISTRATION)</a></li>
+                        <li><a href="event.html"  class="text-white/80 hover:text-white transition-colors">🎉 ଉତ୍ସବ (EVENTS)</a></li>
+                        <li><a href="galary.html" class="text-white/80 hover:text-white transition-colors">
+                                🖼️ ଗ୍ୟାଲେରୀ (GALLERY)</a></li>
+                        <li><a  href="contact.html" class="text-white/80 hover:text-white transition-colors">📞 ଯୋଗାଯୋଗ (CONTACT)</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-yellow-200">📿 ଦୈନିକ ମନ୍ତ୍ର</h4>
+                    <ul class="space-y-2 text-white/80 text-sm">
+                        <li>🕉️ ଓମ୍ ନମଃ ଶିବାୟ</li>
+                        <li>🪷 ଓମ୍ ନମୋ ଭଗବତେ</li>
+                        <li>🔱 ହର ହର ମହାଦେବ</li>
+                        <li>🌺 ଜୟ ଶ୍ରୀ ରାମ</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4 text-yellow-200">📞 ଯୋଗାଯୋଗ</h4>
+                    <ul class="space-y-2 text-white/80">
+                        <li>📱 +91 94370 23379</li>
+                        <li>📱 +91 98306 25301</li>
+                        <li>📧 maabhubaneswaritemple@gmail.com</li>
+                        <li>📍 ପବିତ୍ର ମନ୍ଦିର ପରିସର</li>
+                        <li class="text-yellow-200 mt-3">🕉️ ପ୍ରତିଦିନ ଖୋଲା: ସକାଳ ୫ - ରାତି ୯</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Divine Blessings Section -->
+            <div class="border-t border-white/20 pt-6 text-center">
+                <p class="text-yellow-200 mb-2">✨ ପ୍ରଭୁଙ୍କ ଆଶୀର୍ବାଦ ଆପଣଙ୍କ ଉପରେ ରହୁ ✨</p>
+                <p class="text-white/80 text-sm mb-4">
+                    "ଧର୍ମୋ ରକ୍ଷତି ରକ୍ଷିତଃ" - ଧର୍ମ ତାକୁ ରକ୍ଷା କରେ ଯିଏ ଧର୍ମକୁ ରକ୍ଷା କରେ
+                </p>
+                <p class="text-white/60 text-xs">
+                    © ୨୦୨୬ ପବିତ୍ର ମନ୍ଦିର |<span class="underline"><a href="teamcodex.html"> CREATED AND DEVELOPED BY LITCODEX </a></span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+  <!-- BOOTSTRAP JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
+    integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"
+    integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script>
+    // GSAP Animations for Bhubaneswari Temple Website
+
+// Temple name language switcher
+const names = ["ମା ଭୁବନେଶ୍ୱରୀ ", "माँ भुवनेश्वरी ",  "Maa Bhubaneswari "];
+let index = 0;
+const namebox = document.getElementById("nameBox");
+
+if (namebox) {
+  function changeText() {
+    gsap.to([namebox], {
+      opacity: 0,
+      y: 10,
+      duration: 0.3,
+      ease: "power2.inOut",
+      stagger: 0.1,
+      onComplete: () => {
+        // update text when hidden
+        index = (index + 1) % names.length;
+        namebox.textContent = names[index];
+
+        // fade in + move up
+        gsap.fromTo([namebox],
+          { opacity: 0, y: -10 },
+          { opacity: 1, y: 0, duration: 0.3, ease: "power2.inOut", stagger: 0.1 }
+        );
+      }
+    });
+  }
+
+  function loop() {
+    changeText();
+    gsap.delayedCall(4, loop);
+  }
+
+  // start after 4s
+  gsap.delayedCall(4, loop);
+}
+    // Initialize AOS
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: false
+    });
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('mainNav');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Mobile menu toggle with Tailwind CSS
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    let isMenuOpen = false;
+
+    if (mobileMenuToggle && mobileMenu) {
+      mobileMenuToggle.addEventListener('click', function() {
+        isMenuOpen = !isMenuOpen;
+        
+        if (isMenuOpen) {
+          // Open menu
+          mobileMenu.classList.remove('translate-x-full');
+          mobileMenu.classList.add('translate-x-0');
+          mobileMenuToggle.classList.add('hamburger-open');
+          document.body.style.overflow = 'hidden';
+        } else {
+          // Close menu
+          mobileMenu.classList.remove('translate-x-0');
+          mobileMenu.classList.add('translate-x-full');
+          mobileMenuToggle.classList.remove('hamburger-open');
+          document.body.style.overflow = '';
+        }
+      });
+
+      // Close mobile menu when clicking on a link
+      const mobileLinks = mobileMenu.querySelectorAll('a');
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          if (isMenuOpen) {
+            mobileMenuToggle.click();
+          }
+        });
+      });
+    }
+  </script>
+</body>
+</html>

@@ -195,24 +195,24 @@
 
 <body>
   
-   <!-- ========== PREMIUM NAVIGATION - PURE TAILWIND CSS ========== -->
-  <nav class="navbar-gradient  fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="mainNav">
+  <!-- ========== PREMIUM NAVIGATION - PURE TAILWIND CSS ========== -->
+  <nav class="navbar-gradient fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="mainNav">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between py-4">
         
         <!-- Logo -->
-        <a href="home.html" class="flex items-center space-x-3 relative z-40">
+        <div  class="flex items-center space-x-3 relative z-40">
           <img src="assets/logo.jpeg" alt="ମା ଭୁବନେଶ୍ଵରୀ ମନ୍ଦିର" class="logo-img">
-          <span class="logo-text  sm:inline-block">ମା ଭୁବନେଶ୍ଵରୀ</span>
-        </a>
+          <h1 id="nameBox" class="logo-text  sm:inline-block">ମା ଭୁବନେଶ୍ଵରୀ </h1>
+        </div>
 
         <!-- Desktop Navigation -->
         <div class="hidden lg:flex items-center space-x-8">
           <a class="nav-link-item" href="index.html">HOME</a>
           <a class="nav-link-item" href="about.html">ABOUT</a>
-          <a class="nav-link-item" href="puja.html">PUJASEVA</a>
-          <a class="nav-link-item" href="bhoga.html">BHOGO</a>
-          <a class="nav-link-item" href="donation.html">DONATION</a>
+          <!-- <a class="nav-link-item" href="puja.html">PUJASEVA</a>
+          < a class="nav-link-item" href="bhoga.html">BHOGO</a> -->
+          <a class="nav-link-item" href="administration.html">ADMINISTRATION</a>
           <a class="nav-link-item" href="event.html">EVENTS</a>
           <a class="nav-link-item" href="galary.html">GALLERY</a>
           <a class="nav-link-item" href="contact.html">CONTACT</a>
@@ -234,15 +234,15 @@
     <!-- Mobile Navigation Menu -->
     <div 
       id="mobile-menu" 
-      class="lg:hidden z-60 fixed inset-0 h-screen bg-gradient-to-br from-orange-600 via-amber-500 to-orange-700 transform translate-x-full transition-transform duration-300 ease-in-out"
+      class="lg:hidden z-60 fixed inset-0 h-screen bg-gradient-to-br from-orange-600 via-amber-500 to-orange-700 transform translate-x-full transition-transform duration-300 ease-in-out z-40"
     >
      
       <div class="flex flex-col items-center justify-center h-screen space-y-3 px-6 py-4 text-center">
         <a class="mobile-nav-link" href="index.html">HOME</a>
         <a class="mobile-nav-link" href="about.html">ABOUT</a>
-        <a class="mobile-nav-link" href="puja.html">PUJASEVA</a>
-        <a class="mobile-nav-link" href="bhoga.html">BHOGO</a>
-        <a class="mobile-nav-link" href="donation.html">DONATION</a>
+        <!-- <a class="mobile-nav-link" href="puja.html">PUJASEVA</a>
+        <a class="mobile-nav-link" href="bhoga.html">BHOGO</a> -->
+        <a class="mobile-nav-link" href="administration.html">ADMINISTRATION</a>
         <a class="mobile-nav-link" href="event.html">EVENTS</a>
         <a class="mobile-nav-link" href="galary.html">GALLERY</a>
         <a class="mobile-nav-link" href="contact.html">CONTACT</a>
@@ -409,28 +409,35 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Spiritual Quote Section -->
             <div class="text-center mb-8 pb-8 border-b border-white/20">
-                <p class="text-2xl font-bold mb-4 text-yellow-200">🕉️ ॐ ସର୍ବେ ଭବନ୍ତୁ ସୁଖିନଃ 🕉️</p>
-                <p class="text-lg italic mb-2">"ସମସ୍ତ ପ୍ରାଣୀ ସୁଖୀ ହୁଅନ୍ତୁ, ସମସ୍ତ ପ୍ରାଣୀ ସୁସ୍ଥ ହୁଅନ୍ତୁ"</p>
-                <p class="text-sm text-white/80">॥ ସର୍ବେ ଭବନ୍ତୁ ସୁଖିନଃ ସର୍ବେ ସନ୍ତୁ ନିରାମୟାଃ ॥</p>
+                <p class="text-2xl font-bold mb-1 text-yellow-200">॥ ସର୍ବେ ଭବନ୍ତୁ ସୁଖିନଃ </p>
+                <p class="text-2xl font-bold mb-1 text-yellow-200">ସର୍ବେ ସନ୍ତୁ ନିରାମୟାଃ । </p>
+                <p class="text-2xl font-bold mb-1 text-yellow-200">ସର୍ବେ ଭଦ୍ରାଣି ପଶ୍ୟନ୍ତୁ </p>
+                <p class="text-2xl font-bold mb-1 text-yellow-200">ମା କଶ୍ଚିଦ୍ ଦୁଃଖଭାଗ୍ ଭବେତ୍ ॥ </p>
+                
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
                 <div>
                     <h3 class="text-2xl font-bold mb-4 flex items-center gap-2">
-                        <span>🕉️</span>
-                        ପବିତ୍ର ମନ୍ଦିର
+                        <span></span>
+                        ମା ଭୁବନେଶ୍ଵରୀ ମନ୍ଦିର
                     </h3>
                     <p class="text-white/80 mb-3">ଏକ ପବିତ୍ର ବାସସ୍ଥାନ ଯେଉଁଠାରେ ଦିବ୍ୟତା ବାସ କରେ ଏବଂ ଭକ୍ତମାନେ ଶାନ୍ତି
                         ପାଆନ୍ତି</p>
                     <p class="text-yellow-200 italic text-sm">🙏 ଯୁଗ ଯୁଗ ଧରି ଦିବ୍ୟ ସେବା</p>
                 </div>
                 <div>
-                    <h4 class="text-lg font-semibold mb-4 text-yellow-200">🛕 ପବିତ୍ର ସେବା</h4>
+                    <h4 class="text-lg font-semibold mb-4 text-yellow-200">🔗 ଦ୍ରୁତ ଲିଙ୍କ</h4>
                     <ul class="space-y-2">
-                        <li><a href="pooja-booking.html" class="text-white/80 hover:text-white transition-colors">🙏
-                                ପୂଜା ବୁକିଂ</a></li>
-                        <li><a href="offerings.html" class="text-white/80 hover:text-white transition-colors">🍯 ପ୍ରସାଦ
-                                ଓ ଭୋଗ</a></li>
+                        <li><a href="index.html" class="text-white/80 hover:text-white transition-colors">
+                                🏠 ମୁଖ୍ୟ ପୃଷ୍ଠା (HOME)</a></li>
+                        <li><a href="about.html"  class="text-white/80 hover:text-white transition-colors">📖 ଆମ ବିଷୟରେ (ABOUT)</a></li>
+                        <li><a href="administration.html" class="text-white/80 hover:text-white transition-colors">
+                                🏛️ ପରିଚାଳନା ସମିତି (ADMINISTRATION)</a></li>
+                        <li><a href="event.html"  class="text-white/80 hover:text-white transition-colors">🎉 ଉତ୍ସବ (EVENTS)</a></li>
+                        <li><a href="galary.html" class="text-white/80 hover:text-white transition-colors">
+                                🖼️ ଗ୍ୟାଲେରୀ (GALLERY)</a></li>
+                        <li><a  href="contact.html" class="text-white/80 hover:text-white transition-colors">📞 ଯୋଗାଯୋଗ (CONTACT)</a></li>
                     </ul>
                 </div>
                 <div>
@@ -445,8 +452,9 @@
                 <div>
                     <h4 class="text-lg font-semibold mb-4 text-yellow-200">📞 ଯୋଗାଯୋଗ</h4>
                     <ul class="space-y-2 text-white/80">
-                        <li>📱 +91 7735514529</li>
-                        <li>📧 blessings@divinetemple.com</li>
+                        <li>📱 +91 94370 23379</li>
+                        <li>📱 +91 98306 25301</li>
+                        <li>📧 maabhubaneswaritemple@gmail.com</li>
                         <li>📍 ପବିତ୍ର ମନ୍ଦିର ପରିସର</li>
                         <li class="text-yellow-200 mt-3">🕉️ ପ୍ରତିଦିନ ଖୋଲା: ସକାଳ ୫ - ରାତି ୯</li>
                     </ul>
@@ -474,6 +482,14 @@
 
     <!-- Typewriter Effect JavaScript -->
     <script src="js/typewriter.js"></script>
+
+      <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
+    integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"
+    integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script>
         // Load Prasad Items

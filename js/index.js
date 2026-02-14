@@ -1,3 +1,7 @@
+
+
+
+
 // ==========================================
 // USER PAGE LOGIC (index.js)
 // Renders products on offerings.html

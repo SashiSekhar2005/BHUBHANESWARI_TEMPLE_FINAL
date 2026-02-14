@@ -178,59 +178,60 @@
 
 <body class="bg-cream text-maroon flex flex-col min-h-screen">
 
-    <!-- ========== PREMIUM NAVIGATION - PURE TAILWIND CSS ========== -->
-    <nav class="navbar-gradient fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="mainNav">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between py-4">
-
-                <!-- Logo -->
-                <a href="index.html" class="flex items-center space-x-3 relative z-40">
-                    <img src="assets/logo.jpeg" alt="ମା ଭୁବନେଶ୍ଵରୀ ମନ୍ଦିର" class="logo-img">
-                    <span class="logo-text  sm:inline-block">ମା ଭୁବନେଶ୍ଵରୀ</span>
-                </a>
-
-                <!-- Desktop Navigation -->
-                <div class="hidden lg:flex items-center space-x-8">
-                    <a class="nav-link-item" href="index.html">HOME</a>
-                    <a class="nav-link-item" href="about.html">ABOUT</a>
-                    <a class="nav-link-item" href="puja.html">PUJASEVA</a>
-                    <a class="nav-link-item" href="bhoga.html">BHOGO</a>
-                    <a class="nav-link-item" href="donation.html">DONATION</a>
-                    <a class="nav-link-item" href="event.html">EVENTS</a>
-                    <a class="nav-link-item" href="galary.html">GALLERY</a>
-                    <a class="nav-link-item" href="contact.html">CONTACT</a>
-                </div>
-
-                <!-- Mobile Menu Toggle Button -->
-                <button
-                    id="mobile-menu-toggle"
-                    class="lg:hidden relative z-50 w-10 h-10 flex flex-col items-center justify-center space-y-1.5 focus:outline-none"
-                    aria-label="Toggle menu"
-                >
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                </button>
-            </div>
+  <!-- ========== PREMIUM NAVIGATION - PURE TAILWIND CSS ========== -->
+  <nav class="navbar-gradient fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="mainNav">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between py-4">
+        
+        <!-- Logo -->
+        <div  class="flex items-center space-x-3 relative z-40">
+          <img src="assets/logo.jpeg" alt="ମା ଭୁବନେଶ୍ଵରୀ ମନ୍ଦିର" class="logo-img">
+          <h1 id="nameBox" class="logo-text  sm:inline-block">ମା ଭୁବନେଶ୍ଵରୀ </h1>
         </div>
 
-        <!-- Mobile Navigation Menu -->
-        <div
-            id="mobile-menu"
-            class="lg:hidden z-60 fixed h-screen inset-0 bg-gradient-to-br from-orange-600 via-amber-500 to-orange-700 transform translate-x-full transition-transform duration-300 ease-in-out z-40"
+        <!-- Desktop Navigation -->
+        <div class="hidden lg:flex items-center space-x-8">
+          <a class="nav-link-item" href="index.html">HOME</a>
+          <a class="nav-link-item" href="about.html">ABOUT</a>
+          <!-- <a class="nav-link-item" href="puja.html">PUJASEVA</a>
+          < a class="nav-link-item" href="bhoga.html">BHOGO</a> -->
+          <a class="nav-link-item" href="administration.html">ADMINISTRATION</a>
+          <a class="nav-link-item" href="event.html">EVENTS</a>
+          <a class="nav-link-item" href="galary.html">GALLERY</a>
+          <a class="nav-link-item" href="contact.html">CONTACT</a>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button 
+          id="mobile-menu-toggle" 
+          class="lg:hidden relative z-50 w-10 h-10 flex flex-col items-center justify-center space-y-1.5 focus:outline-none"
+          aria-label="Toggle menu"
         >
-            <div class="flex flex-col items-center justify-center h-screen space-y-3 px-6 py-4 text-center">
-                <a class="mobile-nav-link" href="index.html">HOME</a>
-                <a class="mobile-nav-link" href="about.html">ABOUT</a>
-                <a class="mobile-nav-link" href="puja.html">PUJASEVA</a>
-                <a class="mobile-nav-link" href="bhoga.html">BHOGO</a>
-                <a class="mobile-nav-link" href="donation.html">DONATION</a>
-                <a class="mobile-nav-link" href="event.html">EVENTS</a>
-                <a class="mobile-nav-link" href="galary.html">GALLERY</a>
-                <a class="mobile-nav-link" href="contact.html">CONTACT</a>
-            </div>
-        </div>
-    </nav>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div 
+      id="mobile-menu" 
+      class="lg:hidden z-60 fixed inset-0 h-screen bg-gradient-to-br from-orange-600 via-amber-500 to-orange-700 transform translate-x-full transition-transform duration-300 ease-in-out z-40"
+    >
+     
+      <div class="flex flex-col items-center justify-center h-screen space-y-3 px-6 py-4 text-center">
+        <a class="mobile-nav-link" href="index.html">HOME</a>
+        <a class="mobile-nav-link" href="about.html">ABOUT</a>
+        <!-- <a class="mobile-nav-link" href="puja.html">PUJASEVA</a>
+        <a class="mobile-nav-link" href="bhoga.html">BHOGO</a> -->
+        <a class="mobile-nav-link" href="administration.html">ADMINISTRATION</a>
+        <a class="mobile-nav-link" href="event.html">EVENTS</a>
+        <a class="mobile-nav-link" href="galary.html">GALLERY</a>
+        <a class="mobile-nav-link" href="contact.html">CONTACT</a>
+      </div>
+    </div>
+  </nav>
 
     <!-- Main Content -->
     <main class="flex-grow mt-40">
@@ -550,9 +551,11 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Spiritual Quote Section -->
             <div class="text-center mb-8 pb-8 border-b border-white/20">
-                <p class="text-2xl font-bold mb-4 text-yellow-200">🕉️ ॐ ସର୍ବେ ଭବନ୍ତୁ ସୁଖିନଃ 🕉️</p>
-                <p class="text-lg italic mb-2">"ସମସ୍ତ ପ୍ରାଣୀ ସୁଖୀ ହୁଅନ୍ତୁ, ସମସ୍ତ ପ୍ରାଣୀ ସୁସ୍ଥ ହୁଅନ୍ତୁ"</p>
-                <p class="text-sm text-white/80">॥ ସର୍ବେ ଭବନ୍ତୁ ସୁଖିନଃ ସର୍ବେ ସନ୍ତୁ ନିରାମୟାଃ ॥</p>
+                <p class="text-2xl font-bold mb-1 text-yellow-200">॥ ସର୍ବେ ଭବନ୍ତୁ ସୁଖିନଃ </p>
+                <p class="text-2xl font-bold mb-1 text-yellow-200">ସର୍ବେ ସନ୍ତୁ ନିରାମୟାଃ । </p>
+                <p class="text-2xl font-bold mb-1 text-yellow-200">ସର୍ବେ ଭଦ୍ରାଣି ପଶ୍ୟନ୍ତୁ </p>
+                <p class="text-2xl font-bold mb-1 text-yellow-200">ମା କଶ୍ଚିଦ୍ ଦୁଃଖଭାଗ୍ ଭବେତ୍ ॥ </p>
+                
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
@@ -566,12 +569,17 @@
                     <p class="text-yellow-200 italic text-sm">🙏 ଯୁଗ ଯୁଗ ଧରି ଦିବ୍ୟ ସେବା</p>
                 </div>
                 <div>
-                    <h4 class="text-lg font-semibold mb-4 text-yellow-200">🛕 ପବିତ୍ର ସେବା</h4>
+                    <h4 class="text-lg font-semibold mb-4 text-yellow-200">🔗 ଦ୍ରୁତ ଲିଙ୍କ</h4>
                     <ul class="space-y-2">
-                        <li><a href="puja.html" class="text-white/80 hover:text-white transition-colors">🙏
-                                ପୂଜା ବୁକିଂ</a></li>
-                        <li><a href="bhoga.html" class="text-white/80 hover:text-white transition-colors">🍯 ପ୍ରସାଦ
-                                ଓ ଭୋଗ</a></li>
+                        <li><a href="index.html" class="text-white/80 hover:text-white transition-colors">
+                                🏠 ମୁଖ୍ୟ ପୃଷ୍ଠା (HOME)</a></li>
+                        <li><a href="about.html"  class="text-white/80 hover:text-white transition-colors">📖 ଆମ ବିଷୟରେ (ABOUT)</a></li>
+                        <li><a href="administration.html" class="text-white/80 hover:text-white transition-colors">
+                                🏛️ ପରିଚାଳନା ସମିତି (ADMINISTRATION)</a></li>
+                        <li><a href="event.html"  class="text-white/80 hover:text-white transition-colors">🎉 ଉତ୍ସବ (EVENTS)</a></li>
+                        <li><a href="galary.html" class="text-white/80 hover:text-white transition-colors">
+                                🖼️ ଗ୍ୟାଲେରୀ (GALLERY)</a></li>
+                        <li><a  href="contact.html" class="text-white/80 hover:text-white transition-colors">📞 ଯୋଗାଯୋଗ (CONTACT)</a></li>
                     </ul>
                 </div>
                 <div>
@@ -586,8 +594,9 @@
                 <div>
                     <h4 class="text-lg font-semibold mb-4 text-yellow-200">📞 ଯୋଗାଯୋଗ</h4>
                     <ul class="space-y-2 text-white/80">
-                        <li>📱 +91 7735514529</li>
-                        <li>📧 blessings@divinetemple.com</li>
+                        <li>📱 +91 94370 23379</li>
+                        <li>📱 +91 98306 25301</li>
+                        <li>📧 maabhubaneswaritemple@gmail.com</li>
                         <li>📍 ପବିତ୍ର ମନ୍ଦିର ପରିସର</li>
                         <li class="text-yellow-200 mt-3">🕉️ ପ୍ରତିଦିନ ଖୋଲା: ସକାଳ ୫ - ରାତି ୯</li>
                     </ul>
