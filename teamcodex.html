@@ -1,91 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LIT AND TEMPLE - Project Team</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'poppins': ['Poppins', 'sans-serif'],
+          },
+          animation: {
+            'gradient': 'gradient 15s ease infinite',
+            'float': 'float 5s ease-in-out infinite',
+            'float-delayed': 'float 5s ease-in-out 0.5s infinite',
+            'fade-in': 'fadeIn 1.2s ease forwards',
+            'shimmer': 'shimmer 2s ease-in-out infinite',
+          },
+          keyframes: {
+            gradient: {
+              '0%, 100%': { backgroundPosition: '0% 50%' },
+              '50%': { backgroundPosition: '100% 50%' },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+              '50%': { transform: 'translateY(-15px) rotate(1deg)' },
+            },
+            fadeIn: {
+              'from': { opacity: '0', transform: 'translateY(30px) scale(0.95)' },
+              'to': { opacity: '1', transform: 'translateY(0) scale(1)' },
+            },
+            shimmer: {
+              '0%': { backgroundPosition: '-200% 0' },
+              '100%': { backgroundPosition: '200% 0' },
+            },
+          },
+        },
+      },
+    }
+  </script>
   <style>
-    @keyframes float {
-      0% { transform: translateY(0px); }
-      50% { transform: translateY(-12px); }
-      100% { transform: translateY(0px); }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .float {
-      animation: float 4s ease-in-out infinite;
-    }
-
-    .fade-in {
-      animation: fadeIn 1.5s ease forwards;
-    }
-
-    /* Ensure proper scrolling on mobile */
     body {
-      overflow-x: hidden;
-      overflow-y: auto;
-    }
-
-    /* Better mobile text wrapping */
-    @media (max-width: 640px) {
-      .float {
-        animation: float 3s ease-in-out infinite;
-      }
+      background: linear-gradient(-45deg, #1a0b2e, #2d1b69, #6b2d5c, #c94b4b, #ff6b6b);
+      background-size: 400% 400%;
     }
   </style>
 </head>
-<body class="min-h-screen flex-col w-full bg-gradient-to-r from-indigo-900 via-purple-800 to-pink-700 flex items-center justify-center py-8 sm:py-12">
-    
-  <div class="text-center text-white px-4 sm:px-6 md:px-8 max-w-6xl mx-auto fade-in">
-    
-    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 md:mb-8 tracking-wide leading-tight">
+
+<body
+  class="min-h-screen w-full flex items-center justify-center py-8 sm:py-12 font-poppins animate-gradient overflow-x-hidden">
+
+  <div class="text-center text-white px-4 sm:px-6 md:px-8 max-w-6xl mx-auto animate-fade-in">
+
+    <h1
+      class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 md:mb-8 tracking-wide leading-tight drop-shadow-[0_0_20px_rgba(255,255,255,0.5)]">
       🌟 Project Development Team 🌟
     </h1>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 text-base sm:text-lg md:text-xl font-semibold">
-      
-      <div class="bg-white/10 backdrop-blur-md p-4 sm:p-5 md:p-6 rounded-xl shadow-lg hover:scale-105 transition duration-300 float">
-        DIPTI RANJAN SAHOO
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 text-base sm:text-lg md:text-xl font-semibold">
+
+      <!-- Team Member 1: Dipti Ranjan Sahoo -->
+      <div
+        class="group relative bg-white/10 backdrop-blur-xl p-4 sm:p-5 md:p-6 rounded-xl shadow-lg border-2 border-white/20 hover:border-yellow-400/60 hover:shadow-[0_20px_60px_rgba(255,215,0,0.3)] hover:-translate-y-3 hover:scale-105 transition-all duration-500 ease-out animate-float overflow-hidden">
+        <div
+          class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000">
+        </div>
+        <div class="relative z-10">
+          <div class="font-bold text-lg sm:text-xl mb-2">DIPTI RANJAN SAHOO</div>
+          <div
+            class="font-bold text-sm sm:text-base mb-2 bg-gradient-to-r from-yellow-300 to-yellow-500 bg-clip-text text-transparent">
+            Project Manager (Team Leader)</div>
+          <div class="text-xs sm:text-sm text-white/90 space-y-1">
+            <div>• Organizes the team</div>
+            <div>• Sets deadlines</div>
+            <div>• Makes sure everyone stays on track</div>
+          </div>
+        </div>
       </div>
 
-      <div class="bg-white/10 backdrop-blur-md p-4 sm:p-5 md:p-6 rounded-xl shadow-lg hover:scale-105 transition duration-300 float">
-        SASHI SEKHAR SAHOO
+      <!-- Team Member 2: Sashi Sekhar Sahoo -->
+      <div
+        class="group relative bg-white/10 backdrop-blur-xl p-4 sm:p-5 md:p-6 rounded-xl shadow-lg border-2 border-white/20 hover:border-yellow-400/60 hover:shadow-[0_20px_60px_rgba(255,215,0,0.3)] hover:-translate-y-3 hover:scale-105 transition-all duration-500 ease-out animate-float-delayed overflow-hidden">
+        <div
+          class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000">
+        </div>
+        <div class="relative z-10">
+          <div class="font-bold text-lg sm:text-xl mb-2">SASHI SEKHAR SAHOO</div>
+          <div
+            class="font-bold text-sm sm:text-base mb-2 bg-gradient-to-r from-yellow-300 to-yellow-500 bg-clip-text text-transparent">
+            Programmer</div>
+          <div class="text-xs sm:text-sm text-white/90 space-y-1">
+            <div>• Collects information</div>
+            <div>• Finds reliable sources</div>
+            <div>• Gathers data for the project</div>
+          </div>
+        </div>
       </div>
 
-      <div class="bg-white/10 backdrop-blur-md p-4 sm:p-5 md:p-6 rounded-xl shadow-lg hover:scale-105 transition duration-300 float">
-        BHABANI SANKAR SAHOO
+      <!-- Team Member 3: Bhabani Sankar Sahoo -->
+      <div
+        class="group relative bg-white/10 backdrop-blur-xl p-4 sm:p-5 md:p-6 rounded-xl shadow-lg border-2 border-white/20 hover:border-yellow-400/60 hover:shadow-[0_20px_60px_rgba(255,215,0,0.3)] hover:-translate-y-3 hover:scale-105 transition-all duration-500 ease-out animate-float overflow-hidden">
+        <div
+          class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000">
+        </div>
+        <div class="relative z-10">
+          <div class="font-bold text-lg sm:text-xl mb-2">BHABANI SANKAR SAHOO</div>
+          <div
+            class="font-bold text-sm sm:text-base mb-2 bg-gradient-to-r from-yellow-300 to-yellow-500 bg-clip-text text-transparent">
+            Writer / Content Creator</div>
+          <div class="text-xs sm:text-sm text-white/90 space-y-1">
+            <div>• Writes the report or script</div>
+            <div>• Organizes the content clearly</div>
+            <div>• Edits and improves text</div>
+          </div>
+        </div>
       </div>
-        
 
-      <div class="bg-white/10 backdrop-blur-md p-4 sm:p-5 md:p-6 rounded-xl shadow-lg hover:scale-105 transition duration-300 float">
-        BIDHISHA PRIYADARSHINI
+      <!-- Team Member 4: Bidhisha Priyadarshini -->
+      <div
+        class="group relative bg-white/10 backdrop-blur-xl p-4 sm:p-5 md:p-6 rounded-xl shadow-lg border-2 border-white/20 hover:border-yellow-400/60 hover:shadow-[0_20px_60px_rgba(255,215,0,0.3)] hover:-translate-y-3 hover:scale-105 transition-all duration-500 ease-out animate-float-delayed overflow-hidden">
+        <div
+          class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000">
+        </div>
+        <div class="relative z-10">
+          <div class="font-bold text-lg sm:text-xl mb-2">BIDISHA PRIYADARSHINI</div>
+          <div
+            class="font-bold text-sm sm:text-base mb-2 bg-gradient-to-r from-yellow-300 to-yellow-500 bg-clip-text text-transparent">
+            Presenter / Speaker</div>
+          <div class="text-xs sm:text-sm text-white/90 space-y-1">
+            <div>• Presents the project</div>
+            <div>• Explains key points</div>
+            <div>• Answers questions</div>
+          </div>
+        </div>
       </div>
 
-      <div class="bg-white/10 backdrop-blur-md p-4 sm:p-5 md:p-6 rounded-xl shadow-lg hover:scale-105 transition duration-300 float">
-        TARUN KUMAR
+      <!-- Team Member 5: Tarun Kumar Maharana -->
+      <div
+        class="group relative bg-white/10 backdrop-blur-xl p-4 sm:p-5 md:p-6 rounded-xl shadow-lg border-2 border-white/20 hover:border-yellow-400/60 hover:shadow-[0_20px_60px_rgba(255,215,0,0.3)] hover:-translate-y-3 hover:scale-105 transition-all duration-500 ease-out animate-float overflow-hidden">
+        <div
+          class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000">
+        </div>
+        <div class="relative z-10">
+          <div class="font-bold text-lg sm:text-xl mb-2">TARUN KUMAR MAHARANA</div>
+          <div
+            class="font-bold text-sm sm:text-base mb-2 bg-gradient-to-r from-yellow-300 to-yellow-500 bg-clip-text text-transparent">
+            Designer</div>
+          <div class="text-xs sm:text-sm text-white/90 space-y-1">
+            <div>• Creates slides, posters, or visuals</div>
+            <div>• Makes the project look attractive</div>
+            <div>• Handles layout and graphics</div>
+          </div>
+        </div>
       </div>
 
-      <div class="bg-white/10 backdrop-blur-md p-4 sm:p-5 md:p-6 rounded-xl shadow-lg hover:scale-105 transition duration-300 float">
-        GOUTUM SAHOO
+      <!-- Team Member 6: Goutum Sahoo -->
+      <div
+        class="group relative bg-white/10 backdrop-blur-xl p-4 sm:p-5 md:p-6 rounded-xl shadow-lg border-2 border-white/20 hover:border-yellow-400/60 hover:shadow-[0_20px_60px_rgba(255,215,0,0.3)] hover:-translate-y-3 hover:scale-105 transition-all duration-500 ease-out animate-float-delayed overflow-hidden">
+        <div
+          class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000">
+        </div>
+        <div class="relative z-10">
+          <div class="font-bold text-lg sm:text-xl mb-2">GOUTUM SAHOO</div>
+          <div
+            class="font-bold text-sm sm:text-base mb-2 bg-gradient-to-r from-yellow-300 to-yellow-500 bg-clip-text text-transparent">
+            Editor / Quality Checker</div>
+          <div class="text-xs sm:text-sm text-white/90 space-y-1">
+            <div>• Checks grammar and spelling</div>
+            <div>• Ensures everything is correct</div>
+            <div>• Makes final improvements</div>
+          </div>
+        </div>
       </div>
 
     </div>
 
-    <div class="mt-6 sm:mt-8 md:mt-10 text-sm sm:text-base md:text-lg lg:text-xl font-medium animate-pulse px-2 leading-relaxed">
-      💙 Thank You from <span class="font-bold text-yellow-300">LIT AND TEMPLE</span>  
+    <div
+      class="mt-6 sm:mt-8 md:mt-10 text-sm sm:text-base md:text-lg lg:text-xl font-medium animate-pulse px-2 leading-relaxed">
+      💙 Thank You from <span class="font-bold text-yellow-300">LIT AND TEMPLE</span>
       <br>
       <br>
       <span class="block text-xs sm:text-sm md:text-base leading-relaxed">
-        We extend our heartfelt appreciation to each and every team member for your incredible commitment, dedication, and teamwork in making this project a success. Your consistent effort, creative ideas, and collaborative spirit have played a vital role in bringing this vision to life. This project stands as a reflection of your hard work, responsibility, and passion. We are truly grateful for the time, energy, and determination you have invested throughout this journey. Thank you sincerely for your valuable contribution and unwavering support in building this project. 🙏
+        We extend our heartfelt appreciation to each and every team member for your incredible commitment, dedication,
+        and teamwork in making this project a success. Your consistent effort, creative ideas, and collaborative spirit
+        have played a vital role in bringing this vision to life. This project stands as a reflection of your hard work,
+        responsibility, and passion. We are truly grateful for the time, energy, and determination you have invested
+        throughout this journey. Thank you sincerely for your valuable contribution and unwavering support in building
+        this project. 🙏
       </span>
     </div>
 
   </div>
 
 </body>
+
 </html>

@@ -8,6 +8,12 @@
     <!-- TAILWIND CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
+    <!-- fancybox -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.0/dist/fancybox/fancybox.css" />
+    
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
     <link rel="stylesheet" href="gallery_js_css/style.css">
     <link rel="stylesheet" href="gallery_js_css/mobile.css">
     <link rel="stylesheet" href="gallery_js_css/gallery.css">
@@ -122,6 +128,37 @@
       color: #FFF8E7;
       text-shadow: 3px 3px 10px rgba(90, 14, 14, 0.6);
     }
+
+    /* Golden Glowing Border for Gallery Images */
+    .gallery-image-wrapper {
+      border: 4px solid #D4AF37;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.4), 
+                  0 0 40px rgba(212, 175, 55, 0.2),
+                  inset 0 0 10px rgba(212, 175, 55, 0.1);
+      transition: all 0.3s ease;
+      height: 280px;
+    }
+
+    .gallery-image-wrapper:hover {
+      box-shadow: 0 0 30px rgba(212, 175, 55, 0.6), 
+                  0 0 60px rgba(212, 175, 55, 0.3),
+                  inset 0 0 15px rgba(212, 175, 55, 0.15);
+      transform: translateY(-5px);
+      border-color: #FFD700;
+    }
+
+    .gallery-image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-image-wrapper:hover img {
+      transform: scale(1.05);
+    }
     </style>
     
 </head>
@@ -183,6 +220,60 @@
 
   <!-- Add padding to prevent content from being hidden under fixed navbar -->
   <div style="padding-top: 100px;"></div>
+
+     <!-- ==================== SHIVA RATRI PHOTO GALLERY ==================== -->
+    <div class="flex flex-col items-center mt-20">
+      <h1 class="text-[14px] font-bold lg:text-3xl text-center lg:my-4 bg-amber-400 mx-auto lg:mb-12 lg:w-4/5 w-full py-4">
+        MAHA SHIVRATRI CELEBRATIONS: DIVINE MOMENTS CAPTURED
+      </h1>
+      <p class="text-center text-gray-600 text-lg mb-2">ମହା ଶିବରାତ୍ରି ଉତ୍ସବ</p>
+    </div>
+    
+    <div class="flex justify-center mt-3 mb-16">
+      <div class="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 w-11/12 lg:w-4/5 gap-4 lg:gap-6">
+        
+        <a href="events/siva_ratri/0c08c231-74db-4c38-89f9-f96838e98fdb.jpeg" data-fancybox="shivaratri" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100" class="gallery-image-wrapper">
+          <img alt="Maha Shivratri Celebration #1" src="events/siva_ratri/0c08c231-74db-4c38-89f9-f96838e98fdb.jpeg">
+        </a>
+        
+        <a href="events/siva_ratri/2dec75d2-e74a-45b6-bfaf-5049b326fabe.jpeg" data-fancybox="shivaratri" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200" class="gallery-image-wrapper">
+          <img alt="Maha Shivratri Celebration #2" src="events/siva_ratri/2dec75d2-e74a-45b6-bfaf-5049b326fabe.jpeg">
+        </a>
+        
+        <a href="events/siva_ratri/318cf928-db65-456d-ac21-ae0596cfe07e.jpeg" data-fancybox="shivaratri" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300" class="gallery-image-wrapper">
+          <img alt="Maha Shivratri Celebration #3" src="events/siva_ratri/318cf928-db65-456d-ac21-ae0596cfe07e.jpeg">
+        </a>
+        
+        <a href="events/siva_ratri/3d7dd1b5-2c04-4b5a-807d-e71e7db35dc5.jpeg" data-fancybox="shivaratri" data-aos="fade-up" data-aos-duration="800" class="gallery-image-wrapper">
+          <img alt="Maha Shivratri Celebration #4" src="events/siva_ratri/3d7dd1b5-2c04-4b5a-807d-e71e7db35dc5.jpeg">
+        </a>
+        
+        <a href="events/siva_ratri/637bbe1e-f6c4-40be-94e3-3f350e884f77.jpeg" data-fancybox="shivaratri" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100" class="gallery-image-wrapper">
+          <img alt="Maha Shivratri Celebration #5" src="events/siva_ratri/637bbe1e-f6c4-40be-94e3-3f350e884f77.jpeg">
+        </a>
+        
+        <a href="events/siva_ratri/9ef08000-8802-42b7-859e-a06abb3ee3be.jpeg" data-fancybox="shivaratri" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200" class="gallery-image-wrapper">
+          <img alt="Maha Shivratri Celebration #6" src="events/siva_ratri/9ef08000-8802-42b7-859e-a06abb3ee3be.jpeg">
+        </a>
+        
+        <a href="events/siva_ratri/b96d0260-af73-46a0-b1fe-f3253c6e072c.jpeg" data-fancybox="shivaratri" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300" class="gallery-image-wrapper">
+          <img alt="Maha Shivratri Celebration #7" src="events/siva_ratri/b96d0260-af73-46a0-b1fe-f3253c6e072c.jpeg">
+        </a>
+        
+        <a href="events/siva_ratri/c638c17c-2ad3-4e8e-948c-e796848c5828.jpeg" data-fancybox="shivaratri" data-aos="fade-up" data-aos-duration="800" class="gallery-image-wrapper">
+          <img alt="Maha Shivratri Celebration #8" src="events/siva_ratri/c638c17c-2ad3-4e8e-948c-e796848c5828.jpeg">
+        </a>
+        
+        <a href="events/siva_ratri/d4007fe2-661d-41fe-9c95-9b2e5ac63c4e.jpeg" data-fancybox="shivaratri" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100" class="gallery-image-wrapper">
+          <img alt="Maha Shivratri Celebration #9" src="events/siva_ratri/d4007fe2-661d-41fe-9c95-9b2e5ac63c4e.jpeg">
+        </a>
+        
+        <a href="events/siva_ratri/d78180e6-7f5c-4fda-9b50-9c6eafb3c78d.jpeg" data-fancybox="shivaratri" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200" class="gallery-image-wrapper">
+          <img alt="Maha Shivratri Celebration #10" src="events/siva_ratri/d78180e6-7f5c-4fda-9b50-9c6eafb3c78d.jpeg">
+        </a>
+        
+      </div>
+    </div>
 
      <!-- ==================== GALLERY ==================== -->
     <section class="container fade-in">
@@ -417,6 +508,8 @@
         </div>
     </section>
 
+     
+
     <!-- Spiritual Footer -->
     <footer class="text-white py-12" style="background: linear-gradient(135deg, var(--maroon) 0%, #5C0000 100%);">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -486,6 +579,12 @@
         </div>
     </footer>
 
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- fancybox -->
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.0/dist/fancybox/fancybox.umd.js"></script>
+
     <script src="gallery_js_css/main.js"></script>
     <script src="gallery_js_css/gallery.js"></script>
 
@@ -536,6 +635,35 @@ if (namebox) {
   // start after 4s
   gsap.delayedCall(4, loop);
 }
+
+    // Initialize Fancybox
+    Fancybox.bind("[data-fancybox]", {
+      mainStyle: {
+        "--f-toolbar-padding": "16px 32px",
+        "--f-toolbar-gap": "8px",
+        "--f-button-border-radius": "50%",
+        "--f-thumb-width": "82px",
+        "--f-thumb-height": "82px",
+        "--f-thumb-opacity": "0.5",
+        "--f-thumb-hover-opacity": "1",
+        "--f-thumb-selected-opacity": "1",
+      },
+      Carousel: {
+        Toolbar: {
+          display: {
+            right: ["toggleFull", "close"],
+          },
+        },
+      },
+    });
+
+    // Initialize AOS
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: false
+    });
+
     // Navbar scroll effect
     window.addEventListener('scroll', function() {
       const navbar = document.getElementById('mainNav');
